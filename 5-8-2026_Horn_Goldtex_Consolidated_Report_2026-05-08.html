@@ -16,6 +16,8 @@
       margin: 0;
       padding: 20px;
     }
+    img { max-width: 100%; height: auto; }
+    table { max-width: 100%; }
     @media print {
       body { padding: 0; font-size: 14px; }
       .no-print { display: none; }
@@ -28,24 +30,118 @@
     /* Navigation bar */
     .nav-bar {
       position: sticky; top: 0; z-index: 100;
-      background: #1B2A4A; color: white; padding: 10px 20px;
-      font-size: 14px; text-align: center;
+      background: #1B2A4A; color: white; padding: 12px 20px;
+      font-size: 14px;
       margin: -20px -20px 20px -20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
-    .nav-bar a { color: #a8c8e8; text-decoration: none; margin: 0 12px; }
-    .nav-bar a:hover { color: white; text-decoration: underline; }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 12px;
+    }
+    .nav-brand {
+      font-weight: bold; letter-spacing: 0.5px;
+      font-size: 14px; color: #ffffff;
+    }
+    .nav-links {
+      display: flex; flex-wrap: wrap;
+      gap: 4px 6px; align-items: center;
+    }
+    .nav-links a {
+      color: #a8c8e8; text-decoration: none;
+      padding: 6px 10px; border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+      font-size: 14px; line-height: 1.3;
+    }
+    .nav-links a:hover, .nav-links a:focus {
+      background: rgba(255,255,255,0.12);
+      color: #ffffff; text-decoration: none;
+    }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #8B0000; color: #ffffff !important;
+      padding: 8px 14px !important; border-radius: 4px;
+      font-weight: bold; letter-spacing: 0.3px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      white-space: nowrap;
+    }
+    .nav-cta:hover, .nav-cta:focus {
+      background: #a30000 !important; color: #ffffff !important;
+    }
+    /* Site footer */
+    .site-footer {
+      background: #1B2A4A; color: #e8eef7;
+      padding: 32px 24px; margin: 60px -20px -20px -20px;
+      text-align: center; font-size: 15px; line-height: 1.6;
+    }
+    .site-footer a {
+      display: inline-block; margin-top: 10px;
+      color: #ffffff; background: #8B0000;
+      padding: 10px 18px; border-radius: 4px;
+      text-decoration: none; font-weight: bold;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+    .site-footer a:hover, .site-footer a:focus {
+      background: #a30000;
+    }
+    .site-footer .footer-label {
+      display: block; margin-bottom: 4px;
+      font-size: 14px; color: #c8d4ea;
+    }
+    /* Mobile responsive */
+    @media (max-width: 760px) {
+      body { padding: 12px; font-size: 15px; }
+      .nav-bar { padding: 10px 12px; margin: -12px -12px 16px -12px; }
+      .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; }
+      .nav-brand { text-align: center; font-size: 13px; }
+      .nav-links {
+        justify-content: center; gap: 4px;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        padding-top: 8px;
+      }
+      .nav-links a { padding: 6px 8px; font-size: 13px; }
+      .nav-cta { width: 100%; justify-content: center; margin-top: 4px; }
+      .site-footer { margin: 40px -12px -12px -12px; padding: 24px 16px; }
+      /* Make wide tables horizontally scrollable */
+      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      /* Section containers that set max-width via inline style */
+      div[style*="max-width: 1100px"],
+      div[style*="max-width: 960px"],
+      div[style*="max-width: 1200px"] {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+      /* Cover page padding shrink */
+      div[style*="page-break-after: always"] {
+        padding: 32px 16px !important;
+      }
+      h1 { font-size: 26px !important; }
+      h2 { font-size: 20px !important; }
+      h3 { font-size: 18px !important; }
+    }
+    @media (max-width: 420px) {
+      .nav-links a { padding: 5px 6px; font-size: 12px; }
+      .nav-brand { font-size: 12px; letter-spacing: 0.2px; }
+    }
   </style>
 </head>
 <body>
 
 <div class="nav-bar no-print">
-  <strong>HORN / GOLDTEX CONSOLIDATED REPORT</strong> &nbsp;|&nbsp;
-  <a href="#cover-page">Cover</a>
-  <a href="#executive-summary">Executive Summary</a>
-  <a href="#section-2">Trust &amp; Finances</a>
-  <a href="#section-3">Legal Analysis</a>
-  <a href="#section-4">Violations &amp; Patterns</a>
-  <a href="#section-5">Harm &amp; Conclusions</a>
+  <div class="nav-inner">
+    <div class="nav-brand">HORN / GOLDTEX CONSOLIDATED REPORT</div>
+    <div class="nav-links">
+      <a href="#cover-page">Cover</a>
+      <a href="#executive-summary">Executive Summary</a>
+      <a href="#section-2">Trust &amp; Finances</a>
+      <a href="#section-3">Legal Analysis</a>
+      <a href="#section-4">Violations &amp; Patterns</a>
+      <a href="#section-5">Harm &amp; Conclusions</a>
+      <a class="nav-cta" href="https://youtu.be/CU87WawY_l8" target="_blank" rel="noopener">&#9658; Video Slideshow</a>
+    </div>
+  </div>
 </div>
 
 <!-- ================================================================ -->
@@ -3487,4 +3583,10 @@
   </div>
 
 </div>
+
+<footer class="site-footer no-print">
+  <span class="footer-label">Video of Greystar Harassing Me (She Demanded To Speak)</span>
+  <a href="https://youtu.be/UmkdvUQYnHE" target="_blank" rel="noopener">&#9658; Watch on YouTube</a>
+</footer>
+
 </body></html>
