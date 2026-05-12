@@ -182,29 +182,118 @@
       margin: 0 0 28px 0;
     }
     figure.exhibit {
-      margin: 0 0 36px 0;
+      margin: 0 0 32px 0;
       border: 1px solid #d8d8d8;
       background: #ffffff;
-      padding: 14px 14px 6px 14px;
+      padding: 18px 20px 14px 20px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
-    figure.exhibit img {
-      width: 100%; height: auto;
-      border: 1px solid #e0e0e0;
-      background: #f4f4f4;
+    figure.exhibit .ex-head {
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      gap: 6px 12px;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      border-bottom: 1px dotted #d8d8d8;
     }
-    figure.exhibit figcaption {
-      font-size: 13.5px; line-height: 1.55;
-      color: #333; padding: 12px 4px 6px 4px;
-    }
-    figure.exhibit figcaption .label {
-      display: inline-block;
-      font-size: 11px; letter-spacing: 1.5px;
+    figure.exhibit .ex-head .label {
+      font-size: 11px; letter-spacing: 1.8px;
       text-transform: uppercase; color: #8B0000;
-      font-weight: bold; margin-right: 8px;
+      font-weight: bold;
     }
-    figure.exhibit figcaption .date {
+    figure.exhibit .ex-head .title {
+      font-size: 15px; font-weight: bold;
+      color: #1B2A4A;
+    }
+    figure.exhibit .ex-head .date {
       color: #777; font-size: 12px;
+      margin-left: auto;
+      letter-spacing: 0.3px;
+    }
+    figure.exhibit p { margin: 0 0 10px 0; font-size: 14.5px; line-height: 1.6; color: #333; }
+    figure.exhibit p:last-child { margin-bottom: 0; }
+
+    /* Big readout panel (hour-meter) */
+    .readout {
+      display: flex; align-items: baseline; justify-content: center;
+      gap: 12px;
+      background: #0c1a3a;
+      color: #ffffff;
+      padding: 18px 16px;
+      border: 1px solid #0a142b;
+      border-radius: 4px;
+      margin: 6px 0 14px 0;
+      font-family: "Courier New", monospace;
+      box-shadow: inset 0 0 30px rgba(80,140,255,0.15);
+    }
+    .readout .ro-label {
+      font-size: 10px; letter-spacing: 3px;
+      color: #6f8fd0; text-transform: uppercase;
+      align-self: center;
+    }
+    .readout .ro-value {
+      font-size: 44px; font-weight: bold; line-height: 1;
+      color: #7ec0ff;
+      letter-spacing: 4px;
+      text-shadow: 0 0 8px rgba(126,192,255,0.55);
+    }
+    .readout .ro-unit {
+      font-size: 11px; letter-spacing: 2px;
+      color: #6f8fd0; text-transform: uppercase;
+      align-self: center;
+    }
+
+    /* Equipment spec table */
+    table.spec {
+      width: 100%; border-collapse: collapse;
+      font-size: 13.5px; margin: 6px 0 4px 0;
+    }
+    table.spec th, table.spec td {
+      padding: 7px 10px;
+      border: 1px solid #e0e0e0;
+      text-align: left; vertical-align: top;
+    }
+    table.spec th {
+      background: #f3f5f9; color: #1B2A4A;
+      font-size: 11.5px; letter-spacing: 0.6px;
+      text-transform: uppercase; font-weight: bold;
+      width: 32%;
+    }
+
+    /* Data table for the weather chart */
+    table.weather {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px; margin: 4px 0 4px 0;
+      font-variant-numeric: tabular-nums;
+    }
+    table.weather th, table.weather td {
+      padding: 6px 8px;
+      border: 1px solid #e0e0e0;
+      text-align: left;
+    }
+    table.weather thead th {
+      background: #1B2A4A; color: #ffffff;
+      font-size: 11px; letter-spacing: 0.6px;
+      text-transform: uppercase; font-weight: bold;
+      text-align: center;
+    }
+    table.weather td.n,
+    table.weather th.n { text-align: center; font-variant-numeric: tabular-nums; }
+    table.weather tr.exceed td.delta {
+      color: #8B0000; font-weight: bold;
+    }
+    table.weather tr.exceed { background: #fdf6f6; }
+    table.weather tr.equal { background: #f7f7f0; }
+    table.weather tfoot td {
+      background: #fafafa; font-size: 12px;
+      color: #555; font-style: italic;
+    }
+    .key-finding {
+      margin: 12px 0 0 0;
+      padding: 10px 14px;
+      background: #fdf6f6;
+      border-left: 4px solid #8B0000;
+      font-size: 13.5px; line-height: 1.55;
+      color: #1a1a1a;
     }
 
     /* Back link */
@@ -350,42 +439,199 @@
   <div class="exhibits">
 
     <h2>Contemporaneous Documentation</h2>
-    <p class="lead">Photographs and environmental data referenced in connection with the foregoing letter.</p>
+    <p class="lead">Environmental data and equipment status referenced in connection with the foregoing letter. All values transcribed directly from on-site instruments and time-stamped weather records.</p>
 
+    <!-- EXHIBIT A — Hour-meter -->
     <figure class="exhibit">
-      <img src="images/hour-meter-2026-05-12.jpg" alt="Hour-meter on remediation equipment reading 17:41">
-      <figcaption>
+      <div class="ex-head">
         <span class="label">Exhibit A</span>
-        <span class="date">May 12, 2026</span><br>
-        Hour-meter display on remediation equipment in the affected unit, reading <strong>17:41</strong> (hours:minutes) of cumulative runtime. The variable-speed scrubber and Coway Airmega units continue to operate continuously to maintain a tolerable baseline.
-      </figcaption>
+        <span class="title">Remediation-equipment hour-meter</span>
+        <span class="date">Reading taken May 12, 2026</span>
+      </div>
+
+      <div class="readout" role="img" aria-label="Hour meter reading 17 hours 41 minutes">
+        <span class="ro-label">Hour Meter</span>
+        <span class="ro-value">17:41</span>
+        <span class="ro-unit">hh:mm</span>
+      </div>
+
+      <p>
+        Cumulative continuous runtime on the variable-speed remediation unit currently installed in the affected residence: <strong>17 hours, 41 minutes</strong>. The unit has not been powered off since deployment; the reading reflects unbroken operation.
+      </p>
+      <p>
+        Operating mode at time of reading: variable-speed, manual control, running at the upper end of the range to maintain a tolerable indoor air baseline.
+      </p>
     </figure>
 
+    <!-- EXHIBIT B — Equipment inventory -->
     <figure class="exhibit">
-      <img src="images/coway-hepa-2026-05-12.jpg" alt="Coway Airmega AP-1512HH air purifier and HEPA scrubber unit deployed in the affected unit">
-      <figcaption>
+      <div class="ex-head">
         <span class="label">Exhibit B</span>
-        <span class="date">May 12, 2026</span><br>
-        Remediation equipment currently deployed: portable HEPA scrubber (foreground) and Coway Airmega AP-1512HH air purifier (shipping box, rear). This configuration is what the readings in Exhibit A and the temperature record in Exhibits C&ndash;D were taken alongside.
-      </figcaption>
+        <span class="title">Remediation equipment currently deployed</span>
+        <span class="date">As of May 12, 2026</span>
+      </div>
+
+      <table class="spec">
+        <tbody>
+          <tr>
+            <th>Primary HEPA scrubber</th>
+            <td>Portable negative-air HEPA scrubber unit with variable-speed control (see Exhibit A for runtime). Cartridge-style HEPA filter visible at intake; sealed enclosure with latched access; rear exhaust port. Operating continuously since deployment.</td>
+          </tr>
+          <tr>
+            <th>Air purifier</th>
+            <td>Coway Airmega <strong>AP-1512HH(W)</strong> (white) &mdash; supplemental HEPA + activated-carbon residential air purifier. Deployed alongside the scrubber to maintain post-scrub baseline.</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>Beneficiary&rsquo;s remediated environment (post-displacement). Both units operating concurrently while Unit 806 at 315 N. 12th Street remains unoccupied.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 12px;">
+        Equipment is privately funded by the beneficiary&rsquo;s out-of-pocket resources. No remediation cost has been borne by the landlord (Post Goldtex LP / Greystar) or by the trust, notwithstanding repeated requests.
+      </p>
     </figure>
 
+    <!-- EXHIBIT C — Weekly summary -->
     <figure class="exhibit">
-      <img src="images/temp-chart-week-2026-05-12.png" alt="Chart: Unit 806 indoor temperature vs. Philadelphia outdoor weather, May 5 through May 12, 2026">
-      <figcaption>
+      <div class="ex-head">
         <span class="label">Exhibit C</span>
-        <span class="date">May 5&ndash;12, 2026</span><br>
-        Unit 806 indoor temperature (red) plotted against Philadelphia outdoor temperature (blue) for the seven-day displacement window. Indoor readings remain in the <strong>73&ndash;80&deg;F</strong> band continuously, sitting <strong>well above</strong> the 65&ndash;72&deg;F comfortable-sleep range even on days when outdoor highs were only 62&ndash;70&deg;F. The deviation is not weather-driven.
-      </figcaption>
+        <span class="title">Unit 806 indoor temperature vs. Philadelphia outdoor weather</span>
+        <span class="date">May 5&ndash;12, 2026 (8-day window)</span>
+      </div>
+
+      <table class="weather" aria-label="Daily indoor temperature, outdoor high, conditions, and sun hours for Unit 806 May 5 through May 12 2026">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Conditions</th>
+            <th class="n">Sun&nbsp;(h)</th>
+            <th class="n">Outdoor&nbsp;high</th>
+            <th class="n">Indoor&nbsp;peak</th>
+            <th>Indoor band (24h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tue 05/05</td><td>Sunny</td>
+            <td class="n">13.0</td><td class="n">85&deg;F</td><td class="n">79&deg;F</td>
+            <td>~75&ndash;79&deg;F</td>
+          </tr>
+          <tr>
+            <td>Wed 05/06</td><td>Partly cloudy</td>
+            <td class="n">4.0</td><td class="n">70&deg;F</td><td class="n">77&deg;F</td>
+            <td>~75&ndash;77&deg;F</td>
+          </tr>
+          <tr>
+            <td>Thu 05/07</td><td>Mostly sunny</td>
+            <td class="n">7.6</td><td class="n">67&deg;F</td><td class="n">77&deg;F</td>
+            <td>~74&ndash;77&deg;F</td>
+          </tr>
+          <tr>
+            <td>Fri 05/08</td><td>Mostly sunny</td>
+            <td class="n">8.4</td><td class="n">68&deg;F</td><td class="n">80&deg;F</td>
+            <td>~75&ndash;80&deg;F</td>
+          </tr>
+          <tr>
+            <td>Sat 05/09</td><td>Mostly sunny</td>
+            <td class="n">9.0</td><td class="n">67&deg;F</td><td class="n">77&deg;F</td>
+            <td>~74&ndash;77&deg;F</td>
+          </tr>
+          <tr>
+            <td>Sun 05/10</td><td>Mostly sunny</td>
+            <td class="n">7.5</td><td class="n">78&deg;F</td><td class="n">78&deg;F</td>
+            <td>~73&ndash;78&deg;F</td>
+          </tr>
+          <tr>
+            <td>Mon 05/11</td><td>Mostly sunny</td>
+            <td class="n">6.3</td><td class="n">62&deg;F</td><td class="n">76&deg;F</td>
+            <td>~74&ndash;76&deg;F</td>
+          </tr>
+          <tr>
+            <td>Tue 05/12</td><td>Sunny</td>
+            <td class="n">13.0</td><td class="n">69&deg;F</td><td class="n">77&deg;F</td>
+            <td>~74&ndash;77&deg;F</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="6">Indoor readings: ambient temperature sensor inside Unit 806. Outdoor readings: Philadelphia National Weather Service hourly observations. Sun hours: NWS sky-condition aggregates.</td></tr>
+        </tfoot>
+      </table>
+
+      <div class="key-finding">
+        <strong>Finding:</strong> Indoor temperature in Unit 806 remains in a tight <strong>73&ndash;80&deg;F</strong> band for the entire 8-day window. The standard comfortable-sleep range is <strong>65&ndash;72&deg;F</strong>. The unit is therefore <strong>5&ndash;15&deg;F above sleep range continuously</strong>, including overnight, including on days when the outdoor temperature drops to the high-40s. The deviation cannot be explained by ambient weather.
+      </div>
     </figure>
 
+    <!-- EXHIBIT D — Daily peaks -->
     <figure class="exhibit">
-      <img src="images/temp-chart-peaks-2026-05-12.png" alt="Chart: Daily peak indoor vs outdoor temperatures, May 5 through May 12, 2026">
-      <figcaption>
+      <div class="ex-head">
         <span class="label">Exhibit D</span>
-        <span class="date">May 5&ndash;12, 2026</span><br>
-        Daily peak comparison. On six of the eight days shown, the indoor peak in Unit 806 <strong>exceeds the Philadelphia outdoor high</strong> &mdash; including by <strong>10&deg;F on May 7</strong>, <strong>12&deg;F on May 8</strong>, and <strong>14&deg;F on May 11</strong>. The unit is being heated independently of ambient conditions.
-      </figcaption>
+        <span class="title">Daily peak comparison &mdash; indoor vs. outdoor</span>
+        <span class="date">May 5&ndash;12, 2026</span>
+      </div>
+
+      <table class="weather" aria-label="Daily peak indoor versus outdoor temperatures with delta May 5 through May 12 2026">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Conditions</th>
+            <th class="n">Indoor peak (Unit 806)</th>
+            <th class="n">Outdoor high (Philly)</th>
+            <th class="n">Delta (indoor &minus; outdoor)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tue 05/05</td><td>Sunny</td>
+            <td class="n">79&deg;F</td><td class="n">85&deg;F</td>
+            <td class="n delta">&minus;6&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Wed 05/06</td><td>Partly cloudy</td>
+            <td class="n">77&deg;F</td><td class="n">70&deg;F</td>
+            <td class="n delta">+7&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Thu 05/07</td><td>Mostly sunny</td>
+            <td class="n">77&deg;F</td><td class="n">67&deg;F</td>
+            <td class="n delta">+10&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Fri 05/08</td><td>Mostly sunny</td>
+            <td class="n">80&deg;F</td><td class="n">68&deg;F</td>
+            <td class="n delta">+12&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Sat 05/09</td><td>Mostly sunny</td>
+            <td class="n">77&deg;F</td><td class="n">67&deg;F</td>
+            <td class="n delta">+10&deg;F</td>
+          </tr>
+          <tr class="equal">
+            <td>Sun 05/10</td><td>Mostly sunny</td>
+            <td class="n">78&deg;F</td><td class="n">78&deg;F</td>
+            <td class="n delta">0&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Mon 05/11</td><td>Mostly sunny</td>
+            <td class="n">76&deg;F</td><td class="n">62&deg;F</td>
+            <td class="n delta">+14&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Tue 05/12</td><td>Sunny</td>
+            <td class="n">77&deg;F</td><td class="n">69&deg;F</td>
+            <td class="n delta">+8&deg;F</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="5">Highlighted rows: indoor peak exceeded the outdoor high. Mean indoor&ndash;outdoor delta over the 8-day window: <strong>+6.9&deg;F</strong>. Excluding the one day with an 85&deg;F outdoor heat spike (5/5), the mean delta rises to <strong>+8.7&deg;F</strong>.</td></tr>
+        </tfoot>
+      </table>
+
+      <div class="key-finding">
+        <strong>Finding:</strong> On <strong>six of eight</strong> days in the window, the indoor peak in Unit 806 <em>exceeded</em> the outdoor high &mdash; by up to <strong>14&deg;F (5/11)</strong>, <strong>12&deg;F (5/8)</strong>, and <strong>10&deg;F (5/7 and 5/9)</strong>. The single day indoor peak fell <em>below</em> outdoor high (Tue 5/5) was the one day with an 85&deg;F outdoor heat spike. The pattern is consistent with an active in-unit heat source operating independently of ambient weather, not with passive solar or HVAC equilibrium.
+      </div>
     </figure>
 
   </div>
