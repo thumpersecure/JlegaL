@@ -27,48 +27,114 @@
     .toc a { color: #1B2A4A; text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
     .toc li { margin-bottom: 6px; }
+    /* Displacement counter bar (top of page) */
+    .displaced-bar {
+      background: linear-gradient(135deg, #6B0000 0%, #8B0000 50%, #6B0000 100%);
+      color: #ffffff;
+      padding: 14px 20px;
+      font-family: Georgia, serif;
+      margin: -20px -20px 0 -20px;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.35);
+      border-bottom: 1px solid #4a0000;
+      text-align: center;
+    }
+    .displaced-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 18px; flex-wrap: wrap;
+    }
+    .displaced-label {
+      font-size: 11px; letter-spacing: 3px;
+      text-transform: uppercase; color: #f4c8c8;
+      font-weight: bold;
+    }
+    .displaced-count {
+      display: inline-flex; align-items: baseline; gap: 8px;
+      font-size: 15px; letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+    .displaced-count .num {
+      font-size: 34px; font-weight: bold;
+      color: #FFD700; line-height: 1;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+      letter-spacing: 1px;
+    }
+    .displaced-count .word {
+      font-size: 13px; text-transform: uppercase;
+      letter-spacing: 1.5px; color: #fbe9e9;
+      font-weight: bold;
+    }
+    .displaced-since {
+      font-size: 12px; color: #f4c8c8;
+      font-style: italic; letter-spacing: 0.3px;
+    }
+    .displaced-since strong { color: #ffffff; font-style: normal; }
+
     /* Navigation bar */
     .nav-bar {
       position: sticky; top: 0; z-index: 100;
-      background: #1B2A4A; color: white; padding: 12px 20px;
-      font-size: 14px;
-      margin: -20px -20px 20px -20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      background: #1B2A4A;
+      background-image: linear-gradient(180deg, #243966 0%, #1B2A4A 100%);
+      color: white;
+      margin: 0 -20px 0 -20px;
+      border-bottom: 3px solid #8B0000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.22);
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
       display: flex; flex-wrap: wrap;
       align-items: center; justify-content: space-between;
-      gap: 12px;
+      gap: 16px; padding: 14px 20px;
     }
     .nav-brand {
-      font-weight: bold; letter-spacing: 0.5px;
-      font-size: 14px; color: #ffffff;
+      display: flex; flex-direction: column; line-height: 1.15;
+      text-decoration: none; color: #ffffff;
+      padding-right: 12px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .nav-brand-main {
+      font-weight: bold; letter-spacing: 1.8px;
+      font-size: 16px; color: #ffffff;
+      font-family: Georgia, serif;
+    }
+    .nav-brand-sub {
+      font-size: 10px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #a8c8e8;
+      margin-top: 4px; font-weight: normal;
     }
     .nav-links {
       display: flex; flex-wrap: wrap;
-      gap: 4px 6px; align-items: center;
+      gap: 2px; align-items: center;
     }
     .nav-links a {
-      color: #a8c8e8; text-decoration: none;
-      padding: 6px 10px; border-radius: 4px;
-      transition: background 0.15s, color 0.15s;
-      font-size: 14px; line-height: 1.3;
+      color: #c8d4ea; text-decoration: none;
+      padding: 8px 12px;
+      font-family: Georgia, serif;
+      font-size: 13px; line-height: 1.2;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
     }
     .nav-links a:hover, .nav-links a:focus {
-      background: rgba(255,255,255,0.12);
-      color: #ffffff; text-decoration: none;
+      color: #ffffff;
+      border-bottom-color: #DAA520;
+      text-decoration: none;
     }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 6px;
       background: #8B0000; color: #ffffff !important;
-      padding: 8px 14px !important; border-radius: 4px;
-      font-weight: bold; letter-spacing: 0.3px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      padding: 9px 16px !important; border-radius: 3px;
+      font-weight: bold; letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border-bottom: none !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.35);
       white-space: nowrap;
+      margin-left: 4px;
     }
     .nav-cta:hover, .nav-cta:focus {
       background: #a30000 !important; color: #ffffff !important;
+      border-bottom-color: transparent !important;
     }
     /* Site footer */
     .site-footer {
@@ -93,16 +159,24 @@
     /* Mobile responsive */
     @media (max-width: 760px) {
       body { padding: 12px; font-size: 15px; }
-      .nav-bar { padding: 10px 12px; margin: -12px -12px 16px -12px; }
-      .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; }
-      .nav-brand { text-align: center; font-size: 13px; }
-      .nav-links {
-        justify-content: center; gap: 4px;
-        border-top: 1px solid rgba(255,255,255,0.15);
-        padding-top: 8px;
+      .displaced-bar { padding: 10px 12px; margin: -12px -12px 0 -12px; }
+      .displaced-inner { gap: 8px 14px; }
+      .displaced-label { font-size: 10px; letter-spacing: 2px; }
+      .displaced-count .num { font-size: 28px; }
+      .displaced-count .word { font-size: 12px; letter-spacing: 1px; }
+      .displaced-since { font-size: 11px; width: 100%; }
+      .nav-bar { margin: 0 -12px 16px -12px; }
+      .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 12px; }
+      .nav-brand { text-align: center; align-items: center;
+        padding-right: 0; padding-bottom: 8px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
       }
-      .nav-links a { padding: 6px 8px; font-size: 13px; }
-      .nav-cta { width: 100%; justify-content: center; margin-top: 4px; }
+      .nav-brand-main { font-size: 14px; letter-spacing: 1.4px; }
+      .nav-brand-sub { font-size: 9px; letter-spacing: 2px; }
+      .nav-links { justify-content: center; gap: 2px 4px; }
+      .nav-links a { padding: 6px 8px; font-size: 12px; letter-spacing: 0.4px; }
+      .nav-cta { width: 100%; justify-content: center; margin-top: 6px; margin-left: 0; }
       .site-footer { margin: 40px -12px -12px -12px; padding: 24px 16px; }
       /* Make wide tables horizontally scrollable */
       table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -122,40 +196,73 @@
       h3 { font-size: 18px !important; }
     }
     @media (max-width: 420px) {
-      .nav-links a { padding: 5px 6px; font-size: 12px; }
-      .nav-brand { font-size: 12px; letter-spacing: 0.2px; }
+      .nav-links a { padding: 5px 6px; font-size: 11px; letter-spacing: 0.3px; }
+      .nav-brand-main { font-size: 13px; letter-spacing: 1.2px; }
+      .displaced-count .num { font-size: 24px; }
+      .displaced-since { font-size: 10.5px; }
     }
   </style>
 </head>
 <body>
 
+<!-- DISPLACEMENT COUNTER (days since May 5, 2026) -->
+<div class="displaced-bar no-print" role="region" aria-label="Days displaced from home">
+  <div class="displaced-inner">
+    <span class="displaced-label">Displaced From Home</span>
+    <span class="displaced-count">
+      <span class="num" id="displaced-days">&mdash;</span>
+      <span class="word">Days &amp; Counting</span>
+    </span>
+    <span class="displaced-since">Since <strong>May 5, 2026</strong></span>
+  </div>
+</div>
+
 <div class="nav-bar no-print">
   <div class="nav-inner">
-    <div class="nav-brand">HORN / GOLDTEX CONSOLIDATED REPORT</div>
+    <a href="#cover-page" class="nav-brand">
+      <span class="nav-brand-main">HORN / GOLDTEX</span>
+      <span class="nav-brand-sub">Consolidated Master Report</span>
+    </a>
     <div class="nav-links">
       <a href="#cover-page">Cover</a>
-      <a href="#executive-summary">Executive Summary</a>
+      <a href="#executive-summary">Summary</a>
       <a href="#section-2">Trust &amp; Finances</a>
-      <a href="#section-3">Legal Analysis</a>
-      <a href="#section-4">Violations &amp; Patterns</a>
-      <a href="#section-5">Harm &amp; Conclusions</a>
-      <a class="nav-cta" href="https://youtu.be/CU87WawY_l8" target="_blank" rel="noopener">&#9658; Video Slideshow</a>
+      <a href="#section-3">Legal</a>
+      <a href="#section-4">Violations</a>
+      <a href="#section-5">Conclusions</a>
+      <a class="nav-cta" href="https://youtu.be/CU87WawY_l8" target="_blank" rel="noopener">&#9658; Slideshow</a>
     </div>
   </div>
 </div>
 
 <!-- LAST UPDATED BANNER (edit the two dates each release) -->
-<div id="last-updated" class="no-print" style="background: #fffbf0; border-top: 1px solid #DAA520; border-bottom: 1px solid #DAA520; padding: 12px 20px; font-family: Georgia, serif; font-size: 14px; color: #1a1a1a; margin: 0 -20px 24px -20px;">
+<div id="last-updated" class="no-print" style="background: #fffbf0; border-bottom: 1px solid #DAA520; padding: 10px 20px; font-family: Georgia, serif; font-size: 13.5px; color: #1a1a1a; margin: 0 -20px 24px -20px;">
   <div style="max-width: 1200px; margin: 0 auto;">
-    <div style="text-align: center; font-style: italic; color: #555; margin-bottom: 8px; font-size: 13px;">
-      This site is updated regularly as new evidence, correspondence, and filings come in. Check back for revisions.
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 20px;">
+      <div><strong style="color: #8B0000; letter-spacing: 0.6px; font-size: 12px; text-transform: uppercase;">Last Updated:</strong> May 12, 2026 &mdash; 9:30 PM ET <span style="color: #777;">(year-1 brokerage statements + DC #26-09-060340 receipt)</span></div>
+      <div style="color: #777; font-size: 12.5px;"><strong style="color: #555; letter-spacing: 0.4px; text-transform: uppercase; font-size: 11px;">Prior:</strong> May 12, 2026 &mdash; 1:25 AM ET (pro se notice &amp; cease-and-desist)</div>
     </div>
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px;">
-      <div><strong style="color: #8B0000; letter-spacing: 0.5px;">LAST UPDATED:</strong> May 12, 2026 &mdash; 9:30 PM ET <span style="color: #555;">(year-1 brokerage statements + DC #26-09-060340 receipt)</span></div>
-      <div style="color: #555;"><strong>PRIOR UPDATE:</strong> May 12, 2026 &mdash; 1:25 AM ET (pro se notice &amp; cease-and-desist)</div>
+    <div style="text-align: center; font-style: italic; color: #777; margin-top: 6px; font-size: 12px; border-top: 1px dotted #e0c97a; padding-top: 6px;">
+      This site is updated regularly as new evidence, correspondence, and filings come in. Check back for revisions.
     </div>
   </div>
 </div>
+
+<script>
+(function() {
+  function updateDisplacedDays() {
+    var start = new Date(2026, 4, 5); // May 5, 2026 (month 0-indexed)
+    var now = new Date();
+    var startUtc = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+    var nowUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.max(0, Math.floor((nowUtc - startUtc) / 86400000));
+    var el = document.getElementById('displaced-days');
+    if (el) el.textContent = days;
+  }
+  updateDisplacedDays();
+  setInterval(updateDisplacedDays, 60 * 60 * 1000); // refresh hourly
+})();
+</script>
 
 <!-- ================================================================ -->
 <!-- TABLE OF CONTENTS                                                 -->
