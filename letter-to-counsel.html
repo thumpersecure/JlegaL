@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter to Counsel — May 11, 2026 — Horn / Goldtex</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Top displacement bar — same look as the main report */
+    .displaced-bar {
+      background: linear-gradient(135deg, #6B0000 0%, #8B0000 50%, #6B0000 100%);
+      color: #ffffff;
+      padding: 14px 20px;
+      font-family: Georgia, serif;
+      margin: -20px -20px 0 -20px;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.35);
+      border-bottom: 1px solid #4a0000;
+      text-align: center;
+    }
+    .displaced-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 18px; flex-wrap: wrap;
+    }
+    .displaced-label {
+      font-size: 11px; letter-spacing: 3px;
+      text-transform: uppercase; color: #f4c8c8;
+      font-weight: bold;
+    }
+    .displaced-count {
+      display: inline-flex; align-items: baseline; gap: 8px;
+      font-size: 15px; letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+    .displaced-count .num {
+      font-size: 34px; font-weight: bold;
+      color: #FFD700; line-height: 1;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+      letter-spacing: 1px;
+    }
+    .displaced-count .word {
+      font-size: 13px; text-transform: uppercase;
+      letter-spacing: 1.5px; color: #fbe9e9;
+      font-weight: bold;
+    }
+    .displaced-since {
+      font-size: 12px; color: #f4c8c8;
+      font-style: italic; letter-spacing: 0.3px;
+    }
+    .displaced-since strong { color: #ffffff; font-style: normal; }
+
+    /* Nav */
+    .nav-bar {
+      position: sticky; top: 0; z-index: 100;
+      background: #1B2A4A;
+      background-image: linear-gradient(180deg, #243966 0%, #1B2A4A 100%);
+      color: white;
+      margin: 0 -20px 0 -20px;
+      border-bottom: 3px solid #8B0000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px 20px;
+    }
+    .nav-brand {
+      display: flex; flex-direction: column; line-height: 1.15;
+      text-decoration: none; color: #ffffff;
+      padding-right: 12px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .nav-brand-main {
+      font-weight: bold; letter-spacing: 1.8px;
+      font-size: 16px; color: #ffffff;
+      font-family: Georgia, serif;
+    }
+    .nav-brand-sub {
+      font-size: 10px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #a8c8e8;
+      margin-top: 4px; font-weight: normal;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 2px; align-items: center; }
+    .nav-links a {
+      color: #c8d4ea; text-decoration: none;
+      padding: 8px 12px;
+      font-family: Georgia, serif;
+      font-size: 13px; line-height: 1.2;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-links a:hover, .nav-links a:focus {
+      color: #ffffff;
+      border-bottom-color: #DAA520;
+    }
+
+    /* Page wrapper */
+    .wrap {
+      max-width: 880px;
+      margin: 36px auto 60px auto;
+      padding: 0 8px;
+    }
+
+    h1.page-title {
+      font-size: 28px;
+      color: #1B2A4A;
+      text-align: center;
+      border-bottom: 3px solid #1B2A4A;
+      padding-bottom: 10px;
+      margin: 0 0 8px 0;
+      letter-spacing: 0.5px;
+    }
+    .page-sub {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+      font-size: 14px;
+      margin: 0 0 32px 0;
+    }
+
+    /* Letter card */
+    .letter {
+      border: 1px solid #c8c8c8;
+      background: #fdfcf7;
+      padding: 36px 44px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      font-size: 16.5px;
+      line-height: 1.75;
+    }
+    .letter .meta {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      gap: 6px 20px; font-size: 13px; color: #555;
+      border-bottom: 1px dotted #c8b88a;
+      padding-bottom: 10px; margin-bottom: 22px;
+      letter-spacing: 0.3px;
+    }
+    .letter .meta strong { color: #1B2A4A; letter-spacing: 0.5px; text-transform: uppercase; font-size: 12px; }
+    .letter p { margin: 0 0 14px 0; }
+    .letter .greeting { margin-bottom: 18px; }
+    .letter .signoff { margin-top: 26px; }
+    .letter .signature {
+      margin-top: 18px; font-family: Georgia, serif;
+      font-size: 17px; color: #1B2A4A; font-weight: bold;
+    }
+    .letter .contact {
+      font-size: 14px; color: #555; margin-top: 2px;
+    }
+    .letter .postscript {
+      margin-top: 18px; padding-top: 14px;
+      border-top: 1px dotted #c8b88a;
+      font-style: italic; color: #8B0000;
+      font-size: 15px;
+    }
+    .letter .url-line a {
+      color: #1B2A4A; text-decoration: underline;
+      word-break: break-all;
+    }
+
+    /* Exhibits */
+    .exhibits { margin-top: 48px; }
+    .exhibits h2 {
+      font-size: 22px; color: #1B2A4A;
+      border-bottom: 2px solid #1B2A4A;
+      padding-bottom: 8px; margin: 0 0 8px 0;
+    }
+    .exhibits .lead {
+      font-size: 14px; color: #555; font-style: italic;
+      margin: 0 0 28px 0;
+    }
+    figure.exhibit {
+      margin: 0 0 32px 0;
+      border: 1px solid #d8d8d8;
+      background: #ffffff;
+      padding: 18px 20px 14px 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    figure.exhibit .ex-head {
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      gap: 6px 12px;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      border-bottom: 1px dotted #d8d8d8;
+    }
+    figure.exhibit .ex-head .label {
+      font-size: 11px; letter-spacing: 1.8px;
+      text-transform: uppercase; color: #8B0000;
+      font-weight: bold;
+    }
+    figure.exhibit .ex-head .title {
+      font-size: 15px; font-weight: bold;
+      color: #1B2A4A;
+    }
+    figure.exhibit .ex-head .date {
+      color: #777; font-size: 12px;
+      margin-left: auto;
+      letter-spacing: 0.3px;
+    }
+    figure.exhibit p { margin: 0 0 10px 0; font-size: 14.5px; line-height: 1.6; color: #333; }
+    figure.exhibit p:last-child { margin-bottom: 0; }
+
+    /* Big readout panel (hour-meter) */
+    .readout {
+      display: flex; align-items: baseline; justify-content: center;
+      gap: 12px;
+      background: #0c1a3a;
+      color: #ffffff;
+      padding: 18px 16px;
+      border: 1px solid #0a142b;
+      border-radius: 4px;
+      margin: 6px 0 14px 0;
+      font-family: "Courier New", monospace;
+      box-shadow: inset 0 0 30px rgba(80,140,255,0.15);
+    }
+    .readout .ro-label {
+      font-size: 10px; letter-spacing: 3px;
+      color: #6f8fd0; text-transform: uppercase;
+      align-self: center;
+    }
+    .readout .ro-value {
+      font-size: 44px; font-weight: bold; line-height: 1;
+      color: #7ec0ff;
+      letter-spacing: 4px;
+      text-shadow: 0 0 8px rgba(126,192,255,0.55);
+    }
+    .readout .ro-unit {
+      font-size: 11px; letter-spacing: 2px;
+      color: #6f8fd0; text-transform: uppercase;
+      align-self: center;
+    }
+
+    /* Equipment spec table */
+    table.spec {
+      width: 100%; border-collapse: collapse;
+      font-size: 13.5px; margin: 6px 0 4px 0;
+    }
+    table.spec th, table.spec td {
+      padding: 7px 10px;
+      border: 1px solid #e0e0e0;
+      text-align: left; vertical-align: top;
+    }
+    table.spec th {
+      background: #f3f5f9; color: #1B2A4A;
+      font-size: 11.5px; letter-spacing: 0.6px;
+      text-transform: uppercase; font-weight: bold;
+      width: 32%;
+    }
+
+    /* Data table for the weather chart */
+    table.weather {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px; margin: 4px 0 4px 0;
+      font-variant-numeric: tabular-nums;
+    }
+    table.weather th, table.weather td {
+      padding: 6px 8px;
+      border: 1px solid #e0e0e0;
+      text-align: left;
+    }
+    table.weather thead th {
+      background: #1B2A4A; color: #ffffff;
+      font-size: 11px; letter-spacing: 0.6px;
+      text-transform: uppercase; font-weight: bold;
+      text-align: center;
+    }
+    table.weather td.n,
+    table.weather th.n { text-align: center; font-variant-numeric: tabular-nums; }
+    table.weather tr.exceed td.delta {
+      color: #8B0000; font-weight: bold;
+    }
+    table.weather tr.exceed { background: #fdf6f6; }
+    table.weather tr.equal { background: #f7f7f0; }
+    table.weather tfoot td {
+      background: #fafafa; font-size: 12px;
+      color: #555; font-style: italic;
+    }
+    .key-finding {
+      margin: 12px 0 0 0;
+      padding: 10px 14px;
+      background: #fdf6f6;
+      border-left: 4px solid #8B0000;
+      font-size: 13.5px; line-height: 1.55;
+      color: #1a1a1a;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-block;
+      margin: 28px 0 0 0;
+      color: #1B2A4A;
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid #1B2A4A;
+    }
+    .back-link:hover { color: #8B0000; border-bottom-color: #8B0000; }
+
+    /* Site footer */
+    .site-footer {
+      background: #1B2A4A; color: #e8eef7;
+      padding: 28px 24px; margin: 60px -20px -20px -20px;
+      text-align: center; font-size: 13px; line-height: 1.6;
+    }
+    .site-footer a { color: #c8d4ea; text-decoration: underline; }
+
+    /* Mobile */
+    @media (max-width: 760px) {
+      body { padding: 12px; font-size: 15px; }
+      .displaced-bar { padding: 10px 12px; margin: -12px -12px 0 -12px; }
+      .displaced-inner { gap: 8px 14px; }
+      .displaced-label { font-size: 10px; letter-spacing: 2px; }
+      .displaced-count .num { font-size: 28px; }
+      .displaced-count .word { font-size: 12px; letter-spacing: 1px; }
+      .displaced-since { font-size: 11px; width: 100%; }
+      .nav-bar { margin: 0 -12px 16px -12px; }
+      .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 12px; }
+      .nav-brand { text-align: center; align-items: center; padding-right: 0; padding-bottom: 8px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .nav-brand-main { font-size: 14px; letter-spacing: 1.4px; }
+      .nav-links { justify-content: center; gap: 2px 4px; }
+      .nav-links a { padding: 6px 8px; font-size: 12px; }
+      .letter { padding: 22px 18px; font-size: 15.5px; }
+      .wrap { margin: 22px auto 40px auto; }
+      .site-footer { margin: 40px -12px -12px -12px; padding: 22px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Displacement counter (same as main report) -->
+<div class="displaced-bar" role="region" aria-label="Days displaced from home">
+  <div class="displaced-inner">
+    <span class="displaced-label">Displaced From Home</span>
+    <span class="displaced-count">
+      <span class="num" id="displaced-days">&mdash;</span>
+      <span class="word">Days &amp; Counting</span>
+    </span>
+    <span class="displaced-since">Since <strong>May 5, 2026</strong></span>
+  </div>
+</div>
+
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-main">HORN / GOLDTEX</span>
+      <span class="nav-brand-sub">Consolidated Master Report</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">&larr; Back to Report</a>
+      <a href="index.html#executive-summary">Summary</a>
+      <a href="index.html#section-3">Legal</a>
+      <a href="index.html#section-5">Conclusions</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <h1 class="page-title">Letter to Counsel</h1>
+  <p class="page-sub">Transmitted May 11, 2026 &mdash; Day 7 of displacement</p>
+
+  <!-- ============================================================ -->
+  <!-- LETTER                                                        -->
+  <!-- ============================================================ -->
+  <div class="letter">
+
+    <div class="meta">
+      <span><strong>From:</strong> Justin H. Horn</span>
+      <span><strong>To:</strong> Counsel</span>
+      <span><strong>Date:</strong> May 11, 2026</span>
+      <span><strong>Re:</strong> Displacement, Witness Capacity &amp; Imminent Relocation</span>
+    </div>
+
+    <p class="greeting">Hello,</p>
+
+    <p>
+      The documentary reports I had been compiling required continuous revision, and it has become evident that the involved parties &mdash; with my father&rsquo;s financial backing &mdash; are attempting to reconstruct the narrative in a manner that positions me as the culpable party.
+    </p>
+
+    <p>
+      Accordingly, rather than continuing to circulate static reports, I have constructed a publicly accessible website that I can update contemporaneously, thereby foreclosing further mischaracterization:
+    </p>
+
+    <p class="url-line">
+      <a href="https://thumpersecure.github.io/JlegaL/">https://thumpersecure.github.io/JlegaL/</a>
+    </p>
+
+    <p>
+      I have been displaced from my residence for seven consecutive days and continue experiencing multiple chemical sensitivity symptomatology attributable to equipment installed by Goldtex.
+    </p>
+
+    <p>
+      Management has not merely declined remediation; they have persisted in issuing threats notwithstanding repeated formal complaints.
+    </p>
+
+    <p>
+      Subsequent to yesterday&rsquo;s report to the Philadelphia Police Department, I recognized that my present circumstances substantially compromise my capacity to function as a witness.
+    </p>
+
+    <p>
+      Relocation to a non-toxic environment has consequently transitioned from discretionary consideration to survival necessity, and I possess neither the financial resources nor the institutional support requisite to undertake such relocation safely.
+    </p>
+
+    <p>
+      <em>Commonwealth v. Talley</em> proceeds to trial within weeks. Absent intervention, non-response constitutes response, and the prosecution must proceed without my participation.
+    </p>
+
+    <p>
+      Unless circumstances materially change by <strong>TOMORROW</strong>, I will be departing to a new area.
+    </p>
+
+    <p>
+      It&rsquo;s my only option to survive. No response will be accepted a response that my instinct is accurate.
+    </p>
+
+    <p class="signoff">Very truly yours,</p>
+
+    <p class="signature">Justin H. Horn</p>
+    <p class="contact">856-560-7976</p>
+
+    <p class="postscript">Homeless for 7 days and counting&hellip;</p>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- EXHIBITS                                                      -->
+  <!-- ============================================================ -->
+  <div class="exhibits">
+
+    <h2>Contemporaneous Documentation</h2>
+    <p class="lead">Environmental data and equipment status referenced in connection with the foregoing letter. All values transcribed directly from on-site instruments and time-stamped weather records.</p>
+
+    <!-- EXHIBIT A — Hour-meter -->
+    <figure class="exhibit">
+      <div class="ex-head">
+        <span class="label">Exhibit A</span>
+        <span class="title">Remediation-equipment hour-meter</span>
+        <span class="date">Reading taken May 12, 2026</span>
+      </div>
+
+      <div class="readout" role="img" aria-label="Hour meter reading 17 hours 41 minutes">
+        <span class="ro-label">Hour Meter</span>
+        <span class="ro-value">17:41</span>
+        <span class="ro-unit">hh:mm</span>
+      </div>
+
+      <p>
+        Cumulative continuous runtime on the variable-speed remediation unit currently installed in the affected residence: <strong>17 hours, 41 minutes</strong>. The unit has not been powered off since deployment; the reading reflects unbroken operation.
+      </p>
+      <p>
+        Operating mode at time of reading: variable-speed, manual control, running at the upper end of the range to maintain a tolerable indoor air baseline.
+      </p>
+    </figure>
+
+    <!-- EXHIBIT B — Equipment inventory -->
+    <figure class="exhibit">
+      <div class="ex-head">
+        <span class="label">Exhibit B</span>
+        <span class="title">Remediation equipment currently deployed</span>
+        <span class="date">As of May 12, 2026</span>
+      </div>
+
+      <table class="spec">
+        <tbody>
+          <tr>
+            <th>Primary HEPA scrubber</th>
+            <td>Portable negative-air HEPA scrubber unit with variable-speed control (see Exhibit A for runtime). Cartridge-style HEPA filter visible at intake; sealed enclosure with latched access; rear exhaust port. Operating continuously since deployment.</td>
+          </tr>
+          <tr>
+            <th>Air purifier</th>
+            <td>Coway Airmega <strong>AP-1512HH(W)</strong> (white) &mdash; supplemental HEPA + activated-carbon residential air purifier. Deployed alongside the scrubber to maintain post-scrub baseline.</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>Beneficiary&rsquo;s remediated environment (post-displacement). Both units operating concurrently while Unit 806 at 315 N. 12th Street remains unoccupied.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 12px;">
+        Equipment is privately funded by the beneficiary&rsquo;s out-of-pocket resources. No remediation cost has been borne by the landlord (Post Goldtex LP / Greystar) or by the trust, notwithstanding repeated requests.
+      </p>
+    </figure>
+
+    <!-- EXHIBIT C — Weekly summary -->
+    <figure class="exhibit">
+      <div class="ex-head">
+        <span class="label">Exhibit C</span>
+        <span class="title">Unit 806 indoor temperature vs. Philadelphia outdoor weather</span>
+        <span class="date">May 5&ndash;12, 2026 (8-day window)</span>
+      </div>
+
+      <table class="weather" aria-label="Daily indoor temperature, outdoor high, conditions, and sun hours for Unit 806 May 5 through May 12 2026">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Conditions</th>
+            <th class="n">Sun&nbsp;(h)</th>
+            <th class="n">Outdoor&nbsp;high</th>
+            <th class="n">Indoor&nbsp;peak</th>
+            <th>Indoor band (24h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tue 05/05</td><td>Sunny</td>
+            <td class="n">13.0</td><td class="n">85&deg;F</td><td class="n">79&deg;F</td>
+            <td>~75&ndash;79&deg;F</td>
+          </tr>
+          <tr>
+            <td>Wed 05/06</td><td>Partly cloudy</td>
+            <td class="n">4.0</td><td class="n">70&deg;F</td><td class="n">77&deg;F</td>
+            <td>~75&ndash;77&deg;F</td>
+          </tr>
+          <tr>
+            <td>Thu 05/07</td><td>Mostly sunny</td>
+            <td class="n">7.6</td><td class="n">67&deg;F</td><td class="n">77&deg;F</td>
+            <td>~74&ndash;77&deg;F</td>
+          </tr>
+          <tr>
+            <td>Fri 05/08</td><td>Mostly sunny</td>
+            <td class="n">8.4</td><td class="n">68&deg;F</td><td class="n">80&deg;F</td>
+            <td>~75&ndash;80&deg;F</td>
+          </tr>
+          <tr>
+            <td>Sat 05/09</td><td>Mostly sunny</td>
+            <td class="n">9.0</td><td class="n">67&deg;F</td><td class="n">77&deg;F</td>
+            <td>~74&ndash;77&deg;F</td>
+          </tr>
+          <tr>
+            <td>Sun 05/10</td><td>Mostly sunny</td>
+            <td class="n">7.5</td><td class="n">78&deg;F</td><td class="n">78&deg;F</td>
+            <td>~73&ndash;78&deg;F</td>
+          </tr>
+          <tr>
+            <td>Mon 05/11</td><td>Mostly sunny</td>
+            <td class="n">6.3</td><td class="n">62&deg;F</td><td class="n">76&deg;F</td>
+            <td>~74&ndash;76&deg;F</td>
+          </tr>
+          <tr>
+            <td>Tue 05/12</td><td>Sunny</td>
+            <td class="n">13.0</td><td class="n">69&deg;F</td><td class="n">77&deg;F</td>
+            <td>~74&ndash;77&deg;F</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="6">Indoor readings: ambient temperature sensor inside Unit 806. Outdoor readings: Philadelphia National Weather Service hourly observations. Sun hours: NWS sky-condition aggregates.</td></tr>
+        </tfoot>
+      </table>
+
+      <div class="key-finding">
+        <strong>Finding:</strong> Indoor temperature in Unit 806 remains in a tight <strong>73&ndash;80&deg;F</strong> band for the entire 8-day window. The standard comfortable-sleep range is <strong>65&ndash;72&deg;F</strong>. The unit is therefore <strong>5&ndash;15&deg;F above sleep range continuously</strong>, including overnight, including on days when the outdoor temperature drops to the high-40s. The deviation cannot be explained by ambient weather.
+      </div>
+    </figure>
+
+    <!-- EXHIBIT D — Daily peaks -->
+    <figure class="exhibit">
+      <div class="ex-head">
+        <span class="label">Exhibit D</span>
+        <span class="title">Daily peak comparison &mdash; indoor vs. outdoor</span>
+        <span class="date">May 5&ndash;12, 2026</span>
+      </div>
+
+      <table class="weather" aria-label="Daily peak indoor versus outdoor temperatures with delta May 5 through May 12 2026">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Conditions</th>
+            <th class="n">Indoor peak (Unit 806)</th>
+            <th class="n">Outdoor high (Philly)</th>
+            <th class="n">Delta (indoor &minus; outdoor)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tue 05/05</td><td>Sunny</td>
+            <td class="n">79&deg;F</td><td class="n">85&deg;F</td>
+            <td class="n delta">&minus;6&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Wed 05/06</td><td>Partly cloudy</td>
+            <td class="n">77&deg;F</td><td class="n">70&deg;F</td>
+            <td class="n delta">+7&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Thu 05/07</td><td>Mostly sunny</td>
+            <td class="n">77&deg;F</td><td class="n">67&deg;F</td>
+            <td class="n delta">+10&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Fri 05/08</td><td>Mostly sunny</td>
+            <td class="n">80&deg;F</td><td class="n">68&deg;F</td>
+            <td class="n delta">+12&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Sat 05/09</td><td>Mostly sunny</td>
+            <td class="n">77&deg;F</td><td class="n">67&deg;F</td>
+            <td class="n delta">+10&deg;F</td>
+          </tr>
+          <tr class="equal">
+            <td>Sun 05/10</td><td>Mostly sunny</td>
+            <td class="n">78&deg;F</td><td class="n">78&deg;F</td>
+            <td class="n delta">0&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Mon 05/11</td><td>Mostly sunny</td>
+            <td class="n">76&deg;F</td><td class="n">62&deg;F</td>
+            <td class="n delta">+14&deg;F</td>
+          </tr>
+          <tr class="exceed">
+            <td>Tue 05/12</td><td>Sunny</td>
+            <td class="n">77&deg;F</td><td class="n">69&deg;F</td>
+            <td class="n delta">+8&deg;F</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="5">Highlighted rows: indoor peak exceeded the outdoor high. Mean indoor&ndash;outdoor delta over the 8-day window: <strong>+6.9&deg;F</strong>. Excluding the one day with an 85&deg;F outdoor heat spike (5/5), the mean delta rises to <strong>+8.7&deg;F</strong>.</td></tr>
+        </tfoot>
+      </table>
+
+      <div class="key-finding">
+        <strong>Finding:</strong> On <strong>six of eight</strong> days in the window, the indoor peak in Unit 806 <em>exceeded</em> the outdoor high &mdash; by up to <strong>14&deg;F (5/11)</strong>, <strong>12&deg;F (5/8)</strong>, and <strong>10&deg;F (5/7 and 5/9)</strong>. The single day indoor peak fell <em>below</em> outdoor high (Tue 5/5) was the one day with an 85&deg;F outdoor heat spike. The pattern is consistent with an active in-unit heat source operating independently of ambient weather, not with passive solar or HVAC equilibrium.
+      </div>
+    </figure>
+
+  </div>
+
+  <a class="back-link" href="index.html">&larr; Return to Consolidated Master Report</a>
+
+</div>
+
+<footer class="site-footer">
+  Horn / Goldtex &mdash; Consolidated Master Report &middot;
+  <a href="index.html">Main report</a>
+</footer>
+
+<script>
+(function() {
+  function updateDisplacedDays() {
+    var start = new Date(2026, 4, 5);
+    var now = new Date();
+    var startUtc = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+    var nowUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.max(0, Math.floor((nowUtc - startUtc) / 86400000));
+    var el = document.getElementById('displaced-days');
+    if (el) el.textContent = days;
+  }
+  updateDisplacedDays();
+  setInterval(updateDisplacedDays, 60 * 60 * 1000);
+})();
+</script>
+
+</body>
+</html>
