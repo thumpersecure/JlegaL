@@ -305,7 +305,13 @@
       font-size: 14px;
       border-bottom: 1px solid #1B2A4A;
     }
-    .back-link:hover { color: #8B0000; border-bottom-color: #8B0000; }
+    .back-link:hover,
+    .back-link:focus-visible {
+      color: #8B0000;
+      border-bottom-color: #8B0000;
+      outline: 2px solid #DAA520;
+      outline-offset: 3px;
+    }
 
     /* Site footer */
     .site-footer {
@@ -332,6 +338,11 @@
       .nav-links a { padding: 6px 8px; font-size: 12px; }
       .letter { padding: 22px 18px; font-size: 15.5px; }
       .wrap { margin: 22px auto 40px auto; }
+      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .readout { flex-wrap: wrap; gap: 8px 10px; }
+      .readout .ro-value { font-size: 34px; letter-spacing: 2px; }
+      .readout .ro-label,
+      .readout .ro-unit { letter-spacing: 1.5px; }
       .site-footer { margin: 40px -12px -12px -12px; padding: 22px 14px; }
     }
   </style>
@@ -350,7 +361,7 @@
   </div>
 </div>
 
-<div class="nav-bar">
+<nav class="nav-bar" aria-label="Report navigation">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
       <span class="nav-brand-main">HORN / GOLDTEX</span>
@@ -363,7 +374,7 @@
       <a href="index.html#section-5">Conclusions</a>
     </div>
   </div>
-</div>
+</nav>
 
 <div class="wrap">
 
