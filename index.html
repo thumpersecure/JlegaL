@@ -136,6 +136,11 @@
       background: #a30000 !important; color: #ffffff !important;
       border-bottom-color: transparent !important;
     }
+    #cover-page,
+    #executive-summary,
+    div[id^="section-"] {
+      scroll-margin-top: 96px;
+    }
     /* Site footer */
     .site-footer {
       background: #1B2A4A; color: #e8eef7;
@@ -155,32 +160,6 @@
     .site-footer .footer-label {
       display: block; margin-bottom: 4px;
       font-size: 14px; color: #c8d4ea;
-    }
-    /* Small, unobtrusive link to letter-to-counsel page */
-    .site-footer .footer-fineprint {
-      display: block;
-      margin-top: 22px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255,255,255,0.10);
-      font-size: 12px;
-      color: #8a9bbb;
-      letter-spacing: 0.3px;
-    }
-    .site-footer .footer-fineprint a {
-      display: inline;
-      margin: 0;
-      padding: 0;
-      background: none;
-      color: #a8c8e8;
-      font-weight: normal;
-      text-decoration: underline;
-      box-shadow: none;
-      border-radius: 0;
-    }
-    .site-footer .footer-fineprint a:hover,
-    .site-footer .footer-fineprint a:focus {
-      background: none;
-      color: #ffffff;
     }
     /* Mobile responsive */
     @media (max-width: 760px) {
@@ -203,6 +182,15 @@
       .nav-links { justify-content: center; gap: 2px 4px; }
       .nav-links a { padding: 6px 8px; font-size: 12px; letter-spacing: 0.4px; }
       .nav-cta { width: 100%; justify-content: center; margin-top: 6px; margin-left: 0; }
+      #cover-page,
+      #executive-summary,
+      div[id^="section-"] {
+        scroll-margin-top: 164px;
+      }
+      #last-updated {
+        margin: 0 -12px 24px -12px !important;
+        padding: 10px 12px !important;
+      }
       .site-footer { margin: 40px -12px -12px -12px; padding: 24px 16px; }
       /* Make wide tables horizontally scrollable */
       table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -243,7 +231,7 @@
   </div>
 </div>
 
-<div class="nav-bar no-print">
+<nav class="nav-bar no-print" aria-label="Report sections">
   <div class="nav-inner">
     <a href="#cover-page" class="nav-brand">
       <span class="nav-brand-main">HORN / GOLDTEX</span>
@@ -259,7 +247,7 @@
       <a class="nav-cta" href="https://youtu.be/CU87WawY_l8" target="_blank" rel="noopener">&#9658; Slideshow</a>
     </div>
   </div>
-</div>
+</nav>
 
 <!-- LAST UPDATED BANNER (edit the two dates each release) -->
 <div id="last-updated" class="no-print" style="background: #fffbf0; border-bottom: 1px solid #DAA520; padding: 10px 20px; font-family: Georgia, serif; font-size: 13.5px; color: #1a1a1a; margin: 0 -20px 24px -20px;">
@@ -4030,9 +4018,6 @@
 <footer class="site-footer no-print">
   <span class="footer-label">Video of Greystar Harassing Me (She Demanded To Speak)</span>
   <a href="https://youtu.be/UmkdvUQYnHE" target="_blank" rel="noopener">&#9658; Watch on YouTube</a>
-  <span class="footer-fineprint">
-    <a href="letter-to-counsel.html">Letter to counsel &mdash; May 11, 2026</a>
-  </span>
 </footer>
 
 </body></html>
