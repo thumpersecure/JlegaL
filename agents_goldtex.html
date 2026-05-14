@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goldtex Apartments — OSINT Agent Reference</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #0E0E0E;
+      background: #FBF9F4;
+      margin: 0;
+      padding: 0;
+    }
+    a { color: #B8741A; text-underline-offset: 2px; }
+    a:hover { color: #8a5512; }
+    code {
+      font-family: "IBM Plex Mono", "Fira Mono", "Courier New", monospace;
+      font-size: 13.5px;
+      background: #f0ece3;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #1a1a1a;
+      color: #e8e8e8;
+      padding: 18px 20px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    /* Page shell */
+    .page-header {
+      background: #1B2A4A;
+      background-image: linear-gradient(180deg, #243966 0%, #1B2A4A 100%);
+      border-bottom: 3px solid #B8741A;
+      padding: 20px 24px;
+    }
+    .page-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .back-link {
+      color: #a8c8e8;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .back-link:hover { color: #ffffff; }
+    .header-title {
+      color: #ffffff;
+      font-size: 15px;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      line-height: 1.3;
+    }
+    .header-sub {
+      color: #a8c8e8;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+      font-style: italic;
+    }
+
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px 24px;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 30px;
+      color: #0E0E0E;
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+    }
+    .doc-lede {
+      font-size: 16px;
+      color: #444;
+      font-style: italic;
+      margin: 0 0 36px 0;
+      padding-bottom: 28px;
+      border-bottom: 2px solid #B8741A;
+    }
+    h2 {
+      font-size: 22px;
+      color: #1B2A4A;
+      margin: 48px 0 16px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+    }
+    h3 {
+      font-size: 18px;
+      color: #1B2A4A;
+      margin: 32px 0 10px 0;
+    }
+    p { margin: 0 0 16px 0; }
+    ul, ol {
+      margin: 0 0 16px 0;
+      padding-left: 28px;
+    }
+    li { margin-bottom: 8px; }
+    li p { margin: 0; }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      margin: 16px 0 24px 0;
+    }
+    th {
+      background: #1B2A4A;
+      color: #ffffff;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #e0dbd0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f5f1e8; }
+
+    /* Rule block */
+    .rule-note {
+      background: #FBF5EA;
+      border-left: 3px solid #B8741A;
+      padding: 14px 18px;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+    .rule-note strong { color: #0E0E0E; }
+
+    /* Warning block */
+    .warn-note {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      padding: 14px 18px;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+    .warn-note strong { color: #c0392b; }
+
+    /* Footer */
+    .page-footer {
+      text-align: center;
+      font-size: 13px;
+      font-style: italic;
+      color: #6E6E6E;
+      border-top: 1px solid #ddd;
+      padding-top: 24px;
+      margin-top: 48px;
+    }
+    .page-footer a { color: #B8741A; }
+
+    @media (max-width: 600px) {
+      .content { padding: 28px 16px 60px 16px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      h3 { font-size: 16px; }
+      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .page-header-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="./agents_philly_opendata_li.html" class="back-link">&#8592; Philly L&amp;I Open Data Guide</a>
+    <div>
+      <div class="header-title">Goldtex Apartments — OSINT Agent Reference</div>
+      <div class="header-sub">315&#8211;23 N 12th St &middot; OPA 881519440 &middot; Verified May 14, 2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <h1>Goldtex Apartments (315&#8211;23 N 12th St)</h1>
+  <p class="doc-lede">
+    A property-specific extension of the <a href="./agents_philly_opendata_li.html">Philadelphia L&amp;I Open Data Navigation Guide</a>. All facts in this file were verified against the Eclipse ArcGIS feeds and the Carto open-data mirror on May 14, 2026. Field names and endpoint URLs are reproduced verbatim from working queries.<br><br>
+    If anything in this file fails to reproduce, the data systems have changed. Re-verify and update.
+  </p>
+
+  <h2>1. Canonical property identifiers</h2>
+
+  <p>Use these exact values when constructing queries. Variants will return zero rows.</p>
+
+  <table>
+    <thead>
+      <tr><th>Field</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Address (Eclipse canonical)</td><td><code>315-23 N 12TH ST</code></td></tr>
+      <tr><td>ZIP</td><td><code>19107-1201</code></td></tr>
+      <tr><td>Common name</td><td>Goldtex Apartments / Goldtex</td></tr>
+      <tr><td>OPA account</td><td><code>881519440</code></td></tr>
+      <tr><td>Parcel ID</td><td><code>334547</code></td></tr>
+      <tr><td>Council district</td><td><code>1</code></td></tr>
+      <tr><td>Census tract</td><td><code>037600</code></td></tr>
+      <tr><td>Owner of record (OPA)</td><td><code>POST GOLDTEX LP</code></td></tr>
+      <tr><td>Operator / property management</td><td>Greystar</td></tr>
+      <tr><td>Rental License #</td><td><code>602204</code></td></tr>
+      <tr><td>Rental License status</td><td>Expired (true expiration Feb 28, 2026; Carto mirror may still display Active &mdash; Eclipse rules)</td></tr>
+      <tr><td>Dwelling units on license</td><td>163</td></tr>
+      <tr><td>systemofrecord</td><td><code>ECLIPSE</code></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Address-resolution traps</h3>
+  <ul>
+    <li>The block has <code>315-23 N 12TH ST</code> (Goldtex) and <code>325-27 N 12TH ST</code> (Wang Sheng LLC, separate building). There is no <code>315-25</code>.</li>
+    <li>Queries against <code>'315 N 12TH ST'</code>, <code>'315 N 12th Street'</code>, or <code>'315-25 N 12TH ST'</code> return zero rows. The official string is exactly <code>315-23 N 12TH ST</code> (hyphen, no commas, uppercase <code>ST</code>).</li>
+    <li><strong>Prefer <code>opa_account_num = '881519440'</code> over address-string matching for every L&amp;I query.</strong> OPA is the stable join key. Address strings are inconsistent across tables and pages.</li>
+  </ul>
+
+  <h2>2. Authoritative query endpoints</h2>
+
+  <p>Per the <a href="./agents_philly_opendata_li.html">navigation guide</a> §1, Eclipse is authoritative for current state and Carto is authoritative only for bulk historical aggregation and 311 complaints. The Eclipse Property History page at <code>li.phila.gov/property-history/…</code> is a Vue SPA that does not return data to a plain HTTP fetch — it dispatches to the ArcGIS feature services below. Query those directly; that is what the page itself uses.</p>
+
+  <p>Base host: <code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/</code></p>
+
+  <table>
+    <thead>
+      <tr><th>Layer</th><th>Path</th><th>What it returns</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Violations</td><td><code>VIOLATIONS/FeatureServer/0/query</code></td><td>L&amp;I code violations, cases, statuses</td></tr>
+      <tr><td>Permits</td><td><code>PERMITS/FeatureServer/0/query</code></td><td>Building, electrical, mechanical, plumbing, zoning permits</td></tr>
+      <tr><td>Business Licenses</td><td><code>BUSINESS_LICENSES/FeatureServer/0/query</code></td><td>Rental and other business licenses</td></tr>
+      <tr><td>Case Investigations</td><td><code>CASE_INVESTIGATIONS/FeatureServer/0/query</code></td><td>Inspection records tied to cases</td></tr>
+      <tr><td>Appeals</td><td><code>APPEALS/FeatureServer/0/query</code></td><td>L&amp;I appeals filed</td></tr>
+      <tr><td>Building Certs</td><td><code>BUILDING_CERTS/FeatureServer/0/query</code></td><td>Annual certifications (fire alarm, sprinkler, etc.)</td></tr>
+      <tr><td>Building Cert Summary</td><td><code>BUILDING_CERT_SUMMARY/FeatureServer/0/query</code></td><td>Aggregated cert status</td></tr>
+      <tr><td>OPA Properties</td><td><code>opa_properties_public_pde/FeatureServer/0/query</code></td><td>Assessment, owner, deed</td></tr>
+      <tr><td>Building Footprints</td><td><code>LI_BUILDING_FOOTPRINTS/FeatureServer/0/query</code></td><td>Parcel geometry</td></tr>
+    </tbody>
+  </table>
+
+  <p>All ArcGIS REST queries accept <code>where=&lt;sql&gt;</code>, <code>outFields=*</code>, <code>f=json</code>, <code>resultRecordCount=&lt;n&gt;</code>, <code>resultOffset=&lt;n&gt;</code>. Default page size is ~1000 records; if the response includes <code>"exceededTransferLimit": true</code>, paginate.</p>
+
+  <div class="rule-note">
+    <strong>Carto remains the right source for:</strong>
+    <ul style="margin: 8px 0 0 0;">
+      <li><strong>311 complaints</strong> &mdash; the only place Philly publishes them. Table: <code>public_cases_fc</code>.</li>
+      <li><strong>Historical cross-checks</strong> when Eclipse appears truncated.</li>
+      <li><strong>Bulk pulls across multiple OPAs</strong> where the Carto SQL endpoint is more efficient than ArcGIS REST.</li>
+    </ul>
+  </div>
+
+  <h2>3. VIOLATIONS schema (Eclipse field list)</h2>
+
+<pre><code>objectid                 posse_jobid              addressobjectid
+parcel_id_num            casenumber               casecreateddate
+casecompleteddate        council_district         casetype
+casestatus               caseresponsibility       caseprioritydesc
+violationnumber          violationdate            violationcode
+violationcodetitle       violationstatus          violationresolutiondate
+violationresolutioncode  mostrecentinvestigation  publicnov
+opa_account_num          address                  unit_type
+unit_num                 zip                      censustract
+opa_owner                systemofrecord           geocode_x
+geocode_y                underappeal</code></pre>
+
+  <p>Date fields (<code>casecreateddate</code>, <code>casecompleteddate</code>, <code>violationdate</code>, <code>violationresolutiondate</code>, <code>mostrecentinvestigation</code>) are returned as Unix epoch milliseconds. Convert before display.</p>
+  <p><code>underappeal</code> is <code>Y</code> or <code>N</code>. Cross-reference an <code>underappeal = 'Y'</code> record against the APPEALS layer.</p>
+
+  <h2>4. Status semantics</h2>
+
+  <p>Two status fields exist. They are not redundant.</p>
+
+  <h3><code>casestatus</code> (case-level)</h3>
+  <ul>
+    <li><code>IN VIOLATION</code> &mdash; at least one violation on this case is unresolved.</li>
+    <li><code>CLOSED</code> &mdash; case has been closed. Inspect individual <code>violationstatus</code> values to learn <em>how</em> it closed.</li>
+  </ul>
+
+  <h3><code>violationstatus</code> (individual-violation level)</h3>
+  <p>This is the field that distinguishes real compliance from administrative closure:</p>
+  <ul>
+    <li><code>OPEN</code> &mdash; currently unresolved. <strong>This is the only value that means &ldquo;open.&rdquo;</strong></li>
+    <li><code>COMPLIED</code> &mdash; actual confirmed compliance.</li>
+    <li><code>CLOSED</code> &mdash; administratively closed without a recorded compliance event. Not real compliance.</li>
+    <li><code>CLOSEDCASE</code> &mdash; administrative closure of the parent case. Compliance not confirmed.</li>
+    <li><code>RESOLVE</code> &mdash; resolved via appeal or other path. Compliance not confirmed.</li>
+    <li><code>ERROR</code> &mdash; data-entry anomaly. Not a clean closure.</li>
+  </ul>
+
+  <div class="rule-note">
+    When summarizing for Goldtex (or any property), break out the distribution. Do not collapse non-<code>OPEN</code> values into a single &ldquo;closed&rdquo; bucket &mdash; per the navigation guide §2.4, that misrepresents the record.
+  </div>
+
+  <h2>5. Known-truth anchors as of May 14, 2026</h2>
+
+  <p>If a fresh query disagrees with the values below, either the data has changed or the query is wrong. Re-verify before propagating.</p>
+
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Total violation records on file (all time)</td><td>124</td></tr>
+      <tr><td>Open (<code>violationstatus = 'OPEN'</code>)</td><td>16</td></tr>
+      <tr><td>Complied (<code>violationstatus = 'COMPLIED'</code>)</td><td>102</td></tr>
+      <tr><td>Administrative closures (CLOSED / CLOSEDCASE / RESOLVE / ERROR, aggregate)</td><td>6</td></tr>
+      <tr><td>Active cases (<code>casestatus = 'IN VIOLATION'</code>)</td><td>6</td></tr>
+      <tr><td>First record on file</td><td>2007-03-08</td></tr>
+      <tr><td>Most recent violation</td><td>2026-04-27</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Active cases &mdash; 6 cases, 16 violations</h3>
+
+  <table>
+    <thead>
+      <tr><th>Case</th><th>Filed</th><th>Count</th><th>Codes / Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>CF-2026-041843</code></td>
+        <td>2026-04-27</td>
+        <td>6</td>
+        <td>Fire code F-series: command center storage, waste cans, hazard ID signs, smoke control records, ITM, records</td>
+      </tr>
+      <tr>
+        <td><code>CF-2026-038488</code></td>
+        <td>2026-04-21</td>
+        <td>1</td>
+        <td>PM15-603.1 mechanical equipment</td>
+      </tr>
+      <tr>
+        <td><code>CF-2026-012614</code></td>
+        <td>2026-02-11</td>
+        <td>3</td>
+        <td><strong>PM15-109.1 Unfit Structure</strong> + PM15-602.3 + PM15-603.1</td>
+      </tr>
+      <tr>
+        <td><code>CF-2026-012633</code></td>
+        <td>2026-02-11</td>
+        <td>3</td>
+        <td><strong>PM15-109.1 Unfit Structure</strong> + PM15-602.2 + PM15-603.1</td>
+      </tr>
+      <tr>
+        <td><code>CF-2026-011056</code></td>
+        <td>2026-02-06</td>
+        <td>2</td>
+        <td>PM15-603.1, PM15-602.3</td>
+      </tr>
+      <tr>
+        <td><code>CF-2026-010311</code></td>
+        <td>2026-02-04</td>
+        <td>1</td>
+        <td>PM15-603.1</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warn-note">
+    <strong>Note on Unfit Structure citations:</strong> The two <code>PM15-109.1</code> Unfit Structure citations (<code>CF-2026-012614</code>, <code>CF-2026-012633</code>) are the load-bearing finding for any habitability or non-renewal argument. Both were issued the same day. As of this writing, neither appears on the rendered Property History page at <code>li.phila.gov</code> for this address &mdash; they are present in both the Eclipse ArcGIS feed and the Carto mirror, but the Property History UI truncates. See the navigation guide §2.2 for the truncation pattern.
+  </div>
+
+  <h2>6. Working queries</h2>
+
+  <p>All queries below were executed successfully against live endpoints on May 14, 2026. Substitute the OPA account number to retarget.</p>
+
+  <h3>6.1 Open violations only &mdash; Eclipse direct (authoritative)</h3>
+<pre><code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/VIOLATIONS/FeatureServer/0/query?where=opa_account_num%3D%27881519440%27+AND+violationstatus%3D%27OPEN%27&outFields=*&f=json</code></pre>
+  <p>Expected: 16 features as of 2026-05-14.</p>
+
+  <h3>6.2 Full violation history &mdash; Eclipse direct</h3>
+<pre><code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/VIOLATIONS/FeatureServer/0/query?where=opa_account_num%3D%27881519440%27&outFields=*&f=json&resultRecordCount=2000</code></pre>
+  <p>Expected: 124 features as of 2026-05-14.</p>
+
+  <h3>6.3 Carto cross-check (mirror; not authoritative for current state)</h3>
+<pre><code>https://phl.carto.com/api/v2/sql?q=SELECT+*+FROM+violations+WHERE+opa_account_num+%3D+%27881519440%27&format=json</code></pre>
+  <p>Use this only to confirm parity for historical records, never for current status. The Carto mirror can lag Eclipse.</p>
+
+  <h3>6.4 Rental license &mdash; Eclipse direct</h3>
+<pre><code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/BUSINESS_LICENSES/FeatureServer/0/query?where=opa_account_num%3D%27881519440%27&outFields=*&f=json</code></pre>
+  <p>Expected: rental license #602204 with status reflecting the Feb 28, 2026 expiration. If Carto&rsquo;s mirror displays this license as Active, Eclipse is authoritative &mdash; the license is expired.</p>
+
+  <h3>6.5 Permits</h3>
+<pre><code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/PERMITS/FeatureServer/0/query?where=opa_account_num%3D%27881519440%27&outFields=*&f=json&resultRecordCount=2000</code></pre>
+
+  <h3>6.6 Appeals</h3>
+<pre><code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/APPEALS/FeatureServer/0/query?where=opa_account_num%3D%27881519440%27&outFields=*&f=json</code></pre>
+
+  <h3>6.7 Case investigations (inspection events)</h3>
+<pre><code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/CASE_INVESTIGATIONS/FeatureServer/0/query?where=opa_account_num%3D%27881519440%27&outFields=*&f=json&resultRecordCount=2000</code></pre>
+
+  <h3>6.8 311 complaints &mdash; Carto only (Eclipse does not expose these)</h3>
+<pre><code>https://phl.carto.com/api/v2/sql?q=SELECT+requested_datetime%2C+service_name%2C+status%2C+description%2C+address+FROM+public_cases_fc+WHERE+upper(address)+LIKE+%27%25315-23+N+12TH%25%27+OR+upper(address)+LIKE+%27%25315+N+12TH%25%27+ORDER+BY+requested_datetime+DESC&format=json</code></pre>
+  <p>Address-string match is required here because <code>public_cases_fc</code> does not carry <code>opa_account_num</code> for every record. Vary the LIKE pattern as needed.</p>
+
+  <h3>6.9 OPA ownership and assessment</h3>
+<pre><code>https://services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/opa_properties_public_pde/FeatureServer/0/query?where=parcel_number%3D%27881519440%27&outFields=*&f=json</code></pre>
+  <p>The OPA layer uses its own field naming (<code>parcel_number</code>, not <code>opa_account_num</code>). Confirm the field list from <code>/FeatureServer/0?f=json</code> before composing variants.</p>
+
+  <h2>7. What is NOT retrievable from public data</h2>
+
+  <p>Document these absences explicitly; do not let them pass without comment.</p>
+
+  <ul>
+    <li><strong>Inspector identity.</strong> No name, badge number, or unit appears in any layer. FOIA only.</li>
+    <li><strong>Inspector notes and photos.</strong> FOIA only.</li>
+    <li><strong>Internal L&amp;I, PPD, or counsel correspondence.</strong> FOIA only.</li>
+    <li><strong>Tenant identity on 311 complaints.</strong> Anonymized in the public export. FOIA only.</li>
+    <li><strong>Whether a physical re-inspection actually occurred.</strong> <code>COMPLIED</code> is a recorded status; it is not by itself evidence of a site visit.</li>
+  </ul>
+
+  <p>The L&amp;I Open Records Officer handles RTKL requests under 65 P.S. &sect;&nbsp;67.101 et seq. Standard response window: 5 business days, extendable to 30. Denials appealable to the Office of Open Records.</p>
+
+  <h2>8. Cross-reference protocol for any Goldtex claim</h2>
+
+  <p>Before propagating a numeric or status claim about Goldtex (open-violation count, license status, ownership, 311 volume), execute these steps anchored to OPA <code>881519440</code>:</p>
+  <ol>
+    <li>Eclipse VIOLATIONS by OPA &rarr; current open count (§6.1).</li>
+    <li>Eclipse BUSINESS_LICENSES by OPA &rarr; current license status (§6.4).</li>
+    <li>Carto <code>public_cases_fc</code> by address &rarr; 311 history (§6.8).</li>
+    <li>OPA layer by parcel &rarr; ownership confirmation (§6.9).</li>
+    <li>Compare against the anchor values in §5 above. If anything diverges, the systems have updated; refresh the anchors and note the date of the new pull.</li>
+  </ol>
+  <p>Always record the date and time of the pull. Never report a Carto status field as current state without an Eclipse confirmation.</p>
+
+  <p class="page-footer">
+    Last verified against live Eclipse and Carto feeds: May 14, 2026. Maintained at <code>thumpersecure.github.io/jlegal/agents_goldtex.html</code>.<br>
+    Companion to <a href="./agents_philly_opendata_li.html">Navigating Philadelphia L&amp;I Open Data</a>.<br><br>
+    <a href="./">&larr; Back to Horn / Goldtex Consolidated Report</a>
+  </p>
+
+</main>
+</body>
+</html>
