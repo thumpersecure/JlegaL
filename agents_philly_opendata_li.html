@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigating Philadelphia L&amp;I Open Data — Agent &amp; OSINT Guide</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #0E0E0E;
+      background: #FBF9F4;
+      margin: 0;
+      padding: 0;
+    }
+    a { color: #B8741A; text-underline-offset: 2px; }
+    a:hover { color: #8a5512; }
+    code {
+      font-family: "IBM Plex Mono", "Fira Mono", "Courier New", monospace;
+      font-size: 13.5px;
+      background: #f0ece3;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #1a1a1a;
+      color: #e8e8e8;
+      padding: 18px 20px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    /* Page shell */
+    .page-header {
+      background: #1B2A4A;
+      background-image: linear-gradient(180deg, #243966 0%, #1B2A4A 100%);
+      border-bottom: 3px solid #B8741A;
+      padding: 20px 24px;
+    }
+    .page-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .back-link {
+      color: #a8c8e8;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .back-link:hover { color: #ffffff; }
+    .header-title {
+      color: #ffffff;
+      font-size: 15px;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      line-height: 1.3;
+    }
+    .header-sub {
+      color: #a8c8e8;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+      font-style: italic;
+    }
+
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px 24px;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 30px;
+      color: #0E0E0E;
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+    }
+    .doc-lede {
+      font-size: 16px;
+      color: #444;
+      font-style: italic;
+      margin: 0 0 36px 0;
+      padding-bottom: 28px;
+      border-bottom: 2px solid #B8741A;
+    }
+    h2 {
+      font-size: 22px;
+      color: #1B2A4A;
+      margin: 48px 0 16px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+    }
+    h3 {
+      font-size: 18px;
+      color: #1B2A4A;
+      margin: 32px 0 10px 0;
+    }
+    p { margin: 0 0 16px 0; }
+    ul, ol {
+      margin: 0 0 16px 0;
+      padding-left: 28px;
+    }
+    li { margin-bottom: 8px; }
+    li p { margin: 0; }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      margin: 16px 0 24px 0;
+    }
+    th {
+      background: #1B2A4A;
+      color: #ffffff;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #e0dbd0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f5f1e8; }
+
+    /* Rule block */
+    .rule-note {
+      background: #FBF5EA;
+      border-left: 3px solid #B8741A;
+      padding: 14px 18px;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+    .rule-note strong { color: #0E0E0E; }
+
+    /* Footer */
+    .page-footer {
+      text-align: center;
+      font-size: 13px;
+      font-style: italic;
+      color: #6E6E6E;
+      border-top: 1px solid #ddd;
+      padding-top: 24px;
+      margin-top: 48px;
+    }
+    .page-footer a { color: #B8741A; }
+
+    @media (max-width: 600px) {
+      .content { padding: 28px 16px 60px 16px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      h3 { font-size: 16px; }
+      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .page-header-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="./" class="back-link">&#8592; Horn / Goldtex Report</a>
+    <div>
+      <div class="header-title">Philadelphia L&amp;I Open Data — Navigation Guide</div>
+      <div class="header-sub">For AI agents, OSINT researchers, and investigative journalists</div>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <h1>Navigating Philadelphia L&amp;I Open Data</h1>
+  <p class="doc-lede">
+    A reproducible verification protocol for Philadelphia property-compliance records. Written for AI agents acting on behalf of investigative journalists, tenants-rights groups, civic-tech researchers, and anyone trying to confirm what a property's record actually says.<br><br>
+    This guide is descriptive, not editorial. Every claim about a data-system behavior was observed during the cross-referencing work that produced the property record for 315–23 N 12th Street (Goldtex Apartments), OPA account 881519440, in May 2026.
+  </p>
+
+  <h2>1. Source authority — what to trust for what</h2>
+
+  <p>Philadelphia publishes property-compliance data through three overlapping interfaces. They are not equally reliable for the same question.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Source</th>
+        <th>URL pattern</th>
+        <th>Authoritative for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>L&amp;I Eclipse — Property History</strong></td>
+        <td><code>li.phila.gov/property-history/…</code></td>
+        <td><strong>Current</strong> license status, current case status, business mailing address on file.</td>
+      </tr>
+      <tr>
+        <td><strong>L&amp;I Eclipse — eCLIPSE permitting portal</strong></td>
+        <td><code>eclipse.phila.gov</code></td>
+        <td>Permits, contractor licenses, zoning appeals, and direct case lookup by license/permit number.</td>
+      </tr>
+      <tr>
+        <td><strong>Open Data Carto</strong></td>
+        <td><code>phl.carto.com/api/v2/sql?q=…</code></td>
+        <td><strong>Bulk historical</strong> queries against the L&amp;I Violations dataset. Useful for counting and aggregation; not authoritative for current status.</td>
+      </tr>
+      <tr>
+        <td><strong>OpenDataPhilly catalog</strong></td>
+        <td><code>opendataphilly.org</code></td>
+        <td>Dataset discovery and schema documentation. Not a query endpoint.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="rule-note">
+    <strong>Rule of thumb:</strong> If the question is <em>"what is the state of this property right now,"</em> go to li.phila.gov. If the question is <em>"what has happened at this property over time,"</em> go to Carto. Never present a Carto status field as a current-state determination without confirming it against Eclipse.
+  </div>
+
+  <h2>2. Known data-quality issues to test for</h2>
+  <p>These have all been observed and should be assumed present until ruled out for the specific record being verified.</p>
+
+  <h3>2.1 License-status mirror lag</h3>
+  <p>The Carto open-data feed mirrors L&amp;I license records but can lag by months or years for individual licenses. A license can show as <em>Active</em> on Carto while the authoritative Eclipse system shows it as <em>Expired</em>. <strong>Always re-pull license status from <code>li.phila.gov</code> directly before relying on it.</strong></p>
+  <p>Verification pattern:</p>
+  <ol>
+    <li>Pull license record from Carto.</li>
+    <li>Note the license number.</li>
+    <li>Open <code>li.phila.gov/property-history/…</code> for the property.</li>
+    <li>Find the same license number in the rendered table.</li>
+    <li>If the two disagree, the Eclipse value is authoritative.</li>
+  </ol>
+
+  <h3>2.2 Truncated property-history exports</h3>
+  <p>The Property History page on <code>li.phila.gov</code> may present a violations list that is older than the most recent Carto-API result for the same address. The page does not warn the user about its cutoff date. Always check:</p>
+  <ul>
+    <li>The most recent violation date on the rendered page.</li>
+    <li>The most recent violation date returned by a direct Carto SQL query.</li>
+    <li>If they differ by more than one quarter, treat the rendered page as incomplete.</li>
+  </ul>
+  <p>Example query (replace the address):</p>
+<pre><code>SELECT casenumber, casecreateddate, violationdate,
+       violationcode, violationdescription, casestatus
+FROM violations
+WHERE upper(address) LIKE '%315%N%12TH%'
+ORDER BY violationdate DESC</code></pre>
+
+  <h3>2.3 Inspector identity is not in the public data</h3>
+  <p>Violation records contain <code>casenumber</code>, <code>violationcode</code>, <code>violationdescription</code>, <code>casestatus</code>, and <code>casepriority</code>. They do <strong>not</strong> contain an inspector name, badge number, or unit identifier. There is no public mechanism to:</p>
+  <ul>
+    <li>List all violations issued by a specific inspector.</li>
+    <li>Track inspector-level patterns or geographic assignments.</li>
+    <li>FOIA &#8220;all activity by Inspector X&#8221; without knowing X&#8217;s identity from another source.</li>
+  </ul>
+  <p>If the investigation requires an inspector identity, the only known path is a targeted FOIA to L&amp;I referencing a specific case number and inspection date. Plan accordingly.</p>
+
+  <h3>2.4 Non-standard closure statuses</h3>
+  <p>The <code>casestatus</code> field is not binary. Observed values include:</p>
+  <ul>
+    <li><code>COMPLIED</code> — actual compliance recorded.</li>
+    <li><code>NULL</code> — open / no compliance recorded (often rendered as &#8220;UNRESOLVED&#8221; in UI exports).</li>
+    <li><code>ERROR</code> — data-entry anomaly. Not a clean closure.</li>
+    <li><code>CLOSEDCASE</code> — administrative closure. Compliance not confirmed.</li>
+    <li><code>RESOLVE</code> — resolved through appeal or non-compliance path. Compliance not confirmed.</li>
+  </ul>
+  <p>Aggregate summaries on <code>li.phila.gov</code> typically count everything that is not NULL as &#8220;closed.&#8221; Do not propagate that framing. When reporting on a property, break out the status distribution explicitly.</p>
+
+  <h3>2.5 311 complaints are a separate dataset</h3>
+  <p>Tenant complaints filed via Philly311 are not part of the L&amp;I Violations dataset. They live in a separate Carto table and are not surfaced in the Property History rendering. A property can show &#8220;no violations&#8221; while accumulating 311 complaints. If 311 history is relevant, query it separately:</p>
+<pre><code>SELECT requested_datetime, service_name, status, description
+FROM public_cases_fc
+WHERE upper(address) LIKE '%315%N%12TH%'
+ORDER BY requested_datetime DESC</code></pre>
+
+  <h3>2.6 OPA assessment data is a third source</h3>
+  <p>Property valuation, square footage, owner-of-record, and deed history come from the Office of Property Assessment, not L&amp;I. The two systems share an <code>OPA Account</code> number but diverge on owner-name normalization. Use OPA for ownership questions; do not infer owner from L&amp;I license records alone.</p>
+
+  <h2>3. The minimum-viable verification workflow</h2>
+  <p>For any property-compliance claim, an agent should execute the following before publishing or reporting:</p>
+  <ol>
+    <li><strong>Resolve the property to an OPA account.</strong><br>
+      Source: <code>atlas.phila.gov</code> (search by address).<br>
+      Capture: OPA account number, parcel boundary, current zoning.</li>
+    <li><strong>Pull live license status from L&amp;I Eclipse.</strong><br>
+      Source: <code>li.phila.gov/property-history/…</code><br>
+      Capture: every license listed, with status, issue date, last renewal, and licensee.<br>
+      Flag any license whose status differs from what Carto reports for the same license number.</li>
+    <li><strong>Pull full violation history from Carto.</strong><br>
+      Source: Carto SQL endpoint against the <code>violations</code> table.<br>
+      Capture: every record returned, with <code>casenumber</code>, <code>violationdate</code>, <code>violationcode</code>, <code>violationdescription</code>, <code>casestatus</code>, <code>casepriority</code>.<br>
+      Do <strong>not</strong> rely on the Property History page export — re-pull from Carto to confirm completeness.</li>
+    <li><strong>Pull 311 complaint history.</strong><br>
+      Source: Carto SQL endpoint against the <code>public_cases_fc</code> table.<br>
+      Capture: complaint type, status, date, free-text description.</li>
+    <li><strong>Cross-check ownership against OPA.</strong><br>
+      Source: OPA records (linked from <code>atlas.phila.gov</code> or <code>property.phila.gov</code>).<br>
+      Capture: owner name, mailing address, transfer history.</li>
+    <li><strong>Document what is missing.</strong><br>
+      Note that inspector identity is not available in any of the above.<br>
+      Note any closure statuses that are not <code>COMPLIED</code> and treat them as unresolved unless an explicit compliance record can be located.<br>
+      Note the date of every pull. Re-pull before publication.</li>
+  </ol>
+  <p>A complete record assembled this way has known boundaries. Treat anything not assembled this way as provisional.</p>
+
+  <h2>4. Carto API quick reference</h2>
+  <p>Endpoint:</p>
+<pre><code>https://phl.carto.com/api/v2/sql?q=&lt;URL-ENCODED-SQL&gt;&amp;format=json</code></pre>
+
+  <p>Useful tables (verify schema at <code>opendataphilly.org</code> before relying on column names — schemas change):</p>
+  <table>
+    <thead>
+      <tr><th>Table</th><th>Contents</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>violations</code></td><td>L&amp;I code violations, cases, statuses</td></tr>
+      <tr><td><code>permits</code></td><td>Building, electrical, mechanical, plumbing, zoning permits</td></tr>
+      <tr><td><code>business_licenses</code></td><td>Active and historical business licenses (incl. Rental)</td></tr>
+      <tr><td><code>appeals</code></td><td>L&amp;I appeals filed</td></tr>
+      <tr><td><code>public_cases_fc</code></td><td>311 service requests</td></tr>
+      <tr><td><code>opa_properties_public</code></td><td>OPA assessment / ownership</td></tr>
+      <tr><td><code>unsafe</code></td><td>Unsafe structure designations</td></tr>
+      <tr><td><code>imm_dang</code></td><td>Imminently dangerous structure designations</td></tr>
+    </tbody>
+  </table>
+  <p>Output formats: <code>json</code>, <code>csv</code>, <code>geojson</code>, <code>kml</code>. Add <code>&amp;format=csv</code> for direct CSV download. For large queries, paginate with <code>LIMIT</code> and <code>OFFSET</code>.</p>
+
+  <h2>5. What the public data does not tell you</h2>
+  <p>Document these explicitly when reporting; do not let the absence pass without comment.</p>
+  <ul>
+    <li><strong>Who inspected.</strong> No inspector identity is published.</li>
+    <li><strong>When the page was last refreshed.</strong> Property History pages do not display a data-as-of timestamp.</li>
+    <li><strong>What was filed but not yet adjudicated.</strong> Cases in pre-violation stages may not appear.</li>
+    <li><strong>Tenant identity.</strong> Complaints are anonymized in the public 311 export; the identity of the complainant is not retrievable without FOIA.</li>
+    <li><strong>Internal L&amp;I correspondence.</strong> Emails, inspection notes, and supervisor sign-offs are FOIA-only.</li>
+    <li><strong>Whether an inspection actually occurred.</strong> A &#8220;COMPLIED&#8221; status records that the case is closed, not necessarily that an inspector physically returned to the property.</li>
+  </ul>
+
+  <h2>6. FOIA — when to escalate</h2>
+  <p>If verification requires any of the following, file a Right-to-Know request with the City of Philadelphia (RTKL, 65 P.S. &sect;&nbsp;67.101 et seq.). The L&amp;I Open Records Officer handles property-record requests.</p>
+  <ul>
+    <li>Inspector identity for a specific case.</li>
+    <li>Inspector handwritten notes or photographs from a site visit.</li>
+    <li>Body-worn-camera footage from accompanying police response (filed separately with PPD).</li>
+    <li>Internal communications about a property between L&amp;I, PPD, or external counsel.</li>
+    <li>Permit-application materials beyond the public abstract.</li>
+  </ul>
+  <p>Standard response window: 5 business days, extendable to 30. Denials are appealable to the Office of Open Records.</p>
+
+  <h2>7. Reproducibility note</h2>
+  <p>The four data-integrity failures documented on the <a href="./#section-li-data-integrity">parent page</a> were observed against the property at 315–23 N 12th Street, Philadelphia, PA 19107, OPA 881519440, on or before May 14, 2026. The full record set — the L&amp;I Property History export, the Carto API query result, and the cross-source reconciliation report — is preserved and available on request.</p>
+  <p>An agent reproducing this verification today should expect:</p>
+  <ul>
+    <li>The Carto mirror&#8217;s stated status for Rental License #602204 to continue diverging from Eclipse until the underlying data feed catches up.</li>
+    <li>The Property History page to continue presenting records through Sep 2019 unless the city extends the export window.</li>
+    <li>Two open 2026 Unfit Structure citations (CF-2026-012614, CF-2026-012633) to appear in Carto but not in the Property History page.</li>
+  </ul>
+  <p>If any of those expectations fail when you reproduce the query, the data systems have changed; update this guide accordingly.</p>
+
+  <p class="page-footer">
+    Last reviewed: May 2026. Maintained at <code>thumpersecure.github.io/jlegal/agents_philly_opendata_li.html</code>.<br>
+    Corrections welcome via the issues tab on the underlying repository.<br><br>
+    <a href="./">&larr; Back to Horn / Goldtex Consolidated Report</a>
+  </p>
+
+</main>
+</body>
+</html>
