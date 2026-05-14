@@ -217,6 +217,44 @@
       .displaced-count .num { font-size: 24px; }
       .displaced-since { font-size: 10.5px; }
     }
+    /* ── Where the Public Data Fails ────────────────────────────── */
+    .li-section-rule { border-top: 3px solid #B8741A; padding-top: 32px; margin-bottom: 0; }
+    .li-section-heading { font-size: 28px; color: #0E0E0E; margin: 0 0 6px 0; font-family: Georgia, serif; }
+    .li-section-subhead { font-size: 17px; font-style: italic; color: #555; margin: 0 0 28px 0; }
+    .li-failures-list { list-style: none; padding: 0; margin: 0 0 32px 0; }
+    .li-failures-list li { display: flex; gap: 16px; margin-bottom: 28px; align-items: flex-start; }
+    .li-fail-num {
+      font-size: 22px; font-weight: bold; color: #B8741A;
+      font-family: Georgia, serif; line-height: 1.3;
+      min-width: 28px; flex-shrink: 0;
+    }
+    .li-fail-body strong { display: block; margin-bottom: 6px; font-size: 16px; color: #0E0E0E; }
+    .li-fail-body p { margin: 0; font-size: 15.5px; line-height: 1.75; color: #2a2a2a; }
+    .li-source-line {
+      font-size: 13px; font-style: italic; color: #6E6E6E;
+      margin: 0 0 36px 0; line-height: 1.6;
+    }
+    .li-cta-box {
+      border-left: 3px solid #B8741A;
+      background: #FBF5EA;
+      padding: 24px 28px;
+      margin-top: 8px;
+    }
+    .li-cta-box h4 { margin: 0 0 14px 0; font-size: 17px; color: #0E0E0E; font-family: Georgia, serif; }
+    .li-cta-box p { margin: 0 0 12px 0; font-size: 15.5px; line-height: 1.75; color: #2a2a2a; }
+    .li-cta-box p:last-child { margin-bottom: 0; }
+    .li-cta-box a { color: #B8741A; text-decoration: underline; text-underline-offset: 2px; }
+    .li-cta-box a:hover { color: #8a5512; }
+    @media (max-width: 760px) {
+      .li-section-heading { font-size: 22px !important; }
+      .li-section-subhead { font-size: 15px !important; }
+      .li-cta-box { padding: 16px 18px; }
+      .li-failures-list li { flex-direction: column; gap: 4px; }
+      .li-fail-num { font-size: 19px; min-width: auto; }
+    }
+    @media (max-width: 420px) {
+      .li-cta-box { padding: 14px 14px; }
+    }
   </style>
 </head>
 <body>
@@ -4351,6 +4389,67 @@
         This consolidated report was prepared by reviewing and cross-referencing <strong>60+ source documents</strong> including: 11 versions of the Master File (V8 through V15.2 Supplement B), 6 legal memos and correspondence, 3 trust instruments, 4 sets of family transcripts/communications, 2 OSINT intelligence assessments, 6 property violation records, 3 May 2026 report iterations, 2 psychiatrist pattern documents, the DA submission analysis, the AI handoff document, and various supporting materials. Factual assertions were verified across multiple sources. Discrepancies were identified, analyzed, and resolved or flagged as indicated in Section 5.2.
       </p>
     </div>
+  </div>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- WHERE THE PUBLIC DATA FAILS                                       -->
+<!-- ================================================================ -->
+
+<div id="section-li-data-integrity" style="font-family: Georgia, serif; font-size: 16px; line-height: 1.7; color: #1a1a1a; max-width: 1100px; margin: 0 auto 60px auto; padding: 20px;">
+
+  <div class="li-section-rule">
+    <h2 class="li-section-heading">Where the Public Data Fails</h2>
+    <p class="li-section-subhead">A case study in why Philadelphia&rsquo;s L&amp;I transparency systems do not actually let the public verify anything.</p>
+  </div>
+
+  <p style="margin-bottom: 24px; font-size: 15.5px; line-height: 1.8;">
+    Philadelphia operates several overlapping public-records systems for property compliance: L&amp;I Eclipse (the live Property History interface at <code>li.phila.gov</code>), the legacy Eclipse permitting portal, and the Carto Open Data mirror at <code>phl.carto.com</code>. These systems exist so that tenants, buyers, journalists, and code-enforcement watchdogs can confirm that a property is properly licensed and not sitting on unresolved violations. In practice, working a single property &mdash; 315 N 12th Street, the Goldtex Apartments &mdash; produced four separate, independently verifiable failures of that promise.
+  </p>
+
+  <ol class="li-failures-list">
+    <li>
+      <span class="li-fail-num">1.</span>
+      <div class="li-fail-body">
+        <strong>Two city systems disagreed about the same license on the same day.</strong>
+        <p>Rental License #602204 (POST GOLDTEX LP, 163 dwelling units) was confirmed <em>Expired</em> on the authoritative L&amp;I Eclipse Property History page and simultaneously displayed as <em>Active</em> on the Carto open-data feed. A tenant relying on Carto &mdash; which is the source most public-facing tools query &mdash; would conclude the building is properly licensed. It is not.</p>
+      </div>
+    </li>
+    <li>
+      <span class="li-fail-num">2.</span>
+      <div class="li-fail-body">
+        <strong>The &ldquo;complete&rdquo; property history was truncated by six and a half years.</strong>
+        <p>The Property History export for 315 N 12th Street ends on September 12, 2019, and presents 85 violation records. An independent Carto-API query against the same address returned approximately 118 records, including two open <em>Unfit Structure</em> citations issued in 2026 (CF-2026-012614 and CF-2026-012633). The export does not warn the user that records have been omitted. A reasonable reader assumes they are looking at the full record. They are not.</p>
+      </div>
+    </li>
+    <li>
+      <span class="li-fail-num">3.</span>
+      <div class="li-fail-body">
+        <strong>There is no inspector attached to any inspection.</strong>
+        <p>Philadelphia L&amp;I violation records list a case number, a code, a description, a status, and a priority. They do not list the name or badge number of the inspector who issued the violation, signed off on the compliance, or closed the case. There is no way for the public to FOIA &ldquo;all violations issued by Inspector X,&rdquo; cross-check an inspector&rsquo;s pattern of findings, or even know who came to the building. The institutional acts are public; the people performing them are not.</p>
+      </div>
+    </li>
+    <li>
+      <span class="li-fail-num">4.</span>
+      <div class="li-fail-body">
+        <strong>Non-standard closure statuses are treated as resolved.</strong>
+        <p>Of the 85 records in scope, four carry statuses other than COMPLIED: two ERROR rows (Case #165199, 2008), one CLOSEDCASE row (Case #400229, 2012), and one RESOLVE row (Case #578900, 2015). The summary view counts all of these as &ldquo;closed.&rdquo; None of them are recorded as compliant. A property-record reader who treats &ldquo;closed&rdquo; as &ldquo;complied&rdquo; gets a more flattering picture than the data supports.</p>
+      </div>
+    </li>
+  </ol>
+
+  <p style="margin-bottom: 28px; font-size: 15.5px; line-height: 1.8;">
+    Each individual failure is small. Together they describe a system whose surface promise &mdash; <em>&ldquo;look up your building and see what&rsquo;s there&rdquo;</em> &mdash; is structurally unable to deliver. The mirror lags. The export truncates. The actors are anonymized. The closure language papers over the closures that aren&rsquo;t actually compliance. Every one of these would be flagged by an internal audit. None of them are flagged to the citizen using the system as designed.
+  </p>
+
+  <p class="li-source-line">Source: L&amp;I Eclipse Property History (<code>li.phila.gov</code>) and Open Data Carto (<code>phl.carto.com</code>), cross-referenced for the property 315&ndash;23 N 12th Street, OPA 881519440. Full record snapshot available on request.</p>
+
+  <div class="li-cta-box">
+    <h4>Note for OSINT Specialists and Public Interest Groups</h4>
+    <p>The data-integrity problems documented above are reproducible. If you are an investigative journalist, a tenants-rights group, a civic-tech researcher, or an AI agent assisting one, the cross-source verification method used here is published as a navigation guide.</p>
+    <p>It documents which Philadelphia L&amp;I source is authoritative for which question, where the open-data mirror lags or truncates, what fields are systematically missing, and how to reproduce the verification flow that surfaced the discrepancies on this page.</p>
+    <p>&rarr; <strong><a href="./agents_philly_opendata_li.html">Read the navigation guide &rarr;</a></strong></p>
   </div>
 
 </div>
