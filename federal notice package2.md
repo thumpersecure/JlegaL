@@ -42,7 +42,7 @@ These offices have constituent-services staff who can route formal inquiries to 
 |U.S. Senator Andy Kim (NJ)                                               |https://www.kim.senate.gov/contact/                           |
 |U.S. House Representative — verify district for both PA and NJ residences|https://www.house.gov/representatives/find-your-representative|
 
-Cherry Hill, NJ is in NJ-1 (Donald Norcross). Philadelphia districts vary by address; verify at the House lookup link.
+[Residential location redacted]. Philadelphia districts vary by address; verify at the House lookup link.
 
 -----
 
