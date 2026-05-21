@@ -7,6 +7,134 @@
 
 ---
 
+## Health Effects of the Exposure
+
+> [!WARNING]
+> The compounds released from thermally degraded FSK tape are **neurotoxins, carcinogens, and endocrine disruptors**. There are **no federal regulatory limits** for VOC concentrations in residential indoor air in the United States. An exposure that would trigger mandatory workplace evacuation under OSHA has zero regulatory consequence in an apartment.
+
+The portable AC exhaust hose in Unit 806 off-gassed the following compounds at surface temperatures of 102–113°F in an enclosed ~800 sq ft apartment. Exposure lasted 15+ days before source identification, with subsequent re-exposures.
+
+### Compound-by-Compound Effects
+
+<details>
+<summary><strong>Toluene</strong> — Neurotoxin, CNS depressant</summary>
+
+| Timeframe | Effects |
+|:--|:--|
+| **Acute** (hours–days) | Headache, dizziness, confusion, nausea, impaired judgment, blurred vision, fatigue, eye and respiratory irritation. At higher concentrations: loss of consciousness, coma. |
+| **Chronic** (weeks–months) | Persistent CNS dysfunction, difficulty sleeping, chronic upper respiratory irritation, liver enzyme induction. |
+| **Potentially permanent** | Chronic solvent encephalopathy with cognitive deficits in attention, verbal memory, and visuospatial skills. Ototoxicity (hearing loss). White matter brain damage. |
+
+*Source: [ATSDR Toxicological Profile for Toluene (2017)](https://www.atsdr.cdc.gov/toxprofiles/tp56.pdf)*
+
+</details>
+
+<details>
+<summary><strong>Xylene</strong> — Neurotoxin, respiratory irritant</summary>
+
+| Timeframe | Effects |
+|:--|:--|
+| **Acute** | Eye, nose, throat irritation; breathing difficulty; dizziness; impaired short-term memory and reaction time (documented at concentrations as low as 50 ppm). |
+| **Chronic** | Headache, fatigue, tremors, incoordination, anxiety, inability to concentrate. Cardiovascular and kidney effects. |
+| **Potentially permanent** | Persistent neurobehavioral deficits. Co-exposure with toluene inhibits xylene metabolism, increasing blood/tissue levels and prolonging neurotoxic effects. |
+
+*Source: [ATSDR Toxicological Profile for Xylenes](https://www.atsdr.cdc.gov/toxprofiles/tp71.pdf)*
+
+</details>
+
+<details>
+<summary><strong>Styrene</strong> — Possible carcinogen (IARC Group 2A)</summary>
+
+| Timeframe | Effects |
+|:--|:--|
+| **Acute** | Mucous membrane irritation, gastrointestinal effects. Vestibular impairment documented at 87 ppm after only 1 hour of exposure. |
+| **Chronic** | Decreased color discrimination, slowed reaction time, impaired intellectual function, peripheral neuropathy, depression. |
+| **Potentially permanent** | **Irreversible hearing loss.** Styrene causes cochlear hair cell destruction. Workers showed a 3.9× increase in odds of hearing loss. Combined styrene + noise exposure multiplied odds 2–3× further. |
+
+*Sources: [ATSDR Styrene Profile](https://wwwn.cdc.gov/TSP/ToxProfiles/ToxProfiles.aspx?id=421&tid=74); [Styrene ototoxicity (PMC5715476)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5715476/)*
+
+</details>
+
+<details>
+<summary><strong>Formaldehyde</strong> — Known carcinogen (IARC Group 1)</summary>
+
+| Timeframe | Effects |
+|:--|:--|
+| **Acute** | Immediate irritation of eyes, nose, upper respiratory tract. Burning sensation, rhinitis, dyspnea. At higher concentrations: bronchial narrowing, pulmonary edema. |
+| **Chronic** | Respiratory sensitization — can induce occupational asthma. Chronic inflammatory bronchitis. Sensitized individuals experience symptoms *below the odor threshold*. |
+| **Potentially permanent** | **Carcinogenic to humans** (IARC Group 1). Sufficient evidence for nasopharyngeal cancer and leukemia. Mechanism: DNA-protein crosslinks, genotoxicity, hematopoietic stem cell disruption. Respiratory sensitization, once established, is typically permanent. |
+
+*Sources: [ATSDR Formaldehyde Profile](https://wwwn.cdc.gov/TSP/PHS/PHS.aspx?phsid=218&toxid=39); [IARC Monographs (PMC1280402)](https://pmc.ncbi.nlm.nih.gov/articles/PMC1280402/)*
+
+</details>
+
+<details>
+<summary><strong>Phthalates</strong> — Endocrine disruptors</summary>
+
+| Timeframe | Effects |
+|:--|:--|
+| **Acute** | Eye and respiratory tract irritation. |
+| **Chronic** | Endocrine disruption — interfere with hormone synthesis, secretion, and binding. Reduced testosterone, obesity, diabetes. Aggravation of airway inflammation with decreased pulmonary function. |
+| **Potentially permanent** | Epigenomic changes that persist beyond the exposure period. Reproductive and developmental toxicity. Endocrine disruption effects may be irreversible. |
+
+*Sources: [ATSDR DEHP Profile](https://www.atsdr.cdc.gov/toxprofiles/tp9.pdf); [Phthalate epigenomics (PMC7218126)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7218126/)*
+
+</details>
+
+<details>
+<summary><strong>Tackifier resins</strong> — Respiratory sensitizer (colophony/rosin-based)</summary>
+
+| Timeframe | Effects |
+|:--|:--|
+| **Acute** | Eye, throat, nose irritation (reported in nearly half of exposed workers). Cough, phlegm, wheezing. Thermal degradation releases additional reactive aldehydes. |
+| **Chronic** | Colophony fumes are the **third highest cause of occupational asthma** in the UK. Bronchial sensitization through both irritation and immune-mediated (IgE) mechanisms. |
+| **Potentially permanent** | Once colophony-induced asthma is established, it **typically persists even after removal from exposure.** Follow-up studies show continued respiratory impairment years after cessation. |
+
+*Sources: [Colophony occupational asthma (PMC1021099)](https://pmc.ncbi.nlm.nih.gov/articles/PMC1021099/); [Follow-up (PMC459315)](https://pmc.ncbi.nlm.nih.gov/articles/PMC459315/)*
+
+</details>
+
+---
+
+### Synergistic Effects — Why the Mixture Is Worse Than the Sum
+
+> [!CAUTION]
+> Safety thresholds for individual compounds **"may not actually be safe" under combined exposure conditions.**** Existing occupational limits assume single-compound exposure. They do not account for metabolic competition, synergistic toxicity, or enclosed residential exposure without ventilation.
+
+- **Toluene + xylene** compete for the same metabolic pathways (cytochrome P450). Co-exposure inhibits metabolism of both, increasing blood/tissue concentrations and prolonging cellular exposure. Mixed inhalation produces **more-than-additive** respiratory and neurological toxicity. ([ATSDR BTEX Interaction Profile](https://www.atsdr.cdc.gov/interaction-profiles/media/pdfs/ip05-c3.pdf))
+
+- **Formaldehyde + phthalates** — combined exposure "**greatly exacerbated**" airway remodeling and hyperresponsiveness through oxidative stress and NF-κB pathways. This is a **demonstrated synergistic interaction**, not merely additive. ([PMID 29758289](https://pubmed.ncbi.nlm.nih.gov/29758289/))
+
+- **Toluene + styrene** — both independently ototoxic. Combined exposure produces "**additive, potentiating, or synergistic ototoxic effects**" — compounding risk of permanent hearing loss. ([PMID 18259983](https://pubmed.ncbi.nlm.nih.gov/18259983/))
+
+- **CNS damage from solvent mixtures** — organic solvents are lipid-soluble, cross the blood-brain barrier, and cause bilateral symmetrical white matter damage. Chronic exposure produces solvent-induced encephalopathy with cognitive deficits. ([PMC2078137](https://pmc.ncbi.nlm.nih.gov/articles/PMC2078137/))
+
+---
+
+### Multiple Chemical Sensitivity (MCS)
+
+Sustained VOC exposure can trigger **toxicant-induced loss of tolerance (TILT)** — a high-dose initial exposure causes central sensitization, after which even low-level exposures to chemically unrelated substances trigger multi-organ symptoms. Brief peak exposures (not just time-weighted averages) are implicated as triggers.
+
+A 2025 case report documented MCS triggered by indirect VOC exposure in an enclosed space — noting that even routine monitoring showing minimal concentrations did not prevent MCS onset, because **brief peak exposures caused central sensitization**. ([PMC13089136](https://pmc.ncbi.nlm.nih.gov/articles/PMC13089136/))
+
+**There is no established cure for MCS.** The condition is managed by avoidance. Some patients improve with strict chemical avoidance; others experience persistent or progressive sensitization. The literature does not describe reliable reversal. ([PMC11674335](https://pmc.ncbi.nlm.nih.gov/articles/PMC11674335/))
+
+---
+
+### The Regulatory Gap
+
+| Setting | Protection |
+|:--|:--|
+| **Workplace (OSHA)** | PELs enforced: Toluene 200 ppm, Xylene 100 ppm, Styrene 100 ppm, Formaldehyde 0.75 ppm (8-hr TWA) |
+| **Residential (apartment)** | **No federal regulatory limits exist.** No enforceable maximum VOC concentrations for apartments. |
+| **WHO guideline** | Indoor formaldehyde ≤ 0.08 ppm (30-min avg) — *guidance only, not enforceable in the US* |
+
+> A residential occupant has **no regulatory floor of protection.** The OSHA PELs — already criticized as outdated and insufficiently protective for workers — simply do not exist for apartment dwellers. An exposure that would trigger mandatory workplace evacuation, medical surveillance, and employer liability under OSHA has **zero regulatory consequence** in a residential setting.
+
+*Sources: [OSHA PEL Table Z-1](https://www.osha.gov/annotated-pels/table-z-1); [EPA Formaldehyde Summary](https://archive.epa.gov/region5/teach/web/pdf/formaldehyde_summary.pdf)*
+
+---
+
 ## What This Site Is
 
 **[jlegal.pro](https://jlegal.pro)** is a consolidated legal documentation site for the case of **Justin Horn v. Greystar / Goldtex Apartments** (315 N. 12th St, Philadelphia, PA).
