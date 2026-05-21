@@ -2,8 +2,11 @@
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-jlegal.pro-8B0000?style=for-the-badge&logo=github)](https://jlegal.pro)
 [![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-1B2A4A?style=for-the-badge&logo=github)](https://thumpersecure.github.io/JlegaL/)
+[![Tor Hidden Service](https://img.shields.io/badge/Tor%20Mirror-.onion-7D4698?style=for-the-badge&logo=torproject)](http://zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion)
 [![Jurisdiction](https://img.shields.io/badge/Jurisdiction-Philadelphia%2C%20PA-003087?style=for-the-badge)](https://jlegal.pro)
 [![Statute](https://img.shields.io/badge/18%20Pa.C.S.%20§2705-Reckless%20Endangerment-8B0000?style=for-the-badge)](https://jlegal.pro/audio-analysis.html)
+
+> **Tor mirror:** [`zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion`](http://zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion) — open in [Tor Browser](https://www.torproject.org/download/). Auto-syncs from this repo hourly.
 
 ---
 
