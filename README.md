@@ -96,7 +96,7 @@ The main page. Everything in one place: timeline, FLIR evidence, IoT data, medic
 ---
 
 ### [audio-analysis.html](https://thumpersecure.github.io/JlegaL/audio-analysis.html) — Mens Rea Analysis & Audio Analysis
-The forensic deep-dive into the April 17 leasing office recording. Includes:
+The forensic deep-dive into the April 15 leasing office recording. Includes:
 - Timestamped transcript of the full encounter
 - Audio loudness/waveform analysis chart
 - The **5-step notice-and-election sequence** establishing criminal knowledge
