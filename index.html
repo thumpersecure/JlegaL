@@ -27,91 +27,49 @@
     .toc a { color: #1B2A4A; text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
     .toc li { margin-bottom: 6px; }
-    /* Displacement counter bar (top of page) */
-    .displaced-bar {
-      background: linear-gradient(135deg, #6B0000 0%, #8B0000 50%, #6B0000 100%);
-      color: #ffffff;
-      padding: 14px 20px;
-      font-family: Georgia, serif;
-      margin: -20px -20px 0 -20px;
-      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.35);
-      border-bottom: 1px solid #4a0000;
-      text-align: center;
-    }
-    .displaced-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: center;
-      gap: 18px; flex-wrap: wrap;
-    }
-    .displaced-label {
-      font-size: 11px; letter-spacing: 3px;
-      text-transform: uppercase; color: #f4c8c8;
-      font-weight: bold;
-    }
-    .displaced-count {
-      display: inline-flex; align-items: baseline; gap: 8px;
-      font-size: 15px; letter-spacing: 0.5px;
-      color: #ffffff;
-    }
-    .displaced-count .num {
-      font-size: 34px; font-weight: bold;
-      color: #FFD700; line-height: 1;
-      text-shadow: 0 1px 0 rgba(0,0,0,0.4);
-      letter-spacing: 1px;
-    }
-    .displaced-count .word {
-      font-size: 13px; text-transform: uppercase;
-      letter-spacing: 1.5px; color: #fbe9e9;
-      font-weight: bold;
-    }
-    .displaced-since {
-      font-size: 12px; color: #f4c8c8;
-      font-style: italic; letter-spacing: 0.3px;
-    }
-    .displaced-since strong { color: #ffffff; font-style: normal; }
-
-    /* Trial countdown bar */
-    .trial-bar {
-      background: linear-gradient(135deg, #0a2540 0%, #1B2A4A 50%, #0a2540 100%);
+    /* Combined status bar */
+    .status-bar {
+      background: linear-gradient(135deg, #6B0000 0%, #3a1030 35%, #0a2540 70%, #1B2A4A 100%);
       color: #ffffff;
       padding: 10px 20px;
       font-family: Georgia, serif;
-      margin: 0 -20px 0 -20px;
+      margin: -20px -20px 0 -20px;
       box-shadow: inset 0 -1px 0 rgba(0,0,0,0.35);
-      border-bottom: 1px solid #0a1a30;
+      border-bottom: 2px solid #4a0000;
       text-align: center;
     }
-    .trial-inner {
+    .status-inner {
       max-width: 1200px; margin: 0 auto;
       display: flex; align-items: center; justify-content: center;
-      gap: 18px; flex-wrap: wrap;
+      gap: 12px 28px; flex-wrap: wrap;
     }
-    .trial-label {
-      font-size: 11px; letter-spacing: 3px;
-      text-transform: uppercase; color: #a8c8e8;
+    .status-block {
+      display: inline-flex; align-items: baseline; gap: 6px;
+    }
+    .status-label {
+      font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: #f4c8c8;
       font-weight: bold;
     }
-    .trial-count {
-      display: inline-flex; align-items: baseline; gap: 8px;
-      font-size: 15px; letter-spacing: 0.5px;
-      color: #ffffff;
-    }
-    .trial-count .num {
-      font-size: 34px; font-weight: bold;
+    .status-num {
+      font-size: 28px; font-weight: bold;
       color: #FFD700; line-height: 1;
       text-shadow: 0 1px 0 rgba(0,0,0,0.4);
-      letter-spacing: 1px;
     }
-    .trial-count .word {
-      font-size: 13px; text-transform: uppercase;
-      letter-spacing: 1.5px; color: #c8d4ea;
+    .status-unit {
+      font-size: 11px; text-transform: uppercase;
+      letter-spacing: 1px; color: #fbe9e9;
       font-weight: bold;
     }
-    .trial-date {
-      font-size: 12px; color: #a8c8e8;
+    .status-sep {
+      color: rgba(255,255,255,0.2); font-size: 20px;
+      line-height: 1; padding: 0 2px;
+    }
+    .status-detail {
+      font-size: 11px; color: #a8c8e8;
       font-style: italic; letter-spacing: 0.3px;
     }
-    .trial-date strong { color: #ffffff; font-style: normal; }
+    .status-detail strong { color: #ffffff; font-style: normal; }
 
     /* Navigation bar */
     .nav-bar {
@@ -231,18 +189,10 @@
     /* Mobile responsive */
     @media (max-width: 760px) {
       body { padding: 12px; font-size: 15px; }
-      .displaced-bar { padding: 10px 12px; margin: -12px -12px 0 -12px; }
-      .displaced-inner { gap: 8px 14px; }
-      .displaced-label { font-size: 10px; letter-spacing: 2px; }
-      .displaced-count .num { font-size: 28px; }
-      .displaced-count .word { font-size: 12px; letter-spacing: 1px; }
-      .displaced-since { font-size: 11px; width: 100%; }
-      .trial-bar { padding: 8px 12px; margin: 0 -12px 0 -12px; }
-      .trial-inner { gap: 8px 14px; }
-      .trial-label { font-size: 10px; letter-spacing: 2px; }
-      .trial-count .num { font-size: 28px; }
-      .trial-count .word { font-size: 12px; letter-spacing: 1px; }
-      .trial-date { font-size: 11px; width: 100%; }
+      .status-bar { padding: 8px 12px; margin: -12px -12px 0 -12px; }
+      .status-inner { gap: 6px 14px; }
+      .status-num { font-size: 22px; }
+      .status-detail { width: 100%; text-align: center; }
       .nav-bar { margin: 0 -12px 16px -12px; }
       .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 12px; }
       .nav-brand { text-align: center; align-items: center;
@@ -285,10 +235,9 @@
     }
     @media (max-width: 420px) {
       .nav-brand-main { font-size: 13px; letter-spacing: 1.2px; }
-      .displaced-count .num { font-size: 24px; }
-      .displaced-since { font-size: 10.5px; }
-      .trial-count .num { font-size: 24px; }
-      .trial-date { font-size: 10.5px; }
+      .status-num { font-size: 20px; }
+      .status-sep { display: none; }
+      .status-detail { font-size: 10px; }
     }
     /* ── Where the Public Data Fails ────────────────────────────── */
     .li-section-rule { border-top: 3px solid #B8741A; padding-top: 32px; margin-bottom: 0; }
@@ -332,27 +281,22 @@
 </head>
 <body>
 
-<!-- DISPLACEMENT COUNTER (days since May 5, 2026) -->
-<div class="displaced-bar no-print" role="region" aria-label="Days displaced from Goldtex">
-  <div class="displaced-inner">
-    <span class="displaced-label">Displaced From GOLDTEX</span>
-    <span class="displaced-count">
-      <span class="num" id="displaced-days">&mdash;</span>
-      <span class="word">Days &amp; Counting</span>
+<!-- COMBINED STATUS BAR -->
+<div class="status-bar no-print" role="region" aria-label="Case status">
+  <div class="status-inner">
+    <span class="status-label">Displaced</span>
+    <span class="status-block">
+      <span class="status-num" id="displaced-days">&mdash;</span>
+      <span class="status-unit">days</span>
     </span>
-    <span class="displaced-since">Since <strong>May 5, 2026</strong></span>
-  </div>
-</div>
-
-<!-- TRIAL COUNTDOWN (days until June 12, 2026) -->
-<div class="trial-bar no-print" role="region" aria-label="Days until trial">
-  <div class="trial-inner">
-    <span class="trial-label">Days Until Trial</span>
-    <span class="trial-count">
-      <span class="num" id="trial-days">&mdash;</span>
-      <span class="word">Days Remaining</span>
+    <span class="status-sep">|</span>
+    <span class="status-label">Trial in</span>
+    <span class="status-block">
+      <span class="status-num" id="trial-days">&mdash;</span>
+      <span class="status-unit">days</span>
     </span>
-    <span class="trial-date">Trial Date: <strong>June 12, 2026</strong></span>
+    <span class="status-sep">|</span>
+    <span class="status-detail">Displaced <strong>May 5</strong> &mdash; Trial <strong>June 12, 2026</strong></span>
   </div>
 </div>
 
@@ -426,30 +370,20 @@
 
 <script>
 (function() {
-  function updateDisplacedDays() {
-    var start = new Date(2026, 4, 5); // May 5, 2026 (month 0-indexed)
+  function updateCounters() {
     var now = new Date();
-    var startUtc = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
     var nowUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
-    var days = Math.max(0, Math.floor((nowUtc - startUtc) / 86400000));
-    var el = document.getElementById('displaced-days');
-    if (el) el.textContent = days;
+    var startUtc = Date.UTC(2026, 4, 5);
+    var trialUtc = Date.UTC(2026, 5, 12);
+    var displaced = Math.max(0, Math.floor((nowUtc - startUtc) / 86400000));
+    var trial = Math.max(0, Math.ceil((trialUtc - nowUtc) / 86400000));
+    var el1 = document.getElementById('displaced-days');
+    var el2 = document.getElementById('trial-days');
+    if (el1) el1.textContent = displaced;
+    if (el2) el2.textContent = trial;
   }
-  updateDisplacedDays();
-  setInterval(updateDisplacedDays, 60 * 60 * 1000);
-})();
-(function() {
-  function updateTrialDays() {
-    var trial = new Date(2026, 5, 12); // June 12, 2026 (month 0-indexed)
-    var now = new Date();
-    var trialUtc = Date.UTC(trial.getFullYear(), trial.getMonth(), trial.getDate());
-    var nowUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
-    var days = Math.max(0, Math.ceil((trialUtc - nowUtc) / 86400000));
-    var el = document.getElementById('trial-days');
-    if (el) el.textContent = days;
-  }
-  updateTrialDays();
-  setInterval(updateTrialDays, 60 * 60 * 1000);
+  updateCounters();
+  setInterval(updateCounters, 60 * 60 * 1000);
 })();
 </script>
 
