@@ -1,0 +1,56 @@
+# jlegal.pro
+
+> Legal documentation site for Horn v. Greystar / Goldtex Apartments — Philadelphia, PA
+
+## Case Summary
+
+Justin Horn, a Jewish tenant at Goldtex Apartments (315 N. 12th St, Philadelphia), was beaten by two assailants on August 22, 2025 (orbital fracture, broken nose, broken jaw). The criminal case is Commonwealth v. Talley, CP-51-CR-0000673-2026.
+
+Greystar, the property management company, never repaired the HVAC. They installed a portable AC unit sealed with FSK tape that thermally degraded and off-gassed toluene, xylene, styrene, and formaldehyde into the apartment. The source was identified by the tenant using FLIR thermal imaging.
+
+On April 15, 2026, property manager Nicole Cordial was told on video that the tenant was sick with medical documentation. She offered three options: reconnect the toxic unit, lose cooling, or leave. No remediation was offered.
+
+Nineteen days later, the tenant was transported by ambulance to the ER (oxygen, IV fluids). Two EMS responders reported dizziness in the hallway. SERVPRO refused remediation, stating contamination exceeded residential scope.
+
+The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangering Another Person.
+
+## Key Pages
+
+- [Consolidated Master Report](https://jlegal.pro/) — Full timeline, FLIR evidence, IoT data, medical records, legal analysis
+- [Mens Rea Audio Analysis](https://jlegal.pro/audio-analysis.html) — Forensic transcript of the April 15 leasing office recording with timestamped notice sequence
+- [Supplemental Materials](https://jlegal.pro/supplemental.html) — Supporting documentation and corroborating sources
+- [Institutional Misconduct Patterns](https://jlegal.pro/institutional-misconduct.html) — Philadelphia institutional failures 2019-2026
+- [Letter to Counsel](https://jlegal.pro/letter-to-counsel.html) — Formal letter summarizing the case and relief sought
+
+## Key Documents
+
+- [Coercive AC Ultimatum (PDF)](https://jlegal.pro/Coercive_AC_Ultimatum_2026-05-21.pdf) — Section 2705 mens rea analysis
+- [Goldtex Audio Analysis (PDF)](https://jlegal.pro/Goldtex_Audio_Analysis.pdf) — 9-page forensic transcript with loudness data
+- [Dr. Fabi Physician Letter (PDF)](https://jlegal.pro/Dr_Fabi_Letter_2026-04-10_Redacted.pdf) — Medical documentation of chemical exposure
+- [Unit 806 Sensor Report (PDF)](https://jlegal.pro/Unit806%20Sensor%20Report.pdf) — 3,460 IoT air quality readings
+- [Unit 806 Forensic Comprehensive (PDF)](https://jlegal.pro/Unit806%20Forensic%20Comprehensive%20v3.pdf) — Full forensic analysis
+- [Goldtex OSINT Report (PDF)](https://jlegal.pro/Goldtex_OSINT_Report_May2026.pdf) — Open-source intelligence on property and management
+- [Federal Notice Package (PDF)](https://jlegal.pro/federal%20notice%20package%201.pdf) — Federal notice filing
+
+## Key Evidence
+
+- Video of leasing office encounter: https://youtu.be/UmkdvUQYnHE
+- Leasing office video date: April 15, 2026
+- Physician letter date: April 10, 2026
+- Medical emergency (ER transport): May 6, 2026
+- Police DC #26-09-0597175 (May 10, 2026)
+- Police DC #26-09-060340 (May 12, 2026)
+
+## Parties
+
+- Tenant: Justin Horn
+- Property: Goldtex Apartments, Unit 806, 315 N. 12th St, Philadelphia, PA
+- Property Manager: Nicole Cordial
+- Management Company: Greystar
+- Assault defendant: Commonwealth v. Talley, CP-51-CR-0000673-2026
+
+## Contact
+
+- Email: justin@jlegal.pro
+- Repository: https://github.com/thumpersecure/JlegaL
+- Tor mirror: http://zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion
