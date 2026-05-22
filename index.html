@@ -127,23 +127,24 @@
       max-width: 1200px; margin: 0 auto;
       display: flex; flex-wrap: wrap;
       align-items: center; justify-content: space-between;
-      gap: 16px; padding: 14px 20px;
+      gap: 6px; padding: 6px 16px;
     }
     .nav-brand {
-      display: flex; flex-direction: column; line-height: 1.15;
+      display: flex; flex-direction: row; align-items: center; gap: 8px;
+      line-height: 1.15;
       text-decoration: none; color: #ffffff;
-      padding-right: 12px;
+      padding-right: 10px;
       border-right: 1px solid rgba(255,255,255,0.12);
     }
     .nav-brand-main {
       font-weight: bold; letter-spacing: 1.8px;
-      font-size: 16px; color: #ffffff;
+      font-size: 13px; color: #ffffff;
       font-family: Georgia, serif;
     }
     .nav-brand-sub {
-      font-size: 10px; letter-spacing: 2.5px;
+      font-size: 9px; letter-spacing: 2px;
       text-transform: uppercase; color: #a8c8e8;
-      margin-top: 4px; font-weight: normal;
+      font-weight: normal;
     }
     .nav-links {
       display: flex; flex-wrap: wrap;
@@ -151,10 +152,10 @@
     }
     .nav-links a {
       color: #c8d4ea; text-decoration: none;
-      padding: 8px 12px;
+      padding: 4px 8px;
       font-family: Georgia, serif;
-      font-size: 13px; line-height: 1.2;
-      letter-spacing: 0.6px;
+      font-size: 11px; line-height: 1.2;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
       border-bottom: 2px solid transparent;
       transition: color 0.15s, border-color 0.15s;
@@ -165,10 +166,10 @@
       text-decoration: none;
     }
     .nav-cta {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 4px;
       background: #8B0000; color: #ffffff !important;
-      padding: 9px 16px !important; border-radius: 3px;
-      font-weight: bold; letter-spacing: 0.8px;
+      padding: 4px 10px !important; border-radius: 3px;
+      font-weight: bold; letter-spacing: 0.6px;
       text-transform: uppercase;
       border-bottom: none !important;
       box-shadow: 0 1px 3px rgba(0,0,0,0.35);
@@ -184,8 +185,21 @@
     #critical-findings,
     #executive-summary,
     div[id^="section-"] {
-      scroll-margin-top: 96px;
+      scroll-margin-top: 56px;
     }
+    .back-to-top {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      background: #1B2A4A; color: #FFD700;
+      border: none; border-radius: 50%;
+      width: 44px; height: 44px;
+      font-size: 20px; line-height: 44px; text-align: center;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { background: #8B0000; }
     /* Site footer */
     .site-footer {
       background: #1B2A4A; color: #e8eef7;
@@ -5113,4 +5127,13 @@
   </div>
 </div>
 
+<a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+})();
+</script>
 </body></html>
