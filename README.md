@@ -323,6 +323,8 @@ These are not two separate tracks of evidence. They are cause and effect. The vi
 - **Canonical URL:** [https://jlegal.pro/](https://jlegal.pro/)
 - **Hosted via:** GitHub Pages
 - **Contact:** [justin@jlegal.pro](mailto:justin@jlegal.pro)
+- **Tor Mirror:** [`zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion`](http://zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion)
+- **Secure Email (Proton via Tor):** [`protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion`](https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion)
 - **Last updated:** May 22, 2026
 
 ---
