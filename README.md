@@ -312,6 +312,7 @@ These are not two separate tracks of evidence. They are cause and effect. The vi
 | DC #1 | 26-09-0597175 (May 10, 2026) |
 | DC #2 | 26-09-060340 (May 12, 2026) |
 | Investigating detective | N. Nguyen, 215-686-3093 |
+| Contact | [justin@jlegal.pro](mailto:justin@jlegal.pro) |
 
 ---
 
@@ -321,7 +322,8 @@ These are not two separate tracks of evidence. They are cause and effect. The vi
 - **Live URL:** [https://jlegal.pro](https://jlegal.pro)
 - **Canonical URL:** [https://thumpersecure.github.io/JlegaL/](https://thumpersecure.github.io/JlegaL/)
 - **Hosted via:** GitHub Pages
-- **Last updated:** May 21, 2026
+- **Contact:** [justin@jlegal.pro](mailto:justin@jlegal.pro)
+- **Last updated:** May 22, 2026
 
 ---
 
