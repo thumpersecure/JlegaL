@@ -146,39 +146,47 @@
       text-transform: uppercase; color: #a8c8e8;
       font-weight: normal;
     }
-    .nav-links {
-      display: flex; flex-wrap: wrap;
-      gap: 2px; align-items: center;
+    .nav-menu-wrap {
+      position: relative;
     }
-    .nav-links a {
-      color: #c8d4ea; text-decoration: none;
-      padding: 4px 8px;
+    .nav-menu-btn {
+      background: #8B0000; color: #ffffff;
+      border: none; border-radius: 3px;
+      padding: 6px 14px; cursor: pointer;
       font-family: Georgia, serif;
-      font-size: 11px; line-height: 1.2;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-      border-bottom: 2px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .nav-links a:hover, .nav-links a:focus {
-      color: #ffffff;
-      border-bottom-color: #DAA520;
-      text-decoration: none;
-    }
-    .nav-cta {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: #8B0000; color: #ffffff !important;
-      padding: 4px 10px !important; border-radius: 3px;
-      font-weight: bold; letter-spacing: 0.6px;
-      text-transform: uppercase;
-      border-bottom: none !important;
+      font-size: 12px; font-weight: bold;
+      letter-spacing: 1px; text-transform: uppercase;
       box-shadow: 0 1px 3px rgba(0,0,0,0.35);
-      white-space: nowrap;
-      margin-left: 4px;
     }
-    .nav-cta:hover, .nav-cta:focus {
-      background: #a30000 !important; color: #ffffff !important;
-      border-bottom-color: transparent !important;
+    .nav-menu-btn:hover { background: #a30000; }
+    .nav-dropdown {
+      display: none; position: absolute; right: 0; top: 100%;
+      margin-top: 4px;
+      background: #1B2A4A; border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px; min-width: 260px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      z-index: 200;
+      padding: 6px 0;
+    }
+    .nav-dropdown.open { display: block; }
+    .nav-dropdown a {
+      display: block; color: #c8d4ea; text-decoration: none;
+      padding: 8px 16px;
+      font-family: Georgia, serif;
+      font-size: 12px; letter-spacing: 0.4px;
+    }
+    .nav-dropdown a:hover {
+      background: rgba(255,255,255,0.08); color: #ffffff;
+    }
+    .nav-dropdown .dd-divider {
+      height: 1px; background: rgba(255,255,255,0.1);
+      margin: 4px 0;
+    }
+    .nav-dropdown .dd-cta {
+      color: #FFD700; font-weight: bold;
+    }
+    .nav-dropdown .dd-files {
+      color: #FFD700; font-weight: bold;
     }
     #cover-page,
     #adverse-parties,
@@ -244,9 +252,8 @@
       }
       .nav-brand-main { font-size: 14px; letter-spacing: 1.4px; }
       .nav-brand-sub { font-size: 9px; letter-spacing: 2px; }
-      .nav-links { justify-content: center; gap: 2px 4px; }
-      .nav-links a { padding: 6px 8px; font-size: 12px; letter-spacing: 0.4px; }
-      .nav-cta { width: 100%; justify-content: center; margin-top: 6px; margin-left: 0; }
+      .nav-menu-wrap { width: auto; }
+      .nav-dropdown { right: 0; left: auto; }
       #cover-page,
       #adverse-parties,
       #critical-findings,
@@ -277,7 +284,6 @@
       h3 { font-size: 18px !important; }
     }
     @media (max-width: 420px) {
-      .nav-links a { padding: 5px 6px; font-size: 11px; letter-spacing: 0.3px; }
       .nav-brand-main { font-size: 13px; letter-spacing: 1.2px; }
       .displaced-count .num { font-size: 24px; }
       .displaced-since { font-size: 10.5px; }
@@ -356,20 +362,25 @@
       <span class="nav-brand-main">HORN / GOLDTEX</span>
       <span class="nav-brand-sub">Consolidated Master Report</span>
     </a>
-    <div class="nav-links">
-      <a href="#cover-page">Cover</a>
-      <a href="#adverse-parties">Adverse Parties</a>
-      <a href="#critical-findings" style="font-weight: bold;">Critical Findings</a>
-      <a href="#executive-summary">Summary</a>
-      <a href="#section-2">Trust &amp; Finances</a>
-      <a href="#section-3">Legal</a>
-      <a href="#section-4">Violations</a>
-      <a href="#section-5">Conclusions</a>
-      <a class="nav-cta" href="audio-analysis.html">18 Pa.C.S. &sect; 2705</a>
-      <a class="nav-cta" href="supplemental.html">Supplemental</a>
-      <a class="nav-cta" href="institutional-misconduct.html">Misconduct Patterns</a>
-      <a href="https://youtu.be/UmkdvUQYnHE" target="_blank" rel="noopener" style="font-size: 11px; color: #f4c8c8; letter-spacing: 0.5px;">Greystar Office Video</a>
-      <a href="https://github.com/thumpersecure/JlegaL" target="_blank" rel="noopener" style="font-size: 11px; color: #FFD700; letter-spacing: 0.5px; font-weight: bold;">Files</a>
+    <div class="nav-menu-wrap">
+      <button class="nav-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuDropdown">Menu &#9662;</button>
+      <div class="nav-dropdown" id="menuDropdown">
+        <a href="#cover-page">Cover</a>
+        <a href="#adverse-parties">Adverse Parties</a>
+        <a href="#critical-findings" style="font-weight: bold;">Critical Findings</a>
+        <a href="#executive-summary">Summary</a>
+        <a href="#section-2">Trust &amp; Finances</a>
+        <a href="#section-3">Legal</a>
+        <a href="#section-4">Violations</a>
+        <a href="#section-5">Conclusions</a>
+        <div class="dd-divider"></div>
+        <a class="dd-cta" href="audio-analysis.html">18 Pa.C.S. &sect; 2705</a>
+        <a class="dd-cta" href="supplemental.html">Supplemental</a>
+        <a class="dd-cta" href="institutional-misconduct.html">Misconduct Patterns</a>
+        <div class="dd-divider"></div>
+        <a href="https://youtu.be/UmkdvUQYnHE" target="_blank" rel="noopener">Greystar Office Video</a>
+        <a class="dd-files" href="https://github.com/thumpersecure/JlegaL" target="_blank" rel="noopener">Files</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -5130,9 +5141,24 @@
 <a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
 <script>
 (function(){
-  var btn = document.getElementById('backToTop');
+  var topBtn = document.getElementById('backToTop');
   window.addEventListener('scroll', function(){
-    btn.classList.toggle('visible', window.scrollY > 400);
+    topBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  var menuBtn = document.getElementById('menuBtn');
+  var menuDrop = document.getElementById('menuDropdown');
+  menuBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = menuDrop.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(){
+    menuDrop.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  });
+  menuDrop.addEventListener('click', function(){
+    menuDrop.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
   });
 })();
 </script>
