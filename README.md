@@ -210,6 +210,7 @@ She did not dispute it. She did not offer a unit transfer. She did not offer HVA
 | Coercive AC Ultimatum | §2705 Mens Rea Analysis — the legal anchor document | [PDF](https://jlegal.pro/Coercive_AC_Ultimatum_2026-05-21.pdf) |
 | Goldtex Audio Analysis | 9-page forensic transcript with loudness data and timestamped notice sequence | [PDF](https://jlegal.pro/Goldtex_Audio_Analysis.pdf) |
 | Dr. Fabi Physician Letter | April 10, 2026 — DOB redacted | [PDF](https://jlegal.pro/Dr_Fabi_Letter_2026-04-10_Redacted.pdf) |
+| Dr. Fabi Follow-Up Letter | May 21, 2026 — follow-up documentation | [PDF](https://jlegal.pro/Hornletter20260521-Fabi-Letter-2.pdf) |
 | Unit 806 Sensor Report | IoT air quality/temperature data — 3,460 readings | [PDF](https://jlegal.pro/Unit806%20Sensor%20Report.pdf) |
 | Unit 806 Forensic Comprehensive | Full forensic analysis of the unit — May 17, 2026 | [PDF](https://jlegal.pro/Unit806%20Forensic%20Comprehensive%20v3.pdf) |
 | Goldtex OSINT Report | Open-source intelligence on property and management | [PDF](https://jlegal.pro/Goldtex_OSINT_Report_May2026.pdf) |
