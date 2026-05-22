@@ -1,7 +1,7 @@
 # Horn / Goldtex — Legal Documentation Site
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-jlegal.pro-8B0000?style=for-the-badge&logo=github)](https://jlegal.pro)
-[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-1B2A4A?style=for-the-badge&logo=github)](https://thumpersecure.github.io/JlegaL/)
+[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-1B2A4A?style=for-the-badge&logo=github)](https://jlegal.pro/)
 [![Tor Hidden Service](https://img.shields.io/badge/Tor%20Mirror-.onion-7D4698?style=for-the-badge&logo=torproject)](http://zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion)
 [![Jurisdiction](https://img.shields.io/badge/Jurisdiction-Philadelphia%2C%20PA-003087?style=for-the-badge)](https://jlegal.pro)
 [![Statute](https://img.shields.io/badge/18%20Pa.C.S.%20§2705-Reckless%20Endangerment-8B0000?style=for-the-badge)](https://jlegal.pro/audio-analysis.html)
@@ -207,15 +207,15 @@ She did not dispute it. She did not offer a unit transfer. She did not offer HVA
 | Document | Description | Link |
 |---|---|---|
 | **Leasing Office Video** | **The mens rea anchor — recorded encounter with Nicole Cordial** | [YouTube](https://youtu.be/UmkdvUQYnHE) |
-| Coercive AC Ultimatum | §2705 Mens Rea Analysis — the legal anchor document | [PDF](https://thumpersecure.github.io/JlegaL/Coercive_AC_Ultimatum_2026-05-21.pdf) |
-| Goldtex Audio Analysis | 9-page forensic transcript with loudness data and timestamped notice sequence | [PDF](https://thumpersecure.github.io/JlegaL/Goldtex_Audio_Analysis.pdf) |
-| Dr. Fabi Physician Letter | April 10, 2026 — DOB redacted | [PDF](https://thumpersecure.github.io/JlegaL/Dr_Fabi_Letter_2026-04-10_Redacted.pdf) |
-| Unit 806 Sensor Report | IoT air quality/temperature data — 3,460 readings | [PDF](https://thumpersecure.github.io/JlegaL/Unit806%20Sensor%20Report.pdf) |
-| Unit 806 Forensic Comprehensive | Full forensic analysis of the unit — May 17, 2026 | [PDF](https://thumpersecure.github.io/JlegaL/Unit806%20Forensic%20Comprehensive%20v3.pdf) |
-| Goldtex OSINT Report | Open-source intelligence on property and management | [PDF](https://thumpersecure.github.io/JlegaL/Goldtex_OSINT_Report_May2026.pdf) |
-| Institutional Misconduct Pattern Analysis | Broader pattern of Philadelphia tenant-facing institutional failures, 2019–2026 | [PDF](https://thumpersecure.github.io/JlegaL/5-18-2026_Philadelphia_Tenant_Corruption_and_Institutional_Misconduct_Pattern_Analysis_2019-2026.pdf) |
-| Corruption Research Report | Supplemental corruption research — May 17, 2026 | [PDF](https://thumpersecure.github.io/JlegaL/Corruption_Research_Report_2026-05-17.pdf) |
-| Federal Notice Package | Federal notice filing | [PDF](https://thumpersecure.github.io/JlegaL/federal%20notice%20package%201.pdf) |
+| Coercive AC Ultimatum | §2705 Mens Rea Analysis — the legal anchor document | [PDF](https://jlegal.pro/Coercive_AC_Ultimatum_2026-05-21.pdf) |
+| Goldtex Audio Analysis | 9-page forensic transcript with loudness data and timestamped notice sequence | [PDF](https://jlegal.pro/Goldtex_Audio_Analysis.pdf) |
+| Dr. Fabi Physician Letter | April 10, 2026 — DOB redacted | [PDF](https://jlegal.pro/Dr_Fabi_Letter_2026-04-10_Redacted.pdf) |
+| Unit 806 Sensor Report | IoT air quality/temperature data — 3,460 readings | [PDF](https://jlegal.pro/Unit806%20Sensor%20Report.pdf) |
+| Unit 806 Forensic Comprehensive | Full forensic analysis of the unit — May 17, 2026 | [PDF](https://jlegal.pro/Unit806%20Forensic%20Comprehensive%20v3.pdf) |
+| Goldtex OSINT Report | Open-source intelligence on property and management | [PDF](https://jlegal.pro/Goldtex_OSINT_Report_May2026.pdf) |
+| Institutional Misconduct Pattern Analysis | Broader pattern of Philadelphia tenant-facing institutional failures, 2019–2026 | [PDF](https://jlegal.pro/5-18-2026_Philadelphia_Tenant_Corruption_and_Institutional_Misconduct_Pattern_Analysis_2019-2026.pdf) |
+| Corruption Research Report | Supplemental corruption research — May 17, 2026 | [PDF](https://jlegal.pro/Corruption_Research_Report_2026-05-17.pdf) |
+| Federal Notice Package | Federal notice filing | [PDF](https://jlegal.pro/federal%20notice%20package%201.pdf) |
 
 ---
 
@@ -226,7 +226,7 @@ The main page. Everything in one place: timeline, FLIR evidence, IoT data, medic
 
 ---
 
-### [audio-analysis.html](https://thumpersecure.github.io/JlegaL/audio-analysis.html) — Mens Rea Analysis & Audio Analysis
+### [audio-analysis.html](https://jlegal.pro/audio-analysis.html) — Mens Rea Analysis & Audio Analysis
 The forensic deep-dive into the April 15 leasing office recording. Includes:
 - Timestamped transcript of the full encounter
 - Audio loudness/waveform analysis chart
@@ -235,17 +235,17 @@ The forensic deep-dive into the April 15 leasing office recording. Includes:
 
 ---
 
-### [supplemental.html](https://thumpersecure.github.io/JlegaL/supplemental.html) — Supplemental Materials
+### [supplemental.html](https://jlegal.pro/supplemental.html) — Supplemental Materials
 Supporting documentation, corroborating sources, and additional forensic exhibits that extend the master report.
 
 ---
 
-### [institutional-misconduct.html](https://thumpersecure.github.io/JlegaL/institutional-misconduct.html) — Patterns of Institutional Misconduct
+### [institutional-misconduct.html](https://jlegal.pro/institutional-misconduct.html) — Patterns of Institutional Misconduct
 Research documenting the broader pattern of Philadelphia-area institutional failures — L&I, property management, and municipal oversight — from 2019 through 2026. Contextualizes the Goldtex case within a systemic pattern.
 
 ---
 
-### [letter-to-counsel.html](https://thumpersecure.github.io/JlegaL/letter-to-counsel.html) — Letter to Counsel
+### [letter-to-counsel.html](https://jlegal.pro/letter-to-counsel.html) — Letter to Counsel
 A formal letter to legal counsel summarizing the case, evidence chain, and relief sought.
 
 ---
@@ -256,7 +256,7 @@ A formal letter to legal counsel summarizing the case, evidence chain, and relie
 <details>
 <summary><strong>Unlisted Tactical Reference — PPD Report Page</strong></summary>
 
-**[phillypdreport.htm](https://thumpersecure.github.io/JlegaL/phillypdreport.htm)** — This page is **not linked from the site's navigation**. It is a reference document formatted for direct use at the Philadelphia Police Department. It contains complaint numbers, detective contact information, and a concise summary designed for presenting to law enforcement at a precinct. Share via direct URL only.
+**[phillypdreport.htm](https://jlegal.pro/phillypdreport.htm)** — This page is **not linked from the site's navigation**. It is a reference document formatted for direct use at the Philadelphia Police Department. It contains complaint numbers, detective contact information, and a concise summary designed for presenting to law enforcement at a precinct. Share via direct URL only.
 
 - **DC #26-09-0597175** (May 10, 2026)
 - **DC #26-09-060340** (May 12, 2026)
@@ -320,7 +320,7 @@ These are not two separate tracks of evidence. They are cause and effect. The vi
 
 - **Repository:** [thumpersecure/JlegaL](https://github.com/thumpersecure/JlegaL)
 - **Live URL:** [https://jlegal.pro](https://jlegal.pro)
-- **Canonical URL:** [https://thumpersecure.github.io/JlegaL/](https://thumpersecure.github.io/JlegaL/)
+- **Canonical URL:** [https://jlegal.pro/](https://jlegal.pro/)
 - **Hosted via:** GitHub Pages
 - **Contact:** [justin@jlegal.pro](mailto:justin@jlegal.pro)
 - **Last updated:** May 22, 2026

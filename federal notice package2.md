@@ -66,7 +66,7 @@ I am writing as the named victim and primary witness in *Commonwealth v. Talley*
 
 The full documentary record — police reports, medical records, FLIR thermal imaging, IoT environmental sensor data, attorney correspondence, and a 60-plus-page consolidated master report with citations to source documents — is published at:
 
-**https://thumpersecure.github.io/JlegaL/**
+**https://jlegal.pro/**
 
 The summary below identifies the federal predicates and the central facts. The website is the deep record.
 
@@ -120,7 +120,7 @@ Respectfully,
 [Email]
 [Mailing address]
 
-Documentary record: https://thumpersecure.github.io/JlegaL/
+Documentary record: https://jlegal.pro/
 
 -----
 

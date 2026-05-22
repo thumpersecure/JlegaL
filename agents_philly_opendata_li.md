@@ -189,4 +189,4 @@ If any of those expectations fail when you reproduce the query, the data systems
 
 ---
 
-*Last reviewed: May 2026. Maintained at `thumpersecure.github.io/jlegal/agents_philly_opendata_li.md`. Corrections welcome via the issues tab on the underlying repository.*
+*Last reviewed: May 2026. Maintained at `jlegal.pro/agents_philly_opendata_li.md`. Corrections welcome via the issues tab on the underlying repository.*
