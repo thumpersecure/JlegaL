@@ -176,19 +176,6 @@
     }
     .back-to-top.visible { opacity: 1; pointer-events: auto; }
     .back-to-top:hover { background: #8B0000; }
-    .toast-banner {
-      position: fixed; left: 50%; transform: translateX(-50%);
-      z-index: 300; background: #8B0000; color: #ffffff;
-      padding: 6px 16px; border-radius: 4px;
-      font-family: Georgia, serif; font-size: 11px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.4);
-      opacity: 1; transition: opacity 0.6s;
-      text-align: center; max-width: 85%;
-    }
-    .toast-1 { bottom: 24px; display: none; }
-    .toast-2 { bottom: 24px; display: none; }
-    .toast-banner a { color: #FFD700; font-weight: bold; text-decoration: underline; }
-    .toast-banner.fade-out { opacity: 0; pointer-events: none; }
     /* Site footer */
     .site-footer {
       background: #1B2A4A; color: #e8eef7;
@@ -328,6 +315,10 @@
     <a href="#cover-page" class="nav-brand">
       <span class="nav-brand-main">GOLDTEX-GREYSTAR-POST-TALLEY-HORN</span>
     </a>
+    <div style="display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-size: 10px; color: #c8d4ea; letter-spacing: 0.3px;">
+      <span style="color: #FFD700; font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: 1px;">Updates:</span>
+      <a href="bad-faith-bob.html#fire" style="color: #f4c8c8; text-decoration: none;">May 23 &mdash; Two fires at Goldtex. No alarms. No sprinklers.</a>
+    </div>
     <div class="nav-menu-wrap">
       <button class="nav-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuDropdown">Menu &#9662;</button>
       <div class="nav-dropdown" id="menuDropdown">
@@ -5095,13 +5086,6 @@
   </div>
 </div>
 
-<div class="toast-banner toast-1 no-print" id="toast1">
-  May 23, 9:23 AM &mdash; <a href="bad-faith-bob.html#fire">Smoke on 9th Floor, 315 N 12th St &mdash; No Alarms</a>
-</div>
-<div class="toast-banner toast-2 no-print" id="toast2">
-  May 23, 2:16 PM &mdash; <a href="bad-faith-bob.html#fire">Second Fire Call, 315 N 12th St &mdash; Firefighters On Scene</a>
-</div>
-
 <a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
 <script>
 (function(){
@@ -5124,16 +5108,6 @@
     menuDrop.classList.remove('open');
     menuBtn.setAttribute('aria-expanded', 'false');
   });
-  var t1 = document.getElementById('toast1');
-  var t2 = document.getElementById('toast2');
-  if (t1) {
-    setTimeout(function(){ t1.style.display = 'block'; }, 1500);
-    setTimeout(function(){ t1.classList.add('fade-out'); }, 5500);
-  }
-  if (t2) {
-    setTimeout(function(){ t2.style.display = 'block'; }, 7000);
-    setTimeout(function(){ t2.classList.add('fade-out'); }, 11000);
-  }
 })();
 </script>
 </body></html>
