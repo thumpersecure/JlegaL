@@ -330,7 +330,7 @@
     </a>
     <div style="display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-size: 10px; color: #c8d4ea; letter-spacing: 0.3px;">
       <span style="color: #FFD700; font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: 1px;">Updates:</span>
-      <a href="bad-faith-bob.html#fire" style="color: #f4c8c8; text-decoration: none;">May 23 &mdash; Two fires at Goldtex. No alarms. No sprinklers.</a>
+      <span style="color: #f4c8c8;">DA bodycam demand &mdash; <span id="bwc-days" style="color: #FFD700; font-weight: bold;"></span> days left to produce (June 8)</span>
     </div>
     <div class="nav-menu-wrap">
       <button class="nav-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuDropdown">Menu &#9662;</button>
@@ -402,12 +402,16 @@
     var nowUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
     var startUtc = Date.UTC(2026, 4, 5);
     var trialUtc = Date.UTC(2026, 5, 12);
+    var bwcUtc = Date.UTC(2026, 5, 8);
     var displaced = Math.max(0, Math.floor((nowUtc - startUtc) / 86400000));
     var trial = Math.max(0, Math.ceil((trialUtc - nowUtc) / 86400000));
+    var bwc = Math.max(0, Math.ceil((bwcUtc - nowUtc) / 86400000));
     var el1 = document.getElementById('displaced-days');
     var el2 = document.getElementById('trial-days');
+    var el3 = document.getElementById('bwc-days');
     if (el1) el1.textContent = displaced;
     if (el2) el2.textContent = trial;
+    if (el3) el3.textContent = bwc;
   }
   updateCounters();
   setInterval(updateCounters, 60 * 60 * 1000);
