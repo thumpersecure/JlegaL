@@ -198,7 +198,7 @@ She did not dispute it. She did not offer a unit transfer. She did not offer HVA
 
 ### 5. The Medical Emergency: May 6, 2026
 
-**19 days after the leasing office meeting**, Justin was transported by ambulance to an emergency room, where he received oxygen and IV fluids.
+**19 days after the leasing office meeting**, Justin was transported by ambulance to an emergency room, where he received oxygen.
 
 ---
 

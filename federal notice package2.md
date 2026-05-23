@@ -87,7 +87,7 @@ The following federal statutes are implicated by the facts described:
 
 **Late 2025 – Spring 2026.** The same building, now under Greystar Real Estate Partners management, installed a portable air conditioning unit in my apartment as a stopgap for a failed central HVAC system. The exhaust hose was sealed at a thermally-stressed joint with FSK (Foil-Scrim-Kraft) tape that FLIR thermal imaging documented at 102–113°F surface temperatures, releasing toluene, xylene, styrene, formaldehyde, and additional volatile organic compounds. My treating physician confirmed VOC sensitization in writing on April 10, 2026.
 
-**May 6, 2026.** Ambulance transport to the emergency room for acute VOC inhalation; treatment with oxygen and IV fluids; four outgoing 911 calls totaling 18 minutes.
+**May 6, 2026.** Ambulance transport to the emergency room for acute VOC inhalation; treatment with oxygen; four outgoing 911 calls totaling 18 minutes.
 
 **May 4, 2026.** Cohen Marraccini LLC issued the Notice to Quit on behalf of Greystar Real Estate Partners and Post Goldtex LP. The 60-day vacate date — June 15, 2026 — falls inside the active witness window for the Talley trial. Post Goldtex LP’s rental license #602204 expired on February 28, 2026 and has not been renewed; the building has 16 open Licenses and Inspections violations across 6 active cases as of April 30, 2026, including two Unfit Structure designations and six fire-safety violations.
 
