@@ -166,6 +166,17 @@
     }
     .back-to-top.visible { opacity: 1; pointer-events: auto; }
     .back-to-top:hover { background: #8B0000; }
+    .toast-banner {
+      position: fixed; top: 12px; left: 50%; transform: translateX(-50%);
+      z-index: 300; background: #8B0000; color: #ffffff;
+      padding: 12px 24px; border-radius: 6px;
+      font-family: Georgia, serif; font-size: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      opacity: 1; transition: opacity 0.8s;
+      text-align: center; max-width: 90%;
+    }
+    .toast-banner a { color: #FFD700; font-weight: bold; text-decoration: underline; }
+    .toast-banner.fade-out { opacity: 0; pointer-events: none; }
     /* Site footer */
     .site-footer {
       background: #1B2A4A; color: #e8eef7;
@@ -5072,6 +5083,10 @@
   </div>
 </div>
 
+<div class="toast-banner no-print" id="toastBanner">
+  New Update &mdash; May 23, 2026: <a href="bad-faith-bob.html#fire">Fire at Goldtex &mdash; No Alarms, No Sprinklers</a>
+</div>
+
 <a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
 <script>
 (function(){
@@ -5094,6 +5109,8 @@
     menuDrop.classList.remove('open');
     menuBtn.setAttribute('aria-expanded', 'false');
   });
+  var toast = document.getElementById('toastBanner');
+  if (toast) { setTimeout(function(){ toast.classList.add('fade-out'); }, 6000); }
 })();
 </script>
 </body></html>
