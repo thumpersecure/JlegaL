@@ -176,6 +176,19 @@
     }
     .back-to-top.visible { opacity: 1; pointer-events: auto; }
     .back-to-top:hover { background: #8B0000; }
+    .go-to-bottom {
+      position: fixed; bottom: 24px; right: 76px; z-index: 200;
+      background: #1B2A4A; color: #FFD700;
+      border: none; border-radius: 50%;
+      width: 44px; height: 44px;
+      font-size: 20px; line-height: 44px; text-align: center;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+    .go-to-bottom.visible { opacity: 1; pointer-events: auto; }
+    .go-to-bottom:hover { background: #8B0000; }
     /* Site footer */
     .site-footer {
       background: #1B2A4A; color: #e8eef7;
@@ -5087,11 +5100,15 @@
 </div>
 
 <a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
+<a href="#" class="go-to-bottom no-print" id="goToBottom" aria-label="Go to bottom" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});return false;">&darr;</a>
 <script>
 (function(){
   var topBtn = document.getElementById('backToTop');
+  var botBtn = document.getElementById('goToBottom');
   window.addEventListener('scroll', function(){
+    var atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 200;
     topBtn.classList.toggle('visible', window.scrollY > 400);
+    botBtn.classList.toggle('visible', window.scrollY > 400 && !atBottom);
   });
   var menuBtn = document.getElementById('menuBtn');
   var menuDrop = document.getElementById('menuDropdown');
