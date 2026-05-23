@@ -185,8 +185,8 @@
       opacity: 1; transition: opacity 0.6s;
       text-align: center; max-width: 85%;
     }
-    .toast-1 { top: 10px; }
-    .toast-2 { top: 42px; }
+    .toast-1 { bottom: 24px; display: none; }
+    .toast-2 { bottom: 24px; display: none; }
     .toast-banner a { color: #FFD700; font-weight: bold; text-decoration: underline; }
     .toast-banner.fade-out { opacity: 0; pointer-events: none; }
     /* Site footer */
@@ -5126,8 +5126,14 @@
   });
   var t1 = document.getElementById('toast1');
   var t2 = document.getElementById('toast2');
-  if (t1) { setTimeout(function(){ t1.classList.add('fade-out'); }, 4000); }
-  if (t2) { setTimeout(function(){ t2.classList.add('fade-out'); }, 4000); }
+  if (t1) {
+    setTimeout(function(){ t1.style.display = 'block'; }, 1500);
+    setTimeout(function(){ t1.classList.add('fade-out'); }, 5500);
+  }
+  if (t2) {
+    setTimeout(function(){ t2.style.display = 'block'; }, 7000);
+    setTimeout(function(){ t2.classList.add('fade-out'); }, 11000);
+  }
 })();
 </script>
 </body></html>
