@@ -189,6 +189,166 @@
     }
     .go-to-bottom.visible { opacity: 1; pointer-events: auto; }
     .go-to-bottom:hover { background: #8B0000; }
+    /* Sticky TOC Sidebar (desktop only) */
+    .toc-sidebar {
+      position: fixed; left: 0; top: 60px; bottom: 0;
+      width: 180px; z-index: 90;
+      background: rgba(10, 22, 40, 0.92);
+      padding: 18px 10px 18px 14px;
+      font-family: Georgia, serif;
+      font-size: 12px; line-height: 1.5;
+      overflow-y: auto;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .toc-sidebar a {
+      display: block; color: #a8c8e8; text-decoration: none;
+      padding: 6px 6px; border-left: 2px solid transparent;
+      margin-bottom: 2px; transition: all 0.2s;
+    }
+    .toc-sidebar a:hover { color: #ffffff; background: rgba(255,255,255,0.06); }
+    .toc-sidebar a.active {
+      color: #FFD700; border-left-color: #FFD700;
+      background: rgba(255,215,0,0.08); font-weight: bold;
+    }
+    @media (max-width: 1024px) {
+      .toc-sidebar { display: none !important; }
+    }
+
+    /* Start Here button */
+    .start-here-btn {
+      background: #cc0000; color: #ffffff;
+      border: none; border-radius: 3px;
+      padding: 5px 12px; cursor: pointer;
+      font-family: Georgia, serif;
+      font-size: 11px; font-weight: bold;
+      letter-spacing: 0.8px; text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+      white-space: nowrap;
+    }
+    .start-here-btn:hover { background: #e60000; }
+
+    /* Search box */
+    .nav-search-wrap {
+      display: flex; align-items: center; gap: 4px;
+      position: relative;
+    }
+    .nav-search-input {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: #ffffff; border-radius: 3px;
+      padding: 4px 8px; font-size: 12px; font-family: Georgia, serif;
+      width: 140px; outline: none;
+    }
+    .nav-search-input::placeholder { color: #8899aa; }
+    .nav-search-input:focus { border-color: #FFD700; background: rgba(255,255,255,0.18); }
+    .nav-search-count {
+      font-size: 10px; color: #a8c8e8; white-space: nowrap;
+      font-family: Georgia, serif;
+    }
+    .nav-search-clear {
+      background: none; border: none; color: #f4c8c8; cursor: pointer;
+      font-size: 14px; padding: 0 4px; line-height: 1;
+    }
+    .nav-search-clear:hover { color: #ffffff; }
+    mark.search-hl {
+      background: #FFD700; color: #000; padding: 0 1px;
+      border-radius: 2px;
+    }
+    @media (max-width: 760px) {
+      .nav-search-input { width: 100px; }
+    }
+
+    /* Section name in nav */
+    .nav-section-label {
+      font-size: 11px; color: #c8d4ea; font-family: Georgia, serif;
+      font-style: italic; white-space: nowrap;
+      opacity: 0; transition: opacity 0.3s;
+      max-width: 200px; overflow: hidden; text-overflow: ellipsis;
+    }
+    .nav-section-label.visible { opacity: 1; }
+    @media (max-width: 760px) {
+      .nav-section-label { display: none; }
+    }
+
+    /* Visual Timeline */
+    .case-timeline {
+      max-width: 1100px; margin: 0 auto 30px auto;
+      padding: 20px 20px 10px 20px;
+      background: #f8f9fb; border: 1px solid #dde3ec;
+      border-radius: 6px; font-family: Georgia, serif;
+    }
+    .case-timeline h3 {
+      font-size: 16px; color: #1B2A4A; margin: 0 0 16px 0;
+      text-transform: uppercase; letter-spacing: 1.5px; text-align: center;
+    }
+    .timeline-scroll {
+      display: flex; align-items: flex-start; gap: 0;
+      overflow-x: auto; padding-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .timeline-item {
+      display: flex; flex-direction: column; align-items: center;
+      min-width: 100px; flex-shrink: 0; position: relative;
+      text-decoration: none; cursor: pointer;
+    }
+    .timeline-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid #fff; box-shadow: 0 0 0 2px currentColor;
+      margin-bottom: 6px; transition: transform 0.2s;
+    }
+    .timeline-item:hover .timeline-dot { transform: scale(1.3); }
+    .timeline-item .timeline-date {
+      font-size: 10px; color: #555; font-weight: bold;
+      text-align: center; line-height: 1.3;
+    }
+    .timeline-item .timeline-label {
+      font-size: 10px; color: #333; text-align: center;
+      line-height: 1.3; max-width: 90px; margin-top: 2px;
+    }
+    .timeline-line {
+      flex: 1; min-width: 20px; height: 2px;
+      background: #bcc5d3; align-self: center;
+      margin-top: 7px; flex-shrink: 0;
+    }
+    .tl-harm .timeline-dot { color: #cc0000; background: #cc0000; }
+    .tl-legal .timeline-dot { color: #1B2A4A; background: #1B2A4A; }
+    .tl-deadline .timeline-dot { color: #DAA520; background: #DAA520; }
+    @media (max-width: 760px) {
+      .timeline-scroll {
+        flex-direction: column; align-items: flex-start;
+        overflow-x: visible; gap: 0;
+      }
+      .timeline-item {
+        flex-direction: row; align-items: center; gap: 10px;
+        min-width: auto; width: 100%;
+        padding: 6px 0;
+      }
+      .timeline-dot { margin-bottom: 0; flex-shrink: 0; }
+      .timeline-item .timeline-date { text-align: left; min-width: 70px; }
+      .timeline-item .timeline-label { text-align: left; max-width: none; }
+      .timeline-line {
+        width: 2px; height: 12px; min-width: 2px;
+        margin-top: 0; margin-left: 6px;
+        align-self: auto;
+      }
+    }
+
+    /* Font size controls */
+    .font-controls {
+      position: fixed; bottom: 76px; right: 24px; z-index: 200;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .font-btn {
+      background: #1B2A4A; color: #FFD700;
+      border: none; border-radius: 4px;
+      width: 36px; height: 30px;
+      font-size: 14px; font-weight: bold;
+      cursor: pointer; text-align: center; line-height: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      font-family: Georgia, serif;
+    }
+    .font-btn:hover { background: #8B0000; }
+
     /* Site footer */
     .site-footer {
       background: #1B2A4A; color: #e8eef7;
@@ -332,6 +492,13 @@
       <span style="color: #FFD700; font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: 1px;">Updates:</span>
       <a href="#da-bodycam" style="color: #f4c8c8; text-decoration: none;">DA bodycam demand &mdash; <span id="bwc-days" style="color: #FFD700; font-weight: bold;"></span> days left to produce (June 8)</a>
     </div>
+    <span class="nav-section-label no-print" id="navSectionLabel"></span>
+    <a href="#critical-findings" class="start-here-btn no-print">Start Here</a>
+    <div class="nav-search-wrap no-print">
+      <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search..." aria-label="Search page">
+      <span class="nav-search-count" id="navSearchCount"></span>
+      <button class="nav-search-clear" id="navSearchClear" title="Clear search" style="display:none;">&times;</button>
+    </div>
     <div class="nav-menu-wrap">
       <button class="nav-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuDropdown">Menu &#9662;</button>
       <div class="nav-dropdown" id="menuDropdown">
@@ -456,6 +623,37 @@
 
       <p style="margin: 0; color: #5a7a9a; font-style: italic; font-size: 12.5px;">This is not a hypothetical framework. Every mechanism listed above is documented in this report with contemporaneous evidence.</p>
     </div>
+  </div>
+</div>
+
+<!-- VISUAL TIMELINE -->
+<div class="case-timeline no-print" role="navigation" aria-label="Case timeline">
+  <h3>Case Timeline</h3>
+  <div class="timeline-scroll">
+    <a class="timeline-item tl-harm" href="#cover-page"><div class="timeline-dot"></div><span class="timeline-date">Aug 22, 2025</span><span class="timeline-label">Assault</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-harm" href="#section-4"><div class="timeline-dot"></div><span class="timeline-date">Sep 2025</span><span class="timeline-label">HVAC Failure</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-legal" href="#critical-findings"><div class="timeline-dot"></div><span class="timeline-date">Apr 10, 2026</span><span class="timeline-label">Dr. Fabi Letter</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-harm" href="#da-bodycam"><div class="timeline-dot"></div><span class="timeline-date">Apr 14, 2026</span><span class="timeline-label">Police Called / Non-Renewal</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-legal" href="audio-analysis.html"><div class="timeline-dot"></div><span class="timeline-date">Apr 15, 2026</span><span class="timeline-label">Leasing Office Video</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-harm" href="#executive-summary"><div class="timeline-dot"></div><span class="timeline-date">May 5, 2026</span><span class="timeline-label">Displacement</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-harm" href="#update-addendum"><div class="timeline-dot"></div><span class="timeline-date">May 6, 2026</span><span class="timeline-label">ER Transport</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-legal" href="#update-addendum-may13"><div class="timeline-dot"></div><span class="timeline-date">May 13, 2026</span><span class="timeline-label">SERVPRO Refusal</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-harm" href="bad-faith-bob.html#fire"><div class="timeline-dot"></div><span class="timeline-date">May 23, 2026</span><span class="timeline-label">Two Fires</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-deadline" href="#da-bodycam"><div class="timeline-dot"></div><span class="timeline-date">Jun 8, 2026</span><span class="timeline-label">BWC Deadline</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-deadline" href="#section-3"><div class="timeline-dot"></div><span class="timeline-date">Jun 12, 2026</span><span class="timeline-label">Trial</span></a>
+  </div>
+  <div style="text-align: center; font-size: 10px; color: #888; margin-top: 4px;">
+    <span style="color: #cc0000;">&#9679;</span> Harm &nbsp; <span style="color: #1B2A4A;">&#9679;</span> Legal &nbsp; <span style="color: #DAA520;">&#9679;</span> Deadline
   </div>
 </div>
 
@@ -5198,10 +5396,29 @@
   </div>
 </div>
 
+<!-- STICKY TOC SIDEBAR -->
+<nav class="toc-sidebar no-print" id="tocSidebar" aria-label="Section navigation">
+  <a href="#cover-page" data-section="cover-page">Cover</a>
+  <a href="#adverse-parties" data-section="adverse-parties">Adverse Parties</a>
+  <a href="#critical-findings" data-section="critical-findings">Critical Findings</a>
+  <a href="#executive-summary" data-section="executive-summary">Summary</a>
+  <a href="#section-2" data-section="section-2">Trust &amp; Finances</a>
+  <a href="#section-3" data-section="section-3">Legal</a>
+  <a href="#section-4" data-section="section-4">Violations</a>
+  <a href="#section-5" data-section="section-5">Conclusions</a>
+</nav>
+
+<!-- FONT SIZE CONTROLS -->
+<div class="font-controls no-print" id="fontControls">
+  <button class="font-btn" id="fontUp" title="Increase font size" aria-label="Increase font size">A+</button>
+  <button class="font-btn" id="fontDown" title="Decrease font size" aria-label="Decrease font size">A&minus;</button>
+</div>
+
 <a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
 <a href="#" class="go-to-bottom no-print" id="goToBottom" aria-label="Go to bottom" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});return false;">&darr;</a>
 <script>
 (function(){
+  /* ── Existing: back-to-top / go-to-bottom ────────────────────── */
   var topBtn = document.getElementById('backToTop');
   var botBtn = document.getElementById('goToBottom');
   window.addEventListener('scroll', function(){
@@ -5209,6 +5426,8 @@
     topBtn.classList.toggle('visible', window.scrollY > 400);
     botBtn.classList.toggle('visible', window.scrollY > 400 && !atBottom);
   });
+
+  /* ── Existing: dropdown menu ─────────────────────────────────── */
   var menuBtn = document.getElementById('menuBtn');
   var menuDrop = document.getElementById('menuDropdown');
   menuBtn.addEventListener('click', function(e){
@@ -5224,6 +5443,185 @@
     menuDrop.classList.remove('open');
     menuBtn.setAttribute('aria-expanded', 'false');
   });
+
+  /* ── 1 & 4. Sidebar highlight + nav section label (IntersectionObserver) ── */
+  var sectionIds = ['cover-page','adverse-parties','critical-findings','executive-summary','section-2','section-3','section-4','section-5'];
+  var sectionNames = {
+    'cover-page': 'Cover',
+    'adverse-parties': 'Adverse Parties',
+    'critical-findings': 'Critical Findings',
+    'executive-summary': 'Summary',
+    'section-2': 'Trust & Finances',
+    'section-3': 'Legal',
+    'section-4': 'Violations',
+    'section-5': 'Conclusions'
+  };
+  var navLabel = document.getElementById('navSectionLabel');
+  var sidebarLinks = document.querySelectorAll('#tocSidebar a');
+  var currentSection = '';
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          currentSection = entry.target.id;
+          /* Update sidebar active link */
+          sidebarLinks.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('data-section') === currentSection);
+          });
+          /* Update nav section label */
+          if (sectionNames[currentSection]) {
+            navLabel.textContent = sectionNames[currentSection];
+            navLabel.classList.add('visible');
+          }
+        }
+      });
+    }, { rootMargin: '-60px 0px -70% 0px', threshold: 0 });
+
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  }
+
+  /* ── 3. Search box ───────────────────────────────────────────── */
+  var searchInput = document.getElementById('navSearchInput');
+  var searchCount = document.getElementById('navSearchCount');
+  var searchClear = document.getElementById('navSearchClear');
+  var searchTimer = null;
+
+  function clearHighlights() {
+    var marks = document.querySelectorAll('mark.search-hl');
+    marks.forEach(function(m) {
+      var parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+    searchCount.textContent = '';
+    searchClear.style.display = 'none';
+  }
+
+  function highlightText(node, term) {
+    var count = 0;
+    if (node.nodeType === 3) { /* text node */
+      var idx = node.textContent.toLowerCase().indexOf(term.toLowerCase());
+      if (idx >= 0) {
+        var span = document.createElement('mark');
+        span.className = 'search-hl';
+        var after = node.splitText(idx);
+        after.splitText(term.length);
+        span.appendChild(after.cloneNode(true));
+        after.parentNode.replaceChild(span, after);
+        count = 1;
+      }
+    } else if (node.nodeType === 1 && node.childNodes.length > 0 &&
+               !/(script|style|mark|input|textarea)/i.test(node.tagName) &&
+               !node.classList.contains('nav-bar') &&
+               !node.classList.contains('status-bar') &&
+               !node.classList.contains('toc-sidebar') &&
+               !node.classList.contains('no-print')) {
+      for (var i = node.childNodes.length - 1; i >= 0; i--) {
+        count += highlightText(node.childNodes[i], term);
+      }
+    }
+    return count;
+  }
+
+  function doSearch() {
+    clearHighlights();
+    var term = searchInput.value.trim();
+    if (term.length < 2) return;
+    var total = highlightText(document.body, term);
+    searchCount.textContent = total + ' match' + (total !== 1 ? 'es' : '');
+    searchClear.style.display = 'inline';
+    /* scroll to first match */
+    var first = document.querySelector('mark.search-hl');
+    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(doSearch, 350);
+  });
+  searchClear.addEventListener('click', function() {
+    searchInput.value = '';
+    clearHighlights();
+    searchInput.focus();
+  });
+
+  /* ── 6. Font size controls ───────────────────────────────────── */
+  var baseFontSize = 16;
+  var storedSize = localStorage.getItem('jlegal-font-size');
+  if (storedSize) {
+    baseFontSize = parseInt(storedSize, 10);
+    document.body.style.fontSize = baseFontSize + 'px';
+  }
+  document.getElementById('fontUp').addEventListener('click', function() {
+    if (baseFontSize < 24) {
+      baseFontSize += 1;
+      document.body.style.fontSize = baseFontSize + 'px';
+      localStorage.setItem('jlegal-font-size', baseFontSize);
+    }
+  });
+  document.getElementById('fontDown').addEventListener('click', function() {
+    if (baseFontSize > 12) {
+      baseFontSize -= 1;
+      document.body.style.fontSize = baseFontSize + 'px';
+      localStorage.setItem('jlegal-font-size', baseFontSize);
+    }
+  });
+
+  /* ── 7. Internal cross-links (runs once on load) ─────────────── */
+  var linkRules = [
+    { pattern: /§2705|§2705|§\s*2705|section\s+2705/gi, href: 'audio-analysis.html', title: '18 Pa.C.S. §2705 Analysis' },
+    { pattern: /\bSERVPRO\b/g, href: '#update-addendum-may13', title: 'SERVPRO Refusal' },
+    { pattern: /\bbodycam\b/gi, href: '#da-bodycam', title: 'DA Bodycam Demand' },
+    { pattern: /\bBWC\b/g, href: '#da-bodycam', title: 'DA Bodycam Demand' },
+    { pattern: /\bpreservation order\b/gi, href: '#preservation-order', title: 'Preservation Order' },
+    { pattern: /\bNicole Cordial\b/g, href: 'audio-analysis.html', title: 'Audio Analysis' }
+  ];
+
+  function addCrossLinks(node, rule) {
+    if (node.nodeType === 3) {
+      var match = rule.pattern.exec(node.textContent);
+      rule.pattern.lastIndex = 0;
+      if (match) {
+        /* check if already inside a link */
+        var p = node.parentNode;
+        while (p && p !== document.body) {
+          if (p.tagName === 'A') return;
+          p = p.parentNode;
+        }
+        var idx = match.index;
+        var a = document.createElement('a');
+        a.href = rule.href;
+        a.title = rule.title;
+        a.style.color = '#1B2A4A';
+        a.style.textDecoration = 'underline';
+        a.style.textDecorationStyle = 'dotted';
+        a.style.textUnderlineOffset = '2px';
+        var after = node.splitText(idx);
+        var linkText = after.splitText(match[0].length);
+        a.appendChild(after.cloneNode(true));
+        after.parentNode.replaceChild(a, after);
+      }
+    } else if (node.nodeType === 1 && node.childNodes.length > 0 &&
+               !/(script|style|a|button|input|textarea)/i.test(node.tagName) &&
+               !node.classList.contains('nav-bar') &&
+               !node.classList.contains('status-bar') &&
+               !node.classList.contains('toc-sidebar') &&
+               !node.classList.contains('nav-dropdown') &&
+               !node.classList.contains('case-timeline')) {
+      var children = Array.prototype.slice.call(node.childNodes);
+      children.forEach(function(child) { addCrossLinks(child, rule); });
+    }
+  }
+
+  /* Run cross-linking on the main content area only */
+  linkRules.forEach(function(rule) {
+    addCrossLinks(document.body, rule);
+  });
+
 })();
 </script>
 </body></html>
