@@ -175,6 +175,7 @@
     }
     .page-footer a { color: #B8741A; }
 
+    a:focus-visible, button:focus-visible { outline: 2px solid #FFD700; outline-offset: 2px; }
     @media (max-width: 600px) {
       .content { padding: 28px 16px 60px 16px; }
       h1 { font-size: 22px; }
@@ -186,6 +187,7 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#1B2A4A;color:#fff;padding:8px 16px;z-index:1000;font-size:14px;">Skip to main content</a>
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -197,7 +199,7 @@
   </div>
 </header>
 
-<main class="content">
+<main class="content" id="main-content">
 
   <h1>Goldtex Apartments (315&#8211;23 N 12th St)</h1>
   <p class="doc-lede">
@@ -452,5 +454,6 @@ geocode_y                underappeal</code></pre>
   </p>
 
 </main>
+<noscript><p style="padding:16px;background:#fff3cd;border:1px solid #f0a500;text-align:center;">This page works best with JavaScript enabled for full functionality.</p></noscript>
 </body>
 </html>

@@ -156,6 +156,7 @@
     .nav-dropdown .dd-files {
       color: #FFD700; font-weight: bold;
     }
+    #main-content,
     #cover-page,
     #adverse-parties,
     #critical-findings,
@@ -189,30 +190,6 @@
     }
     .go-to-bottom.visible { opacity: 1; pointer-events: auto; }
     .go-to-bottom:hover { background: #8B0000; }
-    /* Sticky TOC Sidebar (desktop only) */
-    .toc-sidebar {
-      position: fixed; left: 0; top: 60px; bottom: 0;
-      width: 180px; z-index: 90;
-      background: rgba(10, 22, 40, 0.92);
-      padding: 18px 10px 18px 14px;
-      font-family: Georgia, serif;
-      font-size: 12px; line-height: 1.5;
-      overflow-y: auto;
-      border-right: 1px solid rgba(255,255,255,0.08);
-    }
-    .toc-sidebar a {
-      display: block; color: #a8c8e8; text-decoration: none;
-      padding: 6px 6px; border-left: 2px solid transparent;
-      margin-bottom: 2px; transition: all 0.2s;
-    }
-    .toc-sidebar a:hover { color: #ffffff; background: rgba(255,255,255,0.06); }
-    .toc-sidebar a.active {
-      color: #FFD700; border-left-color: #FFD700;
-      background: rgba(255,215,0,0.08); font-weight: bold;
-    }
-    @media (max-width: 1024px) {
-      .toc-sidebar { display: none !important; }
-    }
 
     /* Start Here button */
     .start-here-btn {
@@ -255,7 +232,7 @@
       border-radius: 2px;
     }
     @media (max-width: 760px) {
-      .nav-search-input { width: 100px; }
+      .nav-search-input { width: 120px; font-size: 16px; padding: 6px 10px; }
     }
 
     /* Section name in nav */
@@ -362,22 +339,35 @@
       .status-num { font-size: 22px; }
       .status-detail { width: 100%; text-align: center; }
       .nav-bar { margin: 0 -12px 16px -12px; }
-      .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 12px; }
+      .nav-inner { flex-direction: column; align-items: stretch; gap: 6px; padding: 8px 12px; }
       .nav-brand { text-align: center; align-items: center;
-        padding-right: 0; padding-bottom: 8px;
+        padding-right: 0; padding-bottom: 6px;
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.12);
       }
-      .nav-brand-main { font-size: 14px; letter-spacing: 1.4px; }
+      .nav-brand-main { font-size: 12px; letter-spacing: 1px; }
       .nav-brand-sub { font-size: 9px; letter-spacing: 2px; }
+      /* Hide the updates ticker on mobile to reduce nav height */
+      .nav-updates-row { display: none !important; }
+      /* Group Start Here, search, and menu on one row */
+      .nav-actions-row {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        width: 100%;
+      }
       .nav-menu-wrap { width: auto; }
-      .nav-dropdown { right: 0; left: auto; }
+      .nav-dropdown { right: 0; left: auto; min-width: 220px; }
+      .nav-dropdown a { padding: 10px 16px; font-size: 14px; }
+      #main-content,
       #cover-page,
       #adverse-parties,
       #critical-findings,
       #executive-summary,
       div[id^="section-"] {
-        scroll-margin-top: 164px;
+        scroll-margin-top: 90px;
       }
       #last-updated {
         margin: 0 -12px 24px -12px !important;
@@ -400,12 +390,18 @@
       h1 { font-size: 26px !important; }
       h2 { font-size: 20px !important; }
       h3 { font-size: 18px !important; }
+      /* Prevent fixed buttons from overlapping on small screens */
+      .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 18px; line-height: 40px; }
+      .go-to-bottom { bottom: 16px; right: 64px; width: 40px; height: 40px; font-size: 18px; line-height: 40px; }
     }
     @media (max-width: 420px) {
-      .nav-brand-main { font-size: 13px; letter-spacing: 1.2px; }
+      .nav-brand-main { font-size: 11px; letter-spacing: 0.8px; }
       .status-num { font-size: 20px; }
       .status-sep { display: none; }
       .status-detail { font-size: 10px; }
+      .start-here-btn { padding: 4px 8px; font-size: 10px; }
+      .nav-search-input { width: 90px !important; }
+      .nav-menu-btn { padding: 5px 10px; font-size: 11px; }
     }
     /* ── Where the Public Data Fails ────────────────────────────── */
     .li-section-rule { border-top: 3px solid #B8741A; padding-top: 32px; margin-bottom: 0; }
@@ -445,9 +441,15 @@
     @media (max-width: 420px) {
       .li-cta-box { padding: 14px 14px; }
     }
+    /* Skip-to-main-content link */
+    .skip-link { position:absolute; top:-40px; left:0; background:#1B2A4A; color:#fff; padding:8px 16px; z-index:1000; font-size:14px; text-decoration:none; }
+    .skip-link:focus { top:0; }
+    /* Focus-visible indicators for all interactive elements */
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #FFD700; outline-offset: 2px; }
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- COMBINED STATUS BAR -->
 <div class="status-bar no-print" role="region" aria-label="Case status">
@@ -473,11 +475,12 @@
     <a href="#cover-page" class="nav-brand">
       <span class="nav-brand-main">GOLDTEX-GREYSTAR-POST-TALLEY-HORN</span>
     </a>
-    <div style="display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-size: 10px; color: #c8d4ea; letter-spacing: 0.3px;">
+    <div class="nav-updates-row" style="display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-size: 10px; color: #c8d4ea; letter-spacing: 0.3px;">
       <span style="color: #FFD700; font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: 1px;">Updates:</span>
       <a href="#da-bodycam" style="color: #f4c8c8; text-decoration: none;">DA bodycam demand &mdash; <span id="bwc-days" style="color: #FFD700; font-weight: bold;"></span> days left to produce (June 8)</a>
     </div>
     <span class="nav-section-label no-print" id="navSectionLabel"></span>
+    <div class="nav-actions-row" style="display: flex; align-items: center; gap: 10px;">
     <a href="#critical-findings" class="start-here-btn no-print">Start Here</a>
     <div class="nav-search-wrap no-print">
       <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search..." aria-label="Search page">
@@ -505,11 +508,14 @@
         <a class="dd-files" href="https://github.com/thumpersecure/JlegaL" target="_blank" rel="noopener">Files</a>
       </div>
     </div>
+    </div><!-- /nav-actions-row -->
   </div>
 </nav>
 
+<noscript><div style="background:#8B0000;color:#fff;padding:16px;text-align:center;">This site requires JavaScript for search, navigation, and interactive features. Content is still readable without it.</div></noscript>
+
 <!-- KEY DISCOVERY: RECORDED ADMISSION — MENS REA ANCHOR -->
-<div class="no-print" style="background: #fdf2f2; border-bottom: 2px solid #8B0000; padding: 16px 20px; font-family: Georgia, serif; font-size: 14px; color: #1a1a1a; margin: 0 -20px 0 -20px;">
+<div id="main-content" class="no-print" style="background: #fdf2f2; border-bottom: 2px solid #8B0000; padding: 16px 20px; font-family: Georgia, serif; font-size: 14px; color: #1a1a1a; margin: 0 -20px 0 -20px;">
   <div style="max-width: 1200px; margin: 0 auto;">
     <div style="margin-bottom: 10px;">
       <strong style="color: #8B0000; letter-spacing: 1px; font-size: 13px; text-transform: uppercase;">Recorded Admission &mdash; Actual Notice of Harm on the Record</strong>
@@ -952,7 +958,7 @@
       </p>
 
       <div style="margin-top: 20px; padding: 16px 20px; background: #fff5f5; border: 1px solid #8B0000; border-radius: 4px;">
-        <h3 id="da-bodycam" style="font-size: 17px; color: #8B0000; margin: 0 0 10px 0; scroll-margin-top: 56px;">DA&rsquo;s Office &mdash; Bodycam Footage: Four ADAs, No Production</h3>
+        <h3 id="da-bodycam" style="font-size: 17px; color: #8B0000; margin: 0 0 10px 0; scroll-margin-top: 100px;">DA&rsquo;s Office &mdash; Bodycam Footage: Four ADAs, No Production</h3>
         <p style="margin: 0 0 10px 0;">The bodycam footage from the August 22, 2025 responding officer has been requested through <strong>four</strong> Assistant District Attorneys assigned to <em>Commonwealth v. Talley</em> across the life of the case:</p>
         <ul style="margin: 0 0 10px 0; padding-left: 20px; line-height: 1.8;">
           <li><strong>ADA Sean Mulville</strong></li>
@@ -969,7 +975,7 @@
       </div>
 
       <div style="margin-top: 20px; padding: 16px 20px; background: #f5f0ff; border: 1px solid #4a2080; border-radius: 4px;">
-        <h3 id="preservation-order" style="font-size: 17px; color: #4a2080; margin: 0 0 10px 0; scroll-margin-top: 56px;">Prior Court&rsquo;s Preservation Order &mdash; Unenforced</h3>
+        <h3 id="preservation-order" style="font-size: 17px; color: #4a2080; margin: 0 0 10px 0; scroll-margin-top: 100px;">Prior Court&rsquo;s Preservation Order &mdash; Unenforced</h3>
         <p style="margin: 0 0 10px 0;">At the <strong>first preliminary hearing</strong> in <em>Commonwealth v. Talley</em>, the presiding judge ordered that Goldtex&rsquo;s building surveillance footage from August 22, 2025 be preserved. This was a binding court order &mdash; not a request, not a suggestion. Violation constitutes contempt.</p>
         <p style="margin: 0 0 10px 0;">When the case was dismissed at that preliminary hearing and subsequently <strong>refiled with supervisory approval</strong>, the preservation order did not disappear. Court orders survive case refiling unless explicitly vacated by a subsequent judge. The order remained in effect.</p>
         <p style="margin: 0 0 10px 0;">When the refiled case came before <strong>Judge Jessica R. Brown</strong> at the Court of Common Pleas, no inquiry was made into whether the preservation order had been complied with. The DA&rsquo;s office did not report on the status of the preserved footage. Defense counsel did not raise it. The court did not ask. A prior judge&rsquo;s order &mdash; issued because the footage was deemed material enough to require preservation &mdash; was allowed to lapse without verification.</p>
@@ -5381,17 +5387,6 @@
   </div>
 </div>
 
-<!-- STICKY TOC SIDEBAR -->
-<nav class="toc-sidebar no-print" id="tocSidebar" aria-label="Section navigation">
-  <a href="#cover-page" data-section="cover-page">Cover</a>
-  <a href="#adverse-parties" data-section="adverse-parties">Adverse Parties</a>
-  <a href="#critical-findings" data-section="critical-findings">Critical Findings</a>
-  <a href="#executive-summary" data-section="executive-summary">Summary</a>
-  <a href="#section-2" data-section="section-2">Trust &amp; Finances</a>
-  <a href="#section-3" data-section="section-3">Legal</a>
-  <a href="#section-4" data-section="section-4">Violations</a>
-  <a href="#section-5" data-section="section-5">Conclusions</a>
-</nav>
 
 <a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
 <a href="#" class="go-to-bottom no-print" id="goToBottom" aria-label="Go to bottom" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});return false;">&darr;</a>
@@ -5406,7 +5401,7 @@
     botBtn.classList.toggle('visible', window.scrollY > 400 && !atBottom);
   });
 
-  /* ── Existing: dropdown menu ─────────────────────────────────── */
+  /* ── Existing: dropdown menu (touch-friendly) ────────────────── */
   var menuBtn = document.getElementById('menuBtn');
   var menuDrop = document.getElementById('menuDropdown');
   menuBtn.addEventListener('click', function(e){
@@ -5414,16 +5409,24 @@
     var open = menuDrop.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', open);
   });
-  document.addEventListener('click', function(){
-    menuDrop.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
+  /* Close menu when tapping outside */
+  document.addEventListener('click', function(e){
+    if (!menuDrop.contains(e.target) && e.target !== menuBtn) {
+      menuDrop.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
   });
-  menuDrop.addEventListener('click', function(){
-    menuDrop.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
+  /* Close menu when a link inside is tapped */
+  menuDrop.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') {
+      menuDrop.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
   });
+  /* Stop dropdown from closing when scrolling inside on touch */
+  menuDrop.addEventListener('touchmove', function(e){ e.stopPropagation(); });
 
-  /* ── 1 & 4. Sidebar highlight + nav section label (IntersectionObserver) ── */
+  /* ── Nav section label (IntersectionObserver) ── */
   var sectionIds = ['cover-page','adverse-parties','critical-findings','executive-summary','section-2','section-3','section-4','section-5'];
   var sectionNames = {
     'cover-page': 'Cover',
@@ -5436,7 +5439,6 @@
     'section-5': 'Conclusions'
   };
   var navLabel = document.getElementById('navSectionLabel');
-  var sidebarLinks = document.querySelectorAll('#tocSidebar a');
   var currentSection = '';
 
   if ('IntersectionObserver' in window) {
@@ -5444,10 +5446,6 @@
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           currentSection = entry.target.id;
-          /* Update sidebar active link */
-          sidebarLinks.forEach(function(link) {
-            link.classList.toggle('active', link.getAttribute('data-section') === currentSection);
-          });
           /* Update nav section label */
           if (sectionNames[currentSection]) {
             navLabel.textContent = sectionNames[currentSection];
@@ -5497,7 +5495,6 @@
                !/(script|style|mark|input|textarea)/i.test(node.tagName) &&
                !node.classList.contains('nav-bar') &&
                !node.classList.contains('status-bar') &&
-               !node.classList.contains('toc-sidebar') &&
                !node.classList.contains('no-print')) {
       for (var i = node.childNodes.length - 1; i >= 0; i--) {
         count += highlightText(node.childNodes[i], term);
@@ -5566,7 +5563,6 @@
                !/(script|style|a|button|input|textarea)/i.test(node.tagName) &&
                !node.classList.contains('nav-bar') &&
                !node.classList.contains('status-bar') &&
-               !node.classList.contains('toc-sidebar') &&
                !node.classList.contains('nav-dropdown') &&
                !node.classList.contains('case-timeline')) {
       var children = Array.prototype.slice.call(node.childNodes);

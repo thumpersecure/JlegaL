@@ -320,6 +320,7 @@
       text-align: center; font-size: 13px; line-height: 1.6;
     }
     .site-footer a { color: #c8d4ea; text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #FFD700; outline-offset: 2px; }
 
     /* Mobile */
     @media (max-width: 760px) {
@@ -348,6 +349,7 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#1B2A4A;color:#fff;padding:8px 16px;z-index:1000;font-size:14px;">Skip to main content</a>
 
 <!-- Displacement counter (same as main report) -->
 <div class="displaced-bar" role="region" aria-label="Days displaced from home">
@@ -376,7 +378,7 @@
   </div>
 </nav>
 
-<div class="wrap">
+<div class="wrap" id="main-content">
 
   <h1 class="page-title">Letter to Counsel</h1>
   <p class="page-sub">Transmitted May 11, 2026 &mdash; Day 7 of displacement</p>
@@ -672,5 +674,6 @@
 })();
 </script>
 
+<noscript><p style="padding:16px;background:#fff3cd;border:1px solid #f0a500;text-align:center;">This page works best with JavaScript enabled. The displacement counter requires JavaScript.</p></noscript>
 </body>
 </html>

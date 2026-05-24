@@ -129,6 +129,7 @@
       color: #5a9a5a;
     }
     .footer a { color: #2ecc40; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #FFD700; outline-offset: 2px; }
     @media (max-width: 600px) {
       .header h1 { font-size: 28px; }
       .header img { width: 140px; height: 140px; }
@@ -138,6 +139,7 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#1B2A4A;color:#fff;padding:8px 16px;z-index:1000;font-size:14px;">Skip to main content</a>
 
 <div class="nav-back">
   <a href="/">&larr; Back to Consolidated Report</a>
@@ -152,7 +154,7 @@
   <p class="contact">bob@greystar.com &bull; <a href="https://www.greystar.com/contact-us/our-people/bob-faith" target="_blank" rel="noopener">Greystar Profile</a></p>
 </div>
 
-<div class="content">
+<div class="content" id="main-content">
 
   <h2>The Company</h2>
 
@@ -249,5 +251,6 @@
   <p style="margin: 10px 0 0 0;">&copy; 2026 jlegal.pro &mdash; All documentation factual and available for production.</p>
 </div>
 
+<noscript><p style="padding:16px;background:#fff3cd;border:1px solid #f0a500;text-align:center;">This page works best with JavaScript enabled for full functionality.</p></noscript>
 </body>
 </html>
