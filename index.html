@@ -333,21 +333,6 @@
       }
     }
 
-    /* Font size controls */
-    .font-controls {
-      position: fixed; bottom: 76px; right: 24px; z-index: 200;
-      display: flex; flex-direction: column; gap: 4px;
-    }
-    .font-btn {
-      background: #1B2A4A; color: #FFD700;
-      border: none; border-radius: 4px;
-      width: 36px; height: 30px;
-      font-size: 14px; font-weight: bold;
-      cursor: pointer; text-align: center; line-height: 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      font-family: Georgia, serif;
-    }
-    .font-btn:hover { background: #8B0000; }
 
     /* Site footer */
     .site-footer {
@@ -5408,12 +5393,6 @@
   <a href="#section-5" data-section="section-5">Conclusions</a>
 </nav>
 
-<!-- FONT SIZE CONTROLS -->
-<div class="font-controls no-print" id="fontControls">
-  <button class="font-btn" id="fontUp" title="Increase font size" aria-label="Increase font size">A+</button>
-  <button class="font-btn" id="fontDown" title="Decrease font size" aria-label="Decrease font size">A&minus;</button>
-</div>
-
 <a href="#" class="back-to-top no-print" id="backToTop" aria-label="Back to top">&uarr;</a>
 <a href="#" class="go-to-bottom no-print" id="goToBottom" aria-label="Go to bottom" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});return false;">&darr;</a>
 <script>
@@ -5547,28 +5526,6 @@
     searchInput.value = '';
     clearHighlights();
     searchInput.focus();
-  });
-
-  /* ── 6. Font size controls ───────────────────────────────────── */
-  var baseFontSize = 16;
-  var storedSize = localStorage.getItem('jlegal-font-size');
-  if (storedSize) {
-    baseFontSize = parseInt(storedSize, 10);
-    document.body.style.fontSize = baseFontSize + 'px';
-  }
-  document.getElementById('fontUp').addEventListener('click', function() {
-    if (baseFontSize < 24) {
-      baseFontSize += 1;
-      document.body.style.fontSize = baseFontSize + 'px';
-      localStorage.setItem('jlegal-font-size', baseFontSize);
-    }
-  });
-  document.getElementById('fontDown').addEventListener('click', function() {
-    if (baseFontSize > 12) {
-      baseFontSize -= 1;
-      document.body.style.fontSize = baseFontSize + 'px';
-      localStorage.setItem('jlegal-font-size', baseFontSize);
-    }
   });
 
   /* ── 7. Internal cross-links (runs once on load) ─────────────── */
