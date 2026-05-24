@@ -95,7 +95,7 @@
       max-width: 1200px; margin: 0 auto;
       display: flex; flex-wrap: wrap;
       align-items: center; justify-content: space-between;
-      gap: 6px; padding: 6px 16px;
+      gap: 6px; padding: 4px 12px;
     }
     .nav-brand {
       display: flex; flex-direction: row; align-items: center; gap: 8px;
@@ -106,7 +106,7 @@
     }
     .nav-brand-main {
       font-weight: bold; letter-spacing: 1.8px;
-      font-size: 13px; color: #ffffff;
+      font-size: 11px; color: #ffffff;
       font-family: Georgia, serif;
     }
     .nav-brand-sub {
@@ -120,9 +120,9 @@
     .nav-menu-btn {
       background: #8B0000; color: #ffffff;
       border: none; border-radius: 3px;
-      padding: 6px 14px; cursor: pointer;
+      padding: 4px 10px; cursor: pointer;
       font-family: Georgia, serif;
-      font-size: 12px; font-weight: bold;
+      font-size: 11px; font-weight: bold;
       letter-spacing: 1px; text-transform: uppercase;
       box-shadow: 0 1px 3px rgba(0,0,0,0.35);
     }
@@ -161,6 +161,7 @@
     #adverse-parties,
     #critical-findings,
     #executive-summary,
+    #poisoning,
     div[id^="section-"] {
       scroll-margin-top: 56px;
     }
@@ -195,9 +196,9 @@
     .start-here-btn {
       background: #cc0000; color: #ffffff;
       border: none; border-radius: 3px;
-      padding: 5px 12px; cursor: pointer;
+      padding: 4px 8px; cursor: pointer;
       font-family: Georgia, serif;
-      font-size: 11px; font-weight: bold;
+      font-size: 10px; font-weight: bold;
       letter-spacing: 0.8px; text-transform: uppercase;
       text-decoration: none;
       box-shadow: 0 1px 3px rgba(0,0,0,0.35);
@@ -214,7 +215,7 @@
       background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
       color: #ffffff; border-radius: 3px;
       padding: 4px 8px; font-size: 12px; font-family: Georgia, serif;
-      width: 140px; outline: none;
+      width: 80px; outline: none;
     }
     .nav-search-input::placeholder { color: #8899aa; }
     .nav-search-input:focus { border-color: #FFD700; background: rgba(255,255,255,0.18); }
@@ -243,6 +244,9 @@
       max-width: 200px; overflow: hidden; text-overflow: ellipsis;
     }
     .nav-section-label.visible { opacity: 1; }
+    @media (max-width: 900px) {
+      .nav-updates-row { display: none !important; }
+    }
     @media (max-width: 760px) {
       .nav-section-label { display: none; }
     }
@@ -366,6 +370,7 @@
       #adverse-parties,
       #critical-findings,
       #executive-summary,
+      #poisoning,
       div[id^="section-"] {
         scroll-margin-top: 90px;
       }
@@ -477,7 +482,7 @@
     </a>
     <div class="nav-updates-row" style="display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-size: 10px; color: #c8d4ea; letter-spacing: 0.3px;">
       <span style="color: #FFD700; font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: 1px;">Updates:</span>
-      <a href="#da-bodycam" style="color: #f4c8c8; text-decoration: none;">DA bodycam demand &mdash; <span id="bwc-days" style="color: #FFD700; font-weight: bold;"></span> days left to produce (June 8)</a>
+      <a href="#poisoning" style="color: #f4c8c8; text-decoration: none;">May 24 &mdash; Second acute exposure on Floor 8. No notice.</a>
     </div>
     <span class="nav-section-label no-print" id="navSectionLabel"></span>
     <div class="nav-actions-row" style="display: flex; align-items: center; gap: 10px;">
@@ -490,6 +495,7 @@
     <div class="nav-menu-wrap">
       <button class="nav-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuDropdown">Menu &#9662;</button>
       <div class="nav-dropdown" id="menuDropdown">
+        <a href="#poisoning" style="color: #ff453a; font-weight: bold;">&#9888;&#65039; Poisoning</a>
         <a href="#cover-page">Cover</a>
         <a href="#adverse-parties">Adverse Parties</a>
         <a href="#critical-findings" style="font-weight: bold;">Critical Findings</a>
@@ -544,8 +550,8 @@
 <div id="last-updated" class="no-print" style="background: #fffbf0; border-bottom: 1px solid #DAA520; padding: 10px 20px; font-family: Georgia, serif; font-size: 13.5px; color: #1a1a1a; margin: 0 -20px 24px -20px;">
   <div style="max-width: 1200px; margin: 0 auto;">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 20px;">
-      <div><strong style="color: #8B0000; letter-spacing: 0.6px; font-size: 12px; text-transform: uppercase;">Last Updated:</strong> May 23, 2026 <span style="color: #777;">(<a href="#bad-faith-bob" style="color: #8B0000;">DA bodycam demand documented</a> &mdash; 4 ADAs (Mulville, Toll, Jaupaj, Lay), zero compelled productions, Mulville passive lookup exposed, <em>Kyles v. Whitley</em> analysis, June 8 deadline; <a href="bad-faith-bob.html#fire" style="color: #8B0000;">two fires at Goldtex</a> &mdash; no alarms, no sprinklers; <a href="bad-faith-bob.html" style="color: #2ecc40;">Bad Faith Bob page</a> added; Dr. Fabi follow-up letter; domain moved to GitHub Pages; sitemap/robots/llms.txt added; nav restructured with dropdown menu)</span></div>
-      <div style="color: #777; font-size: 12.5px;"><strong style="color: #555; letter-spacing: 0.4px; text-transform: uppercase; font-size: 11px;">Prior:</strong> May 21, 2026 &mdash; Mens rea reframe; 5-step notice-and-election sequence; Coercive AC Ultimatum; FLIR start-date anchor; MCS outcome. May 20 &mdash; NJ criminal charges filed via Cherry Hill PD; BWC demand to DA; opbmedia OSINT/incident report; license display drift; Unit 806 forensic v4; Snyder detail corrected</div>
+      <div><strong style="color: #8B0000; letter-spacing: 0.6px; font-size: 12px; text-transform: uppercase;">Last Updated:</strong> May 24, 2026 <span style="color: #777;">(<a href="#poisoning" style="color: #ff453a; font-weight: bold;">Second acute exposure event</a> &mdash; post-fire remediation on Floor 8 without notice; containment plastic, industrial blower, Tyler Pipe DWV replacement; headache, dizziness, cognitive impairment, fine motor degradation within minutes; third documented exclusion from building-wide notice; &sect;2705 mens rea chain extended; witness intimidation territory &sect;4952/&sect;4953)</span></div>
+      <div style="color: #777; font-size: 12.5px;"><strong style="color: #555; letter-spacing: 0.4px; text-transform: uppercase; font-size: 11px;">Prior:</strong> May 23, 2026 &mdash; DA bodycam demand documented; 4 ADAs, zero compelled productions; two fires at Goldtex &mdash; no alarms, no sprinklers; Bad Faith Bob page added; Dr. Fabi follow-up letter; domain moved to GitHub Pages. May 21 &mdash; Mens rea reframe; 5-step notice-and-election sequence; Coercive AC Ultimatum; FLIR start-date anchor; MCS outcome. May 20 &mdash; NJ criminal charges filed via Cherry Hill PD; BWC demand to DA; opbmedia OSINT/incident report</div>
     </div>
     <div style="text-align: center; font-style: italic; color: #777; margin-top: 6px; font-size: 12px; border-top: 1px dotted #e0c97a; padding-top: 6px;">
       This site is updated regularly as new evidence, correspondence, and filings come in. Check back for revisions.
@@ -638,6 +644,8 @@
     <a class="timeline-item tl-legal" href="#update-addendum-may13"><div class="timeline-dot"></div><span class="timeline-date">May 13, 2026</span><span class="timeline-label">SERVPRO Refusal</span></a>
     <div class="timeline-line"></div>
     <a class="timeline-item tl-harm" href="bad-faith-bob.html#fire"><div class="timeline-dot"></div><span class="timeline-date">May 23, 2026</span><span class="timeline-label">Two Fires</span></a>
+    <div class="timeline-line"></div>
+    <a class="timeline-item tl-harm" href="#poisoning"><div class="timeline-dot"></div><span class="timeline-date">May 24, 2026</span><span class="timeline-label">2nd Exposure</span></a>
     <div class="timeline-line"></div>
     <a class="timeline-item tl-deadline" href="#da-bodycam"><div class="timeline-dot"></div><span class="timeline-date">Jun 8, 2026</span><span class="timeline-label">BWC Deadline</span></a>
     <div class="timeline-line"></div>
@@ -1661,6 +1669,81 @@
 </div>
 <!-- END SECTION 1 -->
 <hr style="border: 2px solid #1B2A4A; margin: 60px auto; max-width: 1100px;">
+
+<!-- POISONING — TOXIC CHEMICAL EXPOSURE TIMELINE -->
+<div id="poisoning" style="font-family: Georgia, serif; font-size: 16px; line-height: 1.6; color: #1a1a1a; max-width: 1100px; margin: 0 auto 40px auto; padding: 0 20px;">
+
+  <div style="background: #fff5f5; border: 3px solid #cc0000; border-radius: 6px; padding: 22px 28px;">
+    <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #cc0000; font-weight: bold; margin-bottom: 8px;">
+      Toxic Exposure Record
+    </div>
+    <h2 style="font-size: 26px; color: #8B0000; margin: 0 0 18px 0; font-family: Georgia, serif; border: none;">
+      &#9888;&#65039; Poisoning &mdash; Toxic Chemical Exposure Timeline
+    </h2>
+
+    <p style="margin: 0 0 20px 0;">
+      The FSK tape installed in Unit 806&rsquo;s HVAC system off-gassed volatile organic compounds &mdash; toluene, xylene, styrene, and formaldehyde &mdash; into the living space. Physician-documented chemical sensitization (Dr. Fabi, April 10, 2026) means subsequent VOC exposures at concentrations below general-population thresholds produce acute symptoms. This section consolidates the exposure events in chronological order, most recent first.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #cc0000; margin: 24px 0;">
+
+    <!-- May 24, 2026 — Second Acute Exposure Event -->
+    <h3 style="font-size: 20px; color: #8B0000; font-family: Georgia, serif; margin: 24px 0 12px 0;">
+      May 24, 2026 &mdash; Second Acute Exposure Event: Post-Fire Remediation on Floor 8 Without Notice
+    </h3>
+
+    <p style="margin: 0 0 16px 0;">
+      A post-fire remediation operation is active on the 8th floor of 315 N. 12th Street, the same floor as Unit 806. The work is at Unit 807, directly below the 9th-floor fire from May 23. Greystar did not provide notice to the beneficiary &mdash; the displaced, physician-documented chemically-sensitized tenant whose lease is on that floor.
+    </p>
+
+    <h4 style="font-size: 17px; color: #1B2A4A; font-family: Georgia, serif; margin: 20px 0 10px 0;">Hallway Conditions</h4>
+    <p style="margin: 0 0 16px 0;">
+      8th-floor corridor sheathed in polyethylene containment plastic from the elevator vestibule outward. Blue industrial blower at the far end. Visible Tyler Pipe 4-inch cast iron no-hub DWV pipe (stamp: TYLER USA 4&quot; CNO-HUB G&amp;S, 07-12 06:50), consistent with drain-stack replacement after fire-suppression water migration. Containment did not contain the off-gassing &mdash; vapor reached the elevator vestibule.
+    </p>
+
+    <h4 style="font-size: 17px; color: #1B2A4A; font-family: Georgia, serif; margin: 20px 0 10px 0;">Symptoms (onset within minutes)</h4>
+    <ul style="margin: 0 0 16px 0; padding-left: 24px;">
+      <li>Headache &mdash; persistent at 1 hour</li>
+      <li>Dizziness &mdash; persistent at 1 hour</li>
+      <li>Cognitive impairment &mdash; persistent at 1 hour</li>
+      <li>Fine motor degradation (<strong>NEW</strong>) &mdash; measurable typing errors above baseline, persistent 1+ hour</li>
+    </ul>
+    <p style="margin: 0 0 16px 0;">
+      Same symptom cluster as May 6 ambulance transport. Fine motor degradation is new &mdash; documentable via neurological exam.
+    </p>
+
+    <h4 style="font-size: 17px; color: #1B2A4A; font-family: Georgia, serif; margin: 20px 0 10px 0;">Third documented exclusion from building-wide notice</h4>
+    <table style="border-collapse: collapse; margin: 0 0 16px 0; font-size: 15px;">
+      <tbody>
+        <tr>
+          <td style="padding: 6px 16px 6px 0; border-bottom: 1px solid #ddd; font-weight: bold;">April 21, 2026</td>
+          <td style="padding: 6px 0; border-bottom: 1px solid #ddd;">&ldquo;City fire hazard&rdquo; letter sent to trustee only</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 16px 6px 0; border-bottom: 1px solid #ddd; font-weight: bold;">April 28, 2026</td>
+          <td style="padding: 6px 0; border-bottom: 1px solid #ddd;">Building-wide email re: license &mdash; excluded</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 16px 6px 0; font-weight: bold;">May 24, 2026</td>
+          <td style="padding: 6px 0;">Post-fire remediation on Floor 8 &mdash; excluded</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 style="font-size: 17px; color: #1B2A4A; font-family: Georgia, serif; margin: 20px 0 10px 0;">Legal hooks</h4>
+    <p style="margin: 0 0 16px 0;">
+      Extends &sect;2705 mens rea chain (Greystar on notice of VOC sensitization via FLIR, video, Dr. Fabi letters, ambulance transport, Cohen Marraccini correspondence). Witness intimidation territory (&sect;4952/&sect;4953) &mdash; remediation on witness&rsquo;s floor without notice during active Talley witness window.
+    </p>
+
+    <h4 style="font-size: 17px; color: #1B2A4A; font-family: Georgia, serif; margin: 20px 0 10px 0;">Evidence captured</h4>
+    <p style="margin: 0 0 0 0;">
+      4 photographs of corridor containment, contemporaneous text exchange with another Floor 8 resident, symptom timeline, raw typing samples showing error rate above baseline.
+    </p>
+
+  </div>
+</div>
+
+<hr style="border: 2px solid #8B0000; margin: 40px auto; max-width: 1100px;">
 
 <!-- UPDATE ADDENDUM (May 11-12, 2026) -->
 <div id="update-addendum" style="font-family: Georgia, serif; font-size: 16px; line-height: 1.6; color: #1a1a1a; max-width: 1100px; margin: 0 auto 40px auto; padding: 0 20px;">
