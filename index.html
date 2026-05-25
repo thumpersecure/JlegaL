@@ -139,7 +139,7 @@
     .nav-dropdown.open { display: block; }
     .nav-dropdown a {
       display: block; color: #c8d4ea; text-decoration: none;
-      padding: 8px 16px;
+      padding: 10px 16px;
       font-family: Georgia, serif;
       font-size: 12px; letter-spacing: 0.4px;
     }
@@ -155,6 +155,30 @@
     }
     .nav-dropdown .dd-files {
       color: #FFD700; font-weight: bold;
+    }
+    .menu-category {
+      margin: 0;
+      padding: 0;
+    }
+    .menu-category-header {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #a8c8e8;
+      padding: 10px 16px 4px;
+      margin-top: 4px;
+      font-weight: bold;
+      font-family: -apple-system, sans-serif;
+      cursor: default;
+      user-select: none;
+    }
+    .menu-category-header:first-child {
+      margin-top: 0;
+    }
+    .menu-cat-divider {
+      height: 1px;
+      background: rgba(255,215,0,0.2);
+      margin: 4px 0;
     }
     #main-content,
     #cover-page,
@@ -365,6 +389,30 @@
       .nav-menu-wrap { width: auto; }
       .nav-dropdown { right: 0; left: auto; min-width: 220px; }
       .nav-dropdown a { padding: 10px 16px; font-size: 14px; }
+      .menu-category-items {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .menu-category.open .menu-category-items {
+        max-height: 500px;
+      }
+      .menu-category-header {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px 8px;
+      }
+      .menu-category-header::after {
+        content: '▸';
+        font-size: 10px;
+        color: #a8c8e8;
+        transition: transform 0.2s;
+      }
+      .menu-category.open .menu-category-header::after {
+        transform: rotate(90deg);
+      }
       #main-content,
       #cover-page,
       #adverse-parties,
@@ -398,6 +446,11 @@
       /* Prevent fixed buttons from overlapping on small screens */
       .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 18px; line-height: 40px; }
       .go-to-bottom { bottom: 16px; right: 64px; width: 40px; height: 40px; font-size: 18px; line-height: 40px; }
+    }
+    @media (min-width: 761px) {
+      .menu-category-items {
+        max-height: none !important;
+      }
     }
     @media (max-width: 420px) {
       .nav-brand-main { font-size: 11px; letter-spacing: 0.8px; }
@@ -495,23 +548,45 @@
     <div class="nav-menu-wrap">
       <button class="nav-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuDropdown">Menu &#9662;</button>
       <div class="nav-dropdown" id="menuDropdown">
-        <a href="#poisoning" style="color: #ff453a; font-weight: bold;">&#9888;&#65039; Poisoning</a>
-        <a href="#cover-page">Cover</a>
-        <a href="#adverse-parties">Adverse Parties</a>
-        <a href="#critical-findings" style="font-weight: bold;">Critical Findings</a>
-        <a href="#executive-summary">Summary</a>
-        <a href="#section-2">Trust &amp; Finances</a>
-        <a href="#section-3">Legal</a>
-        <a href="#section-4">Violations</a>
-        <a href="#section-5">Conclusions</a>
-        <div class="dd-divider"></div>
-        <a class="dd-cta" href="audio-analysis.html">18 Pa.C.S. &sect; 2705</a>
-        <a class="dd-cta" href="supplemental.html">Supplemental</a>
-        <a class="dd-cta" href="institutional-misconduct.html">Misconduct Patterns</a>
-        <a href="bad-faith-bob.html" style="color: #2ecc40; font-weight: bold;">Bad Faith Bob</a>
-        <div class="dd-divider"></div>
-        <a href="https://youtu.be/UmkdvUQYnHE" target="_blank" rel="noopener">Greystar Office Video</a>
-        <a class="dd-files" href="https://github.com/thumpersecure/JlegaL" target="_blank" rel="noopener">Files</a>
+        <div class="menu-category">
+          <div class="menu-category-header">CASE OVERVIEW</div>
+          <div class="menu-category-items">
+            <a href="#poisoning" style="color: #ff453a; font-weight: bold;">&#9888;&#65039; Poisoning</a>
+            <a href="#cover-page">Cover</a>
+            <a href="#executive-summary">Summary</a>
+            <a href="#critical-findings" style="font-weight: bold;">Critical Findings</a>
+          </div>
+        </div>
+        <div class="menu-cat-divider"></div>
+        <div class="menu-category">
+          <div class="menu-category-header">LEGAL RECORD</div>
+          <div class="menu-category-items">
+            <a href="#adverse-parties">Adverse Parties</a>
+            <a href="#section-2">Trust &amp; Finances</a>
+            <a href="#section-3">Legal</a>
+            <a href="#section-4">Violations</a>
+            <a href="#section-5">Conclusions</a>
+            <a class="dd-cta" href="audio-analysis.html">18 Pa.C.S. &sect; 2705</a>
+            <a href="audio-analysis.html">Audio Analysis</a>
+          </div>
+        </div>
+        <div class="menu-cat-divider"></div>
+        <div class="menu-category">
+          <div class="menu-category-header">EVIDENCE &amp; ANALYSIS</div>
+          <div class="menu-category-items">
+            <a class="dd-cta" href="supplemental.html">Supplemental</a>
+            <a class="dd-cta" href="institutional-misconduct.html">Misconduct Patterns</a>
+            <a href="bad-faith-bob.html" style="color: #2ecc40; font-weight: bold;">Bad Faith Bob</a>
+          </div>
+        </div>
+        <div class="menu-cat-divider"></div>
+        <div class="menu-category">
+          <div class="menu-category-header">EXTERNAL</div>
+          <div class="menu-category-items">
+            <a href="https://youtu.be/UmkdvUQYnHE" target="_blank" rel="noopener">Greystar Office Video</a>
+            <a class="dd-files" href="https://github.com/thumpersecure/JlegaL" target="_blank" rel="noopener">Files</a>
+          </div>
+        </div>
       </div>
     </div>
     </div><!-- /nav-actions-row -->
@@ -5511,10 +5586,26 @@
     if (e.target.tagName === 'A') {
       menuDrop.classList.remove('open');
       menuBtn.setAttribute('aria-expanded', 'false');
+      document.querySelectorAll('.menu-category.open').forEach(function(c) { c.classList.remove('open'); });
     }
   });
   /* Stop dropdown from closing when scrolling inside on touch */
   menuDrop.addEventListener('touchmove', function(e){ e.stopPropagation(); });
+
+  /* ── Mobile category collapse ── */
+  document.querySelectorAll('.menu-category-header').forEach(function(header) {
+    header.addEventListener('click', function(e) {
+      if (window.innerWidth <= 760) {
+        e.stopPropagation();
+        var cat = this.parentElement;
+        // Close other categories
+        document.querySelectorAll('.menu-category.open').forEach(function(c) {
+          if (c !== cat) c.classList.remove('open');
+        });
+        cat.classList.toggle('open');
+      }
+    });
+  });
 
   /* ── Nav section label (IntersectionObserver) ── */
   var sectionIds = ['cover-page','adverse-parties','critical-findings','executive-summary','section-2','section-3','section-4','section-5'];
