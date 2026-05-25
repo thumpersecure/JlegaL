@@ -12,11 +12,14 @@ On April 15, 2026, property manager Nicole Cordial was told on video that the te
 
 Nineteen days later, the tenant was transported by ambulance to the ER (oxygen). Two EMS responders reported dizziness in the hallway. SERVPRO refused remediation, stating contamination exceeded residential scope.
 
+On May 24, 2026, a second acute exposure occurred when Greystar began post-fire remediation on Floor 8 without notice. Symptoms within minutes: headache, dizziness, cognitive impairment, fine motor degradation. Third documented exclusion from building-wide safety communication.
+
 The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangering Another Person.
 
 ## Key Pages
 
 - [Consolidated Master Report](https://jlegal.pro/) — Full timeline, FLIR evidence, IoT data, medical records, legal analysis
+- [Bad Faith Bob — CEO Accountability](https://jlegal.pro/bad-faith-bob.html) — Bob Faith, CEO of Greystar: $24M FTC settlement, seven emails, zero responses, two fires
 - [Mens Rea Audio Analysis](https://jlegal.pro/audio-analysis.html) — Forensic transcript of the April 15 leasing office recording with timestamped notice sequence
 - [Supplemental Materials](https://jlegal.pro/supplemental.html) — Supporting documentation and corroborating sources
 - [Institutional Misconduct Patterns](https://jlegal.pro/institutional-misconduct.html) — Philadelphia institutional failures 2019-2026
@@ -27,6 +30,7 @@ The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangeri
 - [Coercive AC Ultimatum (PDF)](https://jlegal.pro/Coercive_AC_Ultimatum_2026-05-21.pdf) — Section 2705 mens rea analysis
 - [Goldtex Audio Analysis (PDF)](https://jlegal.pro/Goldtex_Audio_Analysis.pdf) — 9-page forensic transcript with loudness data
 - [Dr. Fabi Physician Letter (PDF)](https://jlegal.pro/Dr_Fabi_Letter_2026-04-10_Redacted.pdf) — Medical documentation of chemical exposure
+- [Dr. Fabi Follow-Up Letter (PDF)](https://jlegal.pro/Hornletter20260521-Fabi-Letter-2.pdf) — Follow-up documentation, May 21, 2026
 - [Unit 806 Sensor Report (PDF)](https://jlegal.pro/Unit806%20Sensor%20Report.pdf) — 3,460 IoT air quality readings
 - [Unit 806 Forensic Comprehensive (PDF)](https://jlegal.pro/Unit806%20Forensic%20Comprehensive%20v3.pdf) — Full forensic analysis
 - [Goldtex OSINT Report (PDF)](https://jlegal.pro/Goldtex_OSINT_Report_May2026.pdf) — Open-source intelligence on property and management
@@ -40,22 +44,34 @@ The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangeri
 - Mens rea anchored to the video via 5-step notice-and-election sequence
 - Physician letter date: April 10, 2026
 - Medical emergency (ER transport): May 6, 2026
+- Second acute exposure (Floor 8 remediation, no notice): May 24, 2026
 - Police DC #26-09-0597175 (May 10, 2026)
 - Police DC #26-09-060340 (May 12, 2026)
 - DA bodycam demand: 4 ADAs contacted (Mulville, Toll, Jaupaj, Lay), zero compelled productions, June 8, 2026 deadline
+- Prior court preservation order for building surveillance: issued at first preliminary hearing, never enforced
 - Bad Faith Bob: CEO Bob Faith emailed 7 times at bob@greystar.com, zero human responses
 - May 23, 2026: Two fires at Goldtex — no alarms, no sprinklers activated
+- Goldtex ranks #1 worst luxury building in Philadelphia — 16 unresolved violations
+- Trustee (Dr. Abraham Horn) continued paying rent against beneficiary's wishes, refused $10K relocation funds
+- SERVPRO/ECS Limited: total loss assessment — unit cannot be safely re-entered
 
 ## Parties
 
 - Tenant: Justin Horn
 - Property: Goldtex Apartments, Unit 806, 315 N. 12th St, Philadelphia, PA
-- Property Manager: Nicole Cordial
-- Management Company: Greystar
+- Property Manager: Nicole Cordial (Greystar, "Regional Property Manager of the Year" 2024)
+- Management Company: Greystar Real Estate Partners (CEO: Bob Faith, bob@greystar.com)
+- Property Owner: Post Goldtex LP
+- Trustee: Dr. Abraham S. Horn, DO (South Jersey Gastroenterology)
 - Assault defendant: Commonwealth v. Talley, CP-51-CR-0000673-2026
+- ADAs: Sean Mulville, Joseph Toll, Oltiana Jaupaj, Andrew Lay (current for trial)
+- Trial date: June 12, 2026
 
 ## Contact
 
 - Email: justin@jlegal.pro
+- Text: (908) 379-1102
 - Repository: https://github.com/thumpersecure/JlegaL
+- CEO Accountability: https://github.com/thumpersecure/greystar-bob-faith
 - Tor mirror: http://zopbfjwzzp5y5bdhttchqewcsvhmgmxw7j62holkem6mdlilbh7nexyd.onion
+- Related: https://greystarnightmare.com | https://seasol.net
