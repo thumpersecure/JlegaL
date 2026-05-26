@@ -6,7 +6,7 @@
 
 Justin Horn, a Jewish tenant at Goldtex Apartments (315 N. 12th St, Philadelphia), was beaten by two assailants on August 22, 2025 (orbital fracture, broken nose, broken jaw). The criminal case is Commonwealth v. Talley, CP-51-CR-0000673-2026.
 
-Greystar, the property management company, never repaired the HVAC. They installed a portable AC unit sealed with FSK tape that thermally degraded and off-gassed toluene, xylene, styrene, and formaldehyde into the apartment. The source was identified by the tenant using FLIR thermal imaging.
+Greystar, the property management company, never repaired the HVAC (failed September 2025). On April 1, 2026, they installed a portable AC unit with a single exhaust tube and no tape. On April 6, 2026, they modified it with FSK tape that thermally degraded and off-gassed toluene, xylene, styrene, and formaldehyde into the apartment. The source was identified by the tenant using FLIR thermal imaging.
 
 On April 15, 2026, property manager Nicole Cordial was told on video that the tenant was sick with medical documentation. She offered three options: reconnect the toxic unit, lose cooling, or leave. No remediation was offered.
 
