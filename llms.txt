@@ -6,7 +6,7 @@
 
 Justin Horn, a Jewish tenant at Goldtex Apartments (315 N. 12th St, Philadelphia), was beaten by two assailants on August 22, 2025 (orbital fracture, broken nose, broken jaw). The criminal case is Commonwealth v. Talley, CP-51-CR-0000673-2026.
 
-Greystar, the property management company, never repaired the HVAC (failed September 2025). On April 1, 2026, they installed a portable AC unit with a single exhaust tube and no tape. On April 6, 2026, they modified it with FSK tape that thermally degraded and off-gassed toluene, xylene, styrene, and formaldehyde into the apartment. The source was identified by the tenant using FLIR thermal imaging.
+Greystar, the property management company, never repaired the HVAC (failed September 2025). On April 1, 2026, they installed a portable AC unit with a single exhaust tube and no tape. On April 6, 2026, they modified it with FSK tape that thermally degraded and off-gassed toluene, xylene, styrene, and formaldehyde into the apartment. The source was identified by the tenant using FLIR thermal imaging (102-114°F surface temperatures on the degrading tape).
 
 On April 15, 2026, property manager Nicole Cordial was told on video that the tenant was sick with medical documentation. She offered three options: reconnect the toxic unit, lose cooling, or leave. No remediation was offered.
 
@@ -14,11 +14,12 @@ Twenty-one days later, the tenant was transported by ambulance to the ER (oxygen
 
 On May 24, 2026, a second acute exposure occurred when Greystar began post-fire remediation on Floor 8 without notice. Symptoms within minutes: headache, dizziness, cognitive impairment, fine motor degradation. Third documented exclusion from building-wide safety communication.
 
-The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangering Another Person.
+The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangering Another Person. The documented pattern is the institutional response sequence to the antisemitic hate crime, running through three surfaces: building management, criminal-justice system, and family trust.
 
 ## Key Pages
 
 - [Consolidated Master Report](https://jlegal.pro/) — Full timeline, FLIR evidence, IoT data, medical records, legal analysis
+- [The Three Surfaces](https://jlegal.pro/three-surfaces.html) — Structural index: how building management, criminal-justice system, and family trust each reframed the Jewish complainant as the problem
 - [Bad Faith Bob — CEO Accountability](https://jlegal.pro/bad-faith-bob.html) — Bob Faith, CEO of Greystar: $24M FTC settlement, seven emails, zero responses, two fires
 - [Mens Rea Audio Analysis](https://jlegal.pro/audio-analysis.html) — Forensic transcript of the April 15 leasing office recording with timestamped notice sequence
 - [Performance, Then Setup — Lobby Displays](https://jlegal.pro/lobby-displays.html) — December 2025 Hanukkah display in the assault lobby: over-performed recognition, sustained refusal of transfer
@@ -57,6 +58,8 @@ The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangeri
 - Goldtex ranks #1 worst luxury building in Philadelphia — 16 unresolved violations
 - Trustee (Dr. Abraham S. Horn) continued paying rent against beneficiary's wishes, refused $10K relocation funds
 - SERVPRO/ECS Limited: total loss assessment — unit cannot be safely re-entered
+- Evidence photographs (29 images): FLIR thermal, Ring doorbell, email chain, Dr. Fabi letter, trustee messages — https://jlegal.pro/evidence-photos.html
+- ADA Andrew Lay confirmed receipt of bodycam demand on May 27, 2026 — first substantive response from any of four ADAs, triggered by Facebook tag
 
 ## Parties
 
