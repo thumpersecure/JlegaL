@@ -18,6 +18,7 @@ The primary criminal statute is 18 Pa.C.S. Section 2705 — Recklessly Endangeri
 
 ## Key Pages
 
+- [The Story](https://jlegal.pro/story.html) — Figure-first narrative showing how the three tracks converge on displacement, then linking to structural and legal depth
 - [Consolidated Master Report](https://jlegal.pro/) — Full timeline, FLIR evidence, IoT data, medical records, legal analysis
 - [The Three Surfaces](https://jlegal.pro/three-surfaces.html) — Structural index: how building management, criminal-justice system, and family trust each reframed the Jewish complainant as the problem
 - [Bad Faith Bob — CEO Accountability](https://jlegal.pro/bad-faith-bob.html) — Bob Faith, CEO of Greystar: $24M FTC settlement, seven emails, zero responses, two fires
