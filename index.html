@@ -94,8 +94,8 @@
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
       display: flex; flex-wrap: nowrap;
-      align-items: center; justify-content: space-between;
-      gap: 10px; padding: 6px 16px;
+      align-items: center;
+      gap: 12px; padding: 8px 16px;
     }
     .nav-brand {
       display: flex; flex-direction: row; align-items: center; gap: 8px;
@@ -518,9 +518,9 @@
 <!-- COMBINED STATUS BAR -->
 <div class="status-bar no-print" role="region" aria-label="Case status">
   <div class="status-inner">
-    <span class="status-label">Displaced</span>
+    <span class="status-label">Bodycam Due</span>
     <span class="status-block">
-      <span class="status-num" id="displaced-days">&mdash;</span>
+      <span class="status-num" id="bwc-days">&mdash;</span>
       <span class="status-unit">days</span>
     </span>
     <span class="status-sep">|</span>
@@ -530,7 +530,7 @@
       <span class="status-unit">days</span>
     </span>
     <span class="status-sep">|</span>
-    <span class="status-detail">Displaced <strong>May 5</strong> &mdash; Trial <strong>June 12, 2026</strong></span>
+    <span class="status-detail">BWC Deadline <strong>June 8</strong> &mdash; Trial <strong>June 12, 2026</strong></span>
   </div>
 </div>
 
@@ -540,12 +540,8 @@
       <span class="nav-brand-main">SYSTEMATIC ANTISEMITISM AT GOLDTEX</span>
       <span style="font-size: 9px; color: #a8c8e8; letter-spacing: 0.5px; display: block; margin-top: 2px;">Assaulted. Poisoned. Displaced. Documented.</span>
     </a>
-    <div class="nav-updates-row" style="display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-size: 10px; color: #c8d4ea; letter-spacing: 0.3px;">
-      <span style="color: #FFD700; font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: 1px;">Updates:</span>
-      <a href="#poisoning" style="color: #f4c8c8; text-decoration: none;">May 24 &mdash; Second acute exposure on Floor 8. No notice.</a>
-    </div>
     <span class="nav-section-label no-print" id="navSectionLabel"></span>
-    <div class="nav-actions-row" style="display: flex; align-items: center; gap: 10px;">
+    <div class="nav-actions-row" style="display: flex; align-items: center; gap: 8px; margin-left: auto;">
     <a href="#critical-findings" class="start-here-btn no-print">Start Here</a>
     <div class="nav-search-wrap no-print" style="display: flex; align-items: center; gap: 4px;">
       <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search..." aria-label="Search page">
@@ -684,16 +680,12 @@
   function updateCounters() {
     var now = new Date();
     var nowUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
-    var startUtc = Date.UTC(2026, 4, 5);
     var trialUtc = Date.UTC(2026, 5, 12);
     var bwcUtc = Date.UTC(2026, 5, 8);
-    var displaced = Math.max(0, Math.floor((nowUtc - startUtc) / 86400000));
     var trial = Math.max(0, Math.ceil((trialUtc - nowUtc) / 86400000));
     var bwc = Math.max(0, Math.ceil((bwcUtc - nowUtc) / 86400000));
-    var el1 = document.getElementById('displaced-days');
     var el2 = document.getElementById('trial-days');
     var el3 = document.getElementById('bwc-days');
-    if (el1) el1.textContent = displaced;
     if (el2) el2.textContent = trial;
     if (el3) el3.textContent = bwc;
   }
