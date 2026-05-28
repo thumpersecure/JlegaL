@@ -3,192 +3,584 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three Tracks, One Target — The Story of Justin Horn</title>
-    <meta name="description" content="Three institutional systems converged on one Jewish tenant in Philadelphia. The building poisoned him. The police ignored the assault. His father locked the door. This is the documented record.">
-    <meta property="og:title" content="Three Tracks, One Target — The Story of Justin Horn">
-    <meta property="og:description" content="Three institutional systems converged on one Jewish tenant in Philadelphia. The building poisoned him. The police ignored the assault. His father locked the door. This is the documented record.">
+    <title>The Story — jlegal.pro</title>
+    <meta name="description" content="A Jewish tenant was assaulted, poisoned, and displaced. Three institutions converged. This is the documented record.">
+    <meta property="og:title" content="The Story — Systematic Antisemitism at Goldtex Apartments">
+    <meta property="og:description" content="A Jewish tenant was assaulted, poisoned, and displaced. Three institutions converged. This is the documented record.">
     <meta property="og:image" content="https://jlegal.pro/og-thumbnail.png">
     <meta property="og:url" content="https://jlegal.pro/story.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="JLegal">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Three Tracks, One Target — The Story of Justin Horn">
-    <meta name="twitter:description" content="Three institutional systems converged on one Jewish tenant in Philadelphia. The building poisoned him. The police ignored the assault. His father locked the door.">
+    <meta name="twitter:title" content="The Story — Systematic Antisemitism at Goldtex Apartments">
+    <meta name="twitter:description" content="A Jewish tenant was assaulted, poisoned, and displaced. Three institutions converged. This is the documented record.">
     <meta name="twitter:image" content="https://jlegal.pro/og-thumbnail.png">
+    <link rel="canonical" href="https://jlegal.pro/story.html">
     <style>
+        /* ===== CUSTOM PROPERTIES ===== */
+        :root {
+            --bg: #0C0C0E;
+            --bg-elevated: #131316;
+            --bg-card: #18181C;
+            --text: #E8E6E2;
+            --text-dim: #9A9890;
+            --color-red: #C4352A;
+            --color-red-glow: rgba(196, 53, 42, 0.15);
+            --color-teal: #4A7C7E;
+            --color-teal-glow: rgba(74, 124, 126, 0.15);
+            --color-gold: #8B7355;
+            --color-gold-glow: rgba(139, 115, 85, 0.15);
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --max-w: 720px;
+            --section-gap: 80px;
+        }
+
+        /* ===== RESET ===== */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background: #FAFAF8;
-            color: #2C2C2C;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 17px;
-            line-height: 1.75;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 18px;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 24px;
+        /* ===== STICKY NAV ===== */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(12, 12, 14, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(232, 230, 226, 0.06);
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: transform 0.35s ease, opacity 0.35s ease;
         }
 
-        article {
-            padding-top: 80px;
-            padding-bottom: 80px;
+        .sticky-nav.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
 
-        /* Headlines */
-        h1 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 48px;
-            font-weight: 400;
-            line-height: 1.15;
-            color: #2C2C2C;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 32px;
-            font-weight: 600;
-            line-height: 1.25;
-            color: #2C2C2C;
-            margin-bottom: 24px;
-        }
-
-        /* Sections */
-        section {
-            margin-bottom: 64px;
-        }
-
-        section:last-of-type {
-            margin-bottom: 0;
-        }
-
-        p {
-            margin-bottom: 20px;
-        }
-
-        p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Section divider */
-        .divider {
-            text-align: center;
-            padding: 48px 0;
-            margin-bottom: 64px;
-        }
-
-        .divider span {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 24px;
-            font-weight: 400;
-            color: #D4502E;
+        .sticky-nav .nav-title {
+            font-family: var(--serif);
+            font-size: 16px;
+            color: var(--text);
             letter-spacing: 0.02em;
         }
 
-        /* Pull quotes */
-        blockquote.pullquote {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 28px;
-            font-style: italic;
-            line-height: 1.5;
-            color: #D4502E;
-            background: #F5E6D3;
-            border-left: 6px solid #D4502E;
-            padding: 28px 32px;
-            margin: 40px 0;
-        }
-
-        blockquote.pullquote cite {
-            display: block;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        .sticky-nav .nav-link {
             font-size: 14px;
-            font-style: normal;
-            color: #6B6B6B;
-            margin-top: 16px;
+            color: var(--color-gold);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.2s;
         }
 
-        /* Evidence cards */
-        aside.evidence-card {
-            background: #F0F0EC;
-            padding: 24px 28px;
-            margin: 36px 0;
-            border-radius: 4px;
+        .sticky-nav .nav-link:hover {
+            color: var(--text);
         }
 
-        aside.evidence-card strong {
-            display: block;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: #2C2C2C;
-            margin-bottom: 8px;
-        }
-
-        aside.evidence-card p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #4A4A4A;
-            margin-bottom: 10px;
-        }
-
-        aside.evidence-card .meta {
-            font-size: 13px;
-            color: #7A7A7A;
-            font-style: italic;
-        }
-
-        /* Convergence section */
-        .convergence {
-            background: #F5E6D3;
-            padding: 48px 0;
-            margin: 64px -24px;
-            position: relative;
-        }
-
-        .convergence .container {
-            max-width: 680px;
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: var(--max-w);
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        .convergence .timeline-entry {
-            margin-bottom: 16px;
-            padding-left: 0;
+        section {
+            scroll-margin-top: 64px;
         }
 
-        .convergence .timeline-entry .date {
-            font-weight: 600;
-            color: #D4502E;
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 24px;
+            position: relative;
         }
 
-        .convergence p.convergence-closing {
-            margin-top: 32px;
-            font-size: 17px;
-            line-height: 1.75;
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: 72px;
+            font-weight: 400;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin-bottom: 20px;
         }
 
-        .convergence p.architecture {
-            font-family: Georgia, "Times New Roman", serif;
+        .hero .hero-meta {
+            font-size: 15px;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .hero .hero-line {
+            width: 60px;
+            height: 1px;
+            background: var(--color-gold);
+            margin: 0 auto 36px;
+        }
+
+        .hero .hero-hook {
+            font-family: var(--serif);
+            font-size: 22px;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 600px;
+            font-style: italic;
+        }
+
+        .hero .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            animation: scrollBounce 2.4s ease-in-out infinite;
+        }
+
+        .hero .scroll-indicator .chevron {
+            width: 20px;
+            height: 20px;
+            border-right: 1.5px solid var(--color-gold);
+            border-bottom: 1.5px solid var(--color-gold);
+            transform: rotate(45deg);
+            opacity: 0.4;
+        }
+
+        .hero .scroll-indicator .chevron:first-child {
+            opacity: 0.2;
+        }
+
+        .hero .scroll-indicator .chevron:last-child {
+            opacity: 0.6;
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ===== OPENING SCENE ===== */
+        .opening {
+            padding: var(--section-gap) 0;
+        }
+
+        .opening p {
+            font-size: 19px;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
+
+        .opening p:last-child {
+            margin-bottom: 0;
+        }
+
+        .opening .scene-break {
+            font-family: var(--serif);
             font-size: 22px;
             font-style: italic;
-            color: #D4502E;
-            margin-top: 24px;
+            color: var(--text-dim);
+            margin-top: 48px;
         }
 
-        /* Footer */
+        /* ===== PULL QUOTES ===== */
+        .pullquote {
+            font-family: var(--serif);
+            font-size: 24px;
+            font-style: italic;
+            line-height: 1.55;
+            color: var(--color-red);
+            background: var(--bg-elevated);
+            border-left: 4px solid var(--color-red);
+            padding: 28px 32px;
+            margin: 48px 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            font-family: var(--sans);
+            font-size: 14px;
+            font-style: normal;
+            color: var(--text-dim);
+            margin-top: 16px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== THREE TRACKS SECTION ===== */
+        .tracks-section {
+            padding: var(--section-gap) 0;
+        }
+
+        .tracks-section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .tracks-section-header h2 {
+            font-family: var(--serif);
+            font-size: 40px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .tracks-section-header p {
+            font-size: 16px;
+            color: var(--text-dim);
+            letter-spacing: 0.04em;
+        }
+
+        /* Grid layout */
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .tracks-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 32px;
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 0 24px;
+            }
+        }
+
+        /* Individual track */
+        .track {
+            position: relative;
+        }
+
+        .track-header {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 400;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            border-bottom: 2px solid currentColor;
+        }
+
+        .track--building .track-header { color: var(--color-red); }
+        .track--assault .track-header { color: var(--color-teal); }
+        .track--family .track-header { color: var(--color-gold); }
+
+        .track-entries {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        /* Vertical line */
+        .track-entries::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+        }
+
+        .track--building .track-entries::before { background: var(--color-red); }
+        .track--assault .track-entries::before { background: var(--color-teal); }
+        .track--family .track-entries::before { background: var(--color-gold); }
+
+        .track-entry {
+            position: relative;
+            margin-bottom: 28px;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .track-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Dot on the line */
+        .track-entry::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid;
+            background: var(--bg);
+        }
+
+        .track--building .track-entry::before { border-color: var(--color-red); }
+        .track--assault .track-entry::before { border-color: var(--color-teal); }
+        .track--family .track-entry::before { border-color: var(--color-gold); }
+
+        .track-entry .entry-date {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .track--building .entry-date { color: var(--color-red); }
+        .track--assault .entry-date { color: var(--color-teal); }
+        .track--family .entry-date { color: var(--color-gold); }
+
+        .track-entry .entry-text {
+            color: var(--text-dim);
+        }
+
+        /* Highlight critical entries */
+        .track-entry.critical .entry-text {
+            color: var(--text);
+        }
+
+        /* ===== SECTION BREAK ("Then look at the dates.") ===== */
+        .section-break {
+            padding: 100px 24px;
+            text-align: center;
+        }
+
+        .section-break p {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        /* ===== CONVERGENCE SECTION ===== */
+        .convergence-section {
+            padding: var(--section-gap) 0 var(--section-gap);
+        }
+
+        /* Visual merge lines */
+        .merge-visual {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 120px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .merge-visual .merge-line {
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .merge-visual .merge-line--red {
+            background: linear-gradient(to bottom, var(--color-red), var(--text));
+            left: calc(50% - 40px);
+            transform-origin: bottom center;
+            transform: rotate(0deg);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            left: calc(50% - 1px);
+            animation: none;
+        }
+
+        .merge-visual .merge-line--teal {
+            background: linear-gradient(to bottom, var(--color-teal), var(--text));
+            left: calc(50% - 1px);
+        }
+
+        .merge-visual .merge-line--gold {
+            background: linear-gradient(to bottom, var(--color-gold), var(--text));
+            left: calc(50% - 1px);
+        }
+
+        /* Simplified: three lines that converge to center */
+        .merge-visual {
+            overflow: hidden;
+        }
+
+        .merge-visual .merge-line--red {
+            left: 30%;
+            transform: skewX(12deg);
+        }
+
+        .merge-visual .merge-line--teal {
+            left: calc(50% - 1px);
+            transform: none;
+        }
+
+        .merge-visual .merge-line--gold {
+            left: 70%;
+            transform: skewX(-12deg);
+        }
+
+        .merge-visual::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 1px);
+            width: 2px;
+            height: 20px;
+            background: var(--text);
+        }
+
+        /* Convergence timeline */
+        .convergence-timeline {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+        }
+
+        .convergence-timeline::before {
+            content: '';
+            position: absolute;
+            left: calc(24px + 4px);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--text-dim);
+            opacity: 0.3;
+        }
+
+        .conv-entry {
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 28px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .conv-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .conv-entry::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .conv-entry--red::before { background: var(--color-red); box-shadow: 0 0 8px var(--color-red-glow); }
+        .conv-entry--teal::before { background: var(--color-teal); box-shadow: 0 0 8px var(--color-teal-glow); }
+        .conv-entry--gold::before { background: var(--color-gold); box-shadow: 0 0 8px var(--color-gold-glow); }
+        .conv-entry--multi::before {
+            background: linear-gradient(135deg, var(--color-red), var(--color-gold));
+            box-shadow: 0 0 10px rgba(196, 53, 42, 0.2);
+        }
+        .conv-entry--red-teal::before {
+            background: linear-gradient(135deg, var(--color-red), var(--color-teal));
+        }
+
+        .conv-entry .conv-date {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .conv-entry .conv-text {
+            color: var(--text-dim);
+        }
+
+        .conv-entry.critical .conv-text {
+            color: var(--text);
+        }
+
+        /* Convergence closing text */
+        .convergence-closing {
+            max-width: var(--max-w);
+            margin: 64px auto 0;
+            padding: 0 24px;
+        }
+
+        .convergence-closing p {
+            font-size: 18px;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
+
+        .convergence-closing p:last-child {
+            margin-bottom: 0;
+        }
+
+        .convergence-closing .architecture {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-style: italic;
+            color: var(--color-red);
+            margin-top: 40px;
+        }
+
+        /* ===== CLOSING SECTION ===== */
+        .closing {
+            padding: var(--section-gap) 0;
+            border-top: 1px solid rgba(232, 230, 226, 0.06);
+        }
+
+        .closing p {
+            font-size: 18px;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
+
+        .closing p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing .status {
+            color: var(--text);
+        }
+
+        .closing .coda {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-style: italic;
+            color: var(--text-dim);
+            margin-top: 40px;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
-            border-top: 1px solid #E0E0DC;
+            border-top: 1px solid rgba(232, 230, 226, 0.06);
             padding: 48px 0 64px;
-            margin-top: 64px;
+            margin-top: var(--section-gap);
         }
 
         footer nav {
@@ -200,261 +592,427 @@
 
         footer a {
             font-size: 15px;
-            color: #4A7C7E;
+            color: var(--color-gold);
             text-decoration: none;
+            letter-spacing: 0.02em;
             transition: color 0.2s;
         }
 
         footer a:hover {
-            color: #D4502E;
-            text-decoration: underline;
+            color: var(--text);
         }
 
-        /* Links in body */
-        a {
-            color: #4A7C7E;
-            text-decoration: underline;
-            text-decoration-color: rgba(74, 124, 126, 0.3);
-            text-underline-offset: 3px;
-            transition: text-decoration-color 0.2s;
+        footer .footer-label {
+            font-size: 12px;
+            color: var(--text-dim);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
-        a:hover {
-            text-decoration-color: #4A7C7E;
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero .hero-hook {
+                font-size: 18px;
+                padding: 0 12px;
+            }
+
+            .section-break p {
+                font-size: 26px;
+            }
+
+            .pullquote {
+                font-size: 20px;
+                padding: 20px 24px;
+                margin: 36px 0;
+            }
+
+            .tracks-section-header h2 {
+                font-size: 30px;
+            }
+
+            .convergence-closing .architecture {
+                font-size: 22px;
+            }
+
+            .track {
+                padding: 0 24px;
+            }
         }
 
-        /* Desktop */
-        @media (min-width: 640px) {
-            h1 {
-                font-size: 56px;
+        @media (min-width: 768px) {
+            .tracks-grid {
+                max-width: 1100px;
             }
 
-            .convergence {
-                margin: 64px calc(-1 * (100vw - 680px) / 2 - 24px);
-                padding: 56px calc((100vw - 680px) / 2 + 24px);
+            .pullquote {
+                margin-left: -20px;
+                margin-right: -20px;
             }
+        }
 
-            blockquote.pullquote {
-                margin-left: -16px;
-                margin-right: -16px;
-            }
+        /* ===== SELECTION ===== */
+        ::selection {
+            background: var(--color-red);
+            color: var(--text);
         }
     </style>
 </head>
 <body>
 
-<article>
+<!-- STICKY NAV -->
+<nav class="sticky-nav" id="stickyNav" aria-label="Page navigation">
+    <span class="nav-title">The Story</span>
+    <a class="nav-link" href="https://jlegal.pro/">Full Report</a>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+    <h1>The Story</h1>
+    <p class="hero-meta">Justin Horn &ensp;|&ensp; Philadelphia &ensp;|&ensp; 2025&ndash;2026</p>
+    <div class="hero-line"></div>
+    <p class="hero-hook">A Jewish tenant was assaulted, poisoned, and displaced. Three institutions that should have protected him instead converged to erase him.</p>
+    <div class="scroll-indicator">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+    </div>
+</section>
+
+<!-- 2. OPENING SCENE -->
+<section class="opening">
     <div class="container">
+        <p>The ambulance pulled up to Goldtex Apartments on May 6, 2026. Justin Horn was on oxygen by the time they got him inside. Dizziness, cognitive impairment, confusion&mdash;the same cluster that had hit before, but worse this time. The portable AC in his unit had been running that morning, blowing air through ductwork sealed with foil tape that had been off-gassing volatile compounds for a month. Two EMS personnel would later report acute dizziness in the hallway themselves.</p>
 
-        <!-- 1. OPENING -->
-        <section>
-            <h1>Three Tracks, One Target</h1>
+        <p>His landlord knew. His doctor had written a letter. The property manager had been told on camera and didn&rsquo;t deny it. She offered three options&mdash;all of which continued the harm. None of them was &ldquo;we&rsquo;ll fix it.&rdquo; The building&rsquo;s rental license had already been expired for two months. The central HVAC had been down since September. SERVPRO would later refuse the remediation job. Exceeds residential scope.</p>
 
-            <p>The ambulance pulled up to Goldtex Apartments on May 6, 2026, at 2:47 in the afternoon. Justin Horn was on oxygen by the time they got him inside. Dizziness, cognitive impairment, confusion&mdash;the same cluster that had hit before, but worse this time. The portable AC unit in his apartment had been running that morning, blowing air that smelled wrong. Two EMS personnel would later report acute dizziness in the hallway themselves. One exposure, one ambulance, one man in the emergency room of a city hospital because the people who collected his rent had decided thermal-sealed ductwork with foil tape was good enough.</p>
+        <p>But the ambulance wasn&rsquo;t the beginning. It was the place where three separate stories met.</p>
 
-            <p>It wasn&rsquo;t random. The tape had been there since April 6. Nicole Cordial, property manager at Greystar, had watched the fiasco unfold. When Horn told her the unit was making him sick, she didn&rsquo;t offer to replace it. She didn&rsquo;t offer to test it, repair it, or investigate. She offered him a choice: accept the poisoning or leave. On the recording&mdash;he had the foresight to record&mdash;that choice came through clearly. You can hear him telling her he has a doctor&rsquo;s note. You can hear her not denying it. You can hear her saying if he thinks it&rsquo;s causing discomfort, the answer is not remediation. The answer is to get out.</p>
+        <p class="scene-break">This is how the story ends. But it started in three different places.</p>
+    </div>
+</section>
 
-            <p>So he did. But not because he wanted to. Because a landlord running without a valid rental license, in a building with a central HVAC that had failed nine months earlier and never been fixed, had made that the only viable option. By May 5, he was gone. By May 6, he was in the ambulance. By June 15, his eviction notice says he has ten days left to vacate. By June 12, he&rsquo;s supposed to walk into a courtroom as the primary witness in the assault case nobody properly investigated in the first place.</p>
+<!-- 3. THREE PARALLEL TRACKS -->
+<section class="tracks-section">
+    <div class="tracks-section-header">
+        <h2>Three Tracks</h2>
+        <p>Follow each line down. Then look across.</p>
+    </div>
 
-            <p>The ambulance was the moment everything converged. It was also the moment the institutions that should have acted decided they wouldn&rsquo;t.</p>
-        </section>
+    <div class="tracks-grid">
 
-        <!-- 2. DIVIDER -->
-        <div class="divider">
-            <span>Three stories. One target.</span>
+        <!-- TRACK 1: THE BUILDING -->
+        <div class="track track--building" id="track-goldtex">
+            <h3 class="track-header">The Building</h3>
+            <div class="track-entries">
+                <div class="track-entry">
+                    <span class="entry-date">Sept 2025</span>
+                    <span class="entry-text">HVAC fails. Never repaired.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Feb 28, 2026</span>
+                    <span class="entry-text">Rental license expires. Building keeps collecting rent from 163 units.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Apr 1, 2026</span>
+                    <span class="entry-text">Portable AC installed in Unit 806.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Apr 6, 2026</span>
+                    <span class="entry-text">FSK tape applied to exhaust. FLIR captures 102&ndash;114&deg;F. Off-gassing begins.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Apr 10, 2026</span>
+                    <span class="entry-text">Dr. Fabi documents airborne contaminant exposure.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Apr 15, 2026</span>
+                    <span class="entry-text">Justin tells Nicole on camera. She doesn&rsquo;t deny it. Offers three options&mdash;all continue the harm.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">May 4, 2026</span>
+                    <span class="entry-text">Notice to Quit. &ldquo;Defiant trespasser.&rdquo; Same day Justin files harassment report.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">May 6, 2026</span>
+                    <span class="entry-text">Ambulance. Oxygen. ER.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">May 13, 2026</span>
+                    <span class="entry-text">SERVPRO refuses remediation. Exceeds residential scope.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">May 24, 2026</span>
+                    <span class="entry-text">Second exposure. Floor 8 remediation without notice.</span>
+                </div>
+            </div>
         </div>
 
-        <!-- 3. TRACK 1: THE BUILDING -->
-        <section id="track-goldtex">
-            <h2>The Building That Poisoned Him</h2>
-
-            <p>Justin Horn rented Unit 806 at Goldtex Apartments in downtown Philadelphia under the management of Post Goldtex LP, owned by the Pestronk brothers. The building&rsquo;s central air conditioning system failed in September 2025. Months went by with no fix. Justin asked repeatedly to be transferred to another unit&mdash;reasonable requests that management consistently denied without explanation.</p>
-
-            <p>By March 2026, Justin asked for a portable AC unit as a temporary solution. Management agreed and installed one on April 1. But five days later, on April 6, they sealed the unit&rsquo;s hot exhaust hose with FSK tape&mdash;a foil-backed adhesive tape that degrades when heated.</p>
-
-            <p>That same day, Justin used a thermal camera. The FSK tape was registering temperatures between 102 and 114 degrees Fahrenheit. When tape gets that hot, it breaks down and releases volatile organic compounds&mdash;toluene, xylene, styrene, formaldehyde. Toxic fumes, in his apartment, from equipment installed by his landlord.</p>
-
-            <blockquote class="pullquote">
-                &ldquo;I need it. I can&rsquo;t breathe with the air that&rsquo;s come in there. I got sick. I have doctor&rsquo;s notes and you guys know that.&rdquo;
-                <cite>&mdash; Justin Horn, April 15, 2026</cite>
-            </blockquote>
-
-            <p>On April 10, Dr. Mark Fabi documented the airborne contaminant exposure in a formal medical letter. On April 15, Justin went to the leasing office and recorded the conversation. Nicole Cordial didn&rsquo;t deny his illness. She gave him three options, all of which continued the harm: reconnect the AC, lose cooling, or break his lease and leave.</p>
-
-            <blockquote class="pullquote">
-                &ldquo;Then you&rsquo;re welcome to break your lease and move out.&rdquo;
-                <cite>&mdash; Nicole Cordial, April 15, 2026</cite>
-            </blockquote>
-
-            <aside class="evidence-card">
-                <strong>FLIR Thermal Imaging</strong>
-                <p>FSK tape on portable AC measured 113&deg;F on April 6, 2026. Tape junction 112&deg;F. Thermally degraded tape off-gassed VOCs into enclosed living space.</p>
-                <span class="meta">Source: FLIR infrared captures, April 6, 2026</span>
-            </aside>
-
-            <p>On May 6, Justin was transported by ambulance to the ER, treated with oxygen and IV fluids. Two EMS responders reported dizziness in the hallway. On May 13, SERVPRO&mdash;a national remediation company&mdash;refused the cleanup job, saying the contamination exceeded residential scope.</p>
-
-            <p>The building&rsquo;s rental license had expired February 28, 2026. They had 16 open code violations. They were operating 163 units illegally. And on May 4, their lawyer sent Justin a Notice to Quit, calling him a &ldquo;defiant trespasser.&rdquo; The eviction was issued the same day Justin filed a harassment report against Nicole Cordial.</p>
-
-            <aside class="evidence-card">
-                <strong>License Expired</strong>
-                <p>Rental License #602204 expired Feb 28, 2026. Philadelphia Code bars rent collection without valid license. Building continued operating 163 units.</p>
-                <span class="meta">Source: L&amp;I records, li.phila.gov</span>
-            </aside>
-
-            <p>On May 24, three weeks after his ambulance ride, Greystar began post-fire remediation on Floor 8&mdash;directly below Unit 806&mdash;without notifying Justin. A second acute exposure occurred within minutes.</p>
-        </section>
-
-        <!-- 4. TRACK 2: THE ASSAULT -->
-        <section id="track-talley">
-            <h2>The Assault Nobody Investigated</h2>
-
-            <p>In the summer of 2025, Stephen Talley, a fellow resident, directed Justin&rsquo;s attention to antisemitic Twitter content. Justin reported it to building management three times. On August 22, 2025, at approximately 4:24 PM, Talley assaulted Justin in the Goldtex lobby. The attack lasted eleven minutes. Justin sustained an orbital fracture, broken nose, and broken jaw.</p>
-
-            <p>When police arrived, the front desk lied twice: they told the officer that Justin was the aggressor, and that no surveillance footage existed. Both statements were false. Justin, while still injured, went and collected the surveillance footage himself&mdash;the footage the building said didn&rsquo;t exist.</p>
-
-            <blockquote class="pullquote">
-                &ldquo;I&rsquo;m not interested in a plethora of evidence.&rdquo;
-                <cite>&mdash; Corporal Snyder, Badge #8068, Philadelphia Police, May 10, 2026</cite>
-            </blockquote>
-
-            <p>The case was dismissed at preliminary hearing. It was refiled only after supervisory review, with aggravated assault and ethnic intimidation charges added. Four ADAs have been assigned to Commonwealth v. Talley (CP-51-CR-0000673-2026). None has produced the responding officer&rsquo;s bodycam footage.</p>
-
-            <p>The most significant evidence emerged later: Talley&rsquo;s own recording. Made on his iPhone 11, with metadata timestamped to August 22, 2025 at 4:24 PM, the 38.9-second video shows Justin with hands raised, palms out&mdash;a defensive posture, not an aggressor&rsquo;s. The defendant filmed his own victim after the assault. The post-assault filming is conduct directly relevant to ethnic intimidation.</p>
-
-            <aside class="evidence-card">
-                <strong>Defendant&rsquo;s Own Recording</strong>
-                <p>iPhone 11 metadata authenticates to 2025-08-22 16:24:20. Shows complainant in defensive posture. Defendant pursued and filmed post-assault.</p>
-                <span class="meta">Source: Apple QuickTime metadata</span>
-            </aside>
-
-            <p>Attorney David Bercovitch sent a certified preservation letter to Post Brothers on September 18, 2025, demanding all surveillance footage, incident reports, and internal communications be preserved. A judge also ordered footage preserved at the preliminary hearing. Neither the court order nor the preservation letter has been enforced. No footage has been produced.</p>
-        </section>
-
-        <!-- 5. TRACK 3: THE FAMILY -->
-        <section id="track-trust">
-            <h2>The Father Who Funded the Landlord</h2>
-
-            <p>The Jennifer Horn Family Trust of 1993 holds $350,000 to $390,000. Justin&rsquo;s father, Dr. Abraham S. Horn, is the sole trustee. His mother, Pauline Parnes, was named co-trustee in the original instrument but has been sidelined.</p>
-
-            <p>The disability coercion started in February 2025&mdash;six months before the assault, over a year before the poisoning.</p>
-
-            <blockquote class="pullquote">
-                &ldquo;I will be cutting back on all your supplemental monies for everything, since you are giving up the disability.&rdquo;
-                <cite>&mdash; Dr. Abraham S. Horn, February 2025</cite>
-            </blockquote>
-
-            <p>Justin&rsquo;s response was clear: &ldquo;You want to punish me for wanting to work? For needing a valid ID? Coercing me to go for disability? That&rsquo;s over.&rdquo; His father repeated the threat days later.</p>
-
-            <p>In 2022, Dr. Horn removed Justin from the successor trustee list. In 2025, he reduced Justin&rsquo;s annual distribution cap from 10% to 5%. The financial architecture tightened incrementally, each change reducing Justin&rsquo;s autonomy.</p>
-
-            <p>When the rental license expired on February 28, 2026, Justin wrote to his father: stop paying rent to an unlicensed landlord. His father refused and kept paying&mdash;$84,403.23 in trust disbursements, primarily rent to the company that was poisoning his son.</p>
-
-            <blockquote class="pullquote">
-                &ldquo;Why should I jeopardize my credit? For the &lsquo;privilege&rsquo; of being your guarantor.&rdquo;
-                <cite>&mdash; Dr. Abraham S. Horn, May 1, 2026</cite>
-            </blockquote>
-
-            <p>On May 1, Justin asked for $10,000 to relocate to safety. His father refused. On May 6, the ambulance came. On May 7, Justin asked if he could come to his parents&rsquo; house.</p>
-
-            <blockquote class="pullquote">
-                &ldquo;You do not have my permission to come to my house.&rdquo;
-                <cite>&mdash; Dr. Abraham S. Horn, May 7, 2026</cite>
-            </blockquote>
-
-            <p>Less than 24 hours after his son was transported to the emergency room from chemical exposure, the trustee locked the door.</p>
-
-            <aside class="evidence-card">
-                <strong>Trust Misapplication</strong>
-                <p>Trustee paid $84,403.23 to unlicensed landlord from trust assets over beneficiary&rsquo;s written objection. Refused $10K relocation. Admitted motive: personal credit.</p>
-                <span class="meta">Source: Trustee&rsquo;s May 11, 2026 accounting</span>
-            </aside>
-        </section>
-
-    </div><!-- end .container -->
-
-    <!-- 6. THE CONVERGENCE -->
-    <section id="convergence" class="convergence">
-        <div class="container">
-            <h2>Read the Dates</h2>
-
-            <div class="timeline-entry">
-                <p><span class="date">February 2025:</span> The trustee tells his son that if he refuses disability, the money stops. The coercion begins months before anything else.</p>
+        <!-- TRACK 2: THE ASSAULT -->
+        <div class="track track--assault" id="track-talley">
+            <h3 class="track-header">The Assault</h3>
+            <div class="track-entries">
+                <div class="track-entry">
+                    <span class="entry-date">Summer 2025</span>
+                    <span class="entry-text">Talley directs Justin to antisemitic Twitter content. Justin reports it to building management three times.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Aug 22, 2025</span>
+                    <span class="entry-text">11-minute assault. Orbital fracture, broken nose, broken jaw.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Aug 22, 2025</span>
+                    <span class="entry-text">Front desk lies to police&mdash;says Justin was aggressor, says no video exists.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Aug 22, 2025</span>
+                    <span class="entry-text">Justin self-collects surveillance while injured.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Aug 22, 2025</span>
+                    <span class="entry-text">Talley records Justin post-assault on iPhone. Metadata: 16:24:20.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Sept 18, 2025</span>
+                    <span class="entry-text">Bercovitch sends preservation letter via certified mail.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Oct 6, 2025</span>
+                    <span class="entry-text">Sara Kane issues retaliatory warning letter&mdash;94 minutes after complaint.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Preliminary Hearing</span>
+                    <span class="entry-text">Case dismissed. Refiled with aggravated assault + ethnic intimidation.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Dec 31, 2025</span>
+                    <span class="entry-text">ADA Mulville: &ldquo;I checked our systems. I do not see it.&rdquo;</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">May 10, 2026</span>
+                    <span class="entry-text">Cpl. Snyder calls account &ldquo;a made up story.&rdquo; &ldquo;Not interested in a plethora of evidence.&rdquo;</span>
+                </div>
             </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">August 22, 2025:</span> The same son is assaulted in his building lobby. He reports it. He asks for a transfer. The building refuses.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">September 2025:</span> The HVAC fails. No repair.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">February 28, 2026:</span> The rental license expires. The trustee keeps paying rent.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">April 6, 2026:</span> FSK tape goes on. The poisoning begins.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">April 15, 2026:</span> Justin tells Nicole on camera. She doesn&rsquo;t deny it. Police are called. Non-renewal issued. Same day.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">May 1, 2026:</span> Trustee refuses relocation funds. Pays rent instead.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">May 4, 2026:</span> Notice to Quit. &ldquo;Defiant trespasser.&rdquo;</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">May 6, 2026:</span> Ambulance.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">May 7, 2026:</span> &ldquo;You do not have my permission to come to my house.&rdquo;</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">June 12, 2026:</span> Trial date. Commonwealth v. Talley.</p>
-            </div>
-
-            <div class="timeline-entry">
-                <p><span class="date">June 15, 2026:</span> Eviction vacate date.</p>
-            </div>
-
-            <p class="convergence-closing">Three institutional surfaces&mdash;building management, the criminal justice system, and the family trust&mdash;converge on displacing the same Jewish tenant in the same window, from the same building where he was assaulted, using the same leverage: financial dependence, documented chemical harm, and witness credibility. Each actor arrives at the same conclusion&mdash;Justin is the problem&mdash;from its own incentives. They do not need to coordinate. The structure does the work.</p>
-
-            <p class="architecture">This was not dysfunction. It was architecture.</p>
         </div>
-    </section>
 
+        <!-- TRACK 3: THE FAMILY -->
+        <div class="track track--family" id="track-trust">
+            <h3 class="track-header">The Family</h3>
+            <div class="track-entries">
+                <div class="track-entry">
+                    <span class="entry-date">1993</span>
+                    <span class="entry-text">Jennifer Horn Family Trust established. Corpus $350&ndash;390K.</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">2022</span>
+                    <span class="entry-text">Justin removed from successor trustee list.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Feb 2025</span>
+                    <span class="entry-text">&ldquo;I will be cutting back on all your supplemental monies since you are giving up the disability.&rdquo;</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Feb 21, 2025</span>
+                    <span class="entry-text">&ldquo;It would be better if you get the disability until you get yourself self-sufficient.&rdquo;</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">Mar 2025</span>
+                    <span class="entry-text">Trust cap reduced from 10% to 5%.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">Feb 28, 2026</span>
+                    <span class="entry-text">License expires. Father keeps paying rent to unlicensed landlord over Justin&rsquo;s written objection.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">May 1, 2026</span>
+                    <span class="entry-text">Justin asks for $10K to relocate. Father refuses. &ldquo;Why should I jeopardize my credit?&rdquo;</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">May 6, 2026</span>
+                    <span class="entry-text">Ambulance.</span>
+                </div>
+                <div class="track-entry critical">
+                    <span class="entry-date">May 7, 2026</span>
+                    <span class="entry-text">&ldquo;You do not have my permission to come to my house.&rdquo;</span>
+                </div>
+                <div class="track-entry">
+                    <span class="entry-date">May 10, 2026</span>
+                    <span class="entry-text">Tracking number deception. &ldquo;Check the mail&rdquo;&mdash;while holding the tracking number.</span>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- end .tracks-grid -->
+
+    <!-- PULL QUOTE: After building track -->
+    <div class="container" style="margin-top: 60px;">
+        <blockquote class="pullquote">
+            &ldquo;Then you&rsquo;re welcome to break your lease and move out.&rdquo;
+            <cite>&mdash; Nicole Cordial, Property Manager, April 15, 2026</cite>
+        </blockquote>
+    </div>
+</section>
+
+<!-- PULL QUOTE: After assault track -->
+<section style="padding: 0;">
     <div class="container">
+        <blockquote class="pullquote">
+            &ldquo;I&rsquo;m not interested in a plethora of evidence.&rdquo;
+            <cite>&mdash; Cpl. Snyder, Badge #8068, Philadelphia Police, May 10, 2026</cite>
+        </blockquote>
+    </div>
+</section>
 
-        <!-- 7. CLOSING -->
-        <section>
-            <p>He&rsquo;s displaced now. Unit 806 is a total loss. SERVPRO refused the job. The bodycam still hasn&rsquo;t been produced. His father is still the trustee, still controlling the trust, still the lease guarantor. The eviction stands. The trial is June 12.</p>
+<!-- PULL QUOTE: After family track -->
+<section style="padding: 0;">
+    <div class="container">
+        <blockquote class="pullquote">
+            &ldquo;You do not have my permission to come to my house.&rdquo;
+            <cite>&mdash; Dr. Abraham S. Horn, May 7, 2026</cite>
+        </blockquote>
+    </div>
+</section>
 
-            <p>This site exists because when the machinery failed at every level&mdash;the landlord, the police, the prosecutors, the inspectors, the judges, the father he trusted&mdash;there was no backup. No institution moved. So he documented it himself. Everything is here. The dates, the recordings, the emails, the medical letters, the thermal images, the iMessages, the building management on video choosing not to act. It&rsquo;s all here because institutions didn&rsquo;t.</p>
-        </section>
+<!-- 4. SECTION BREAK -->
+<div class="section-break">
+    <p>Then look at the dates.</p>
+</div>
 
-        <!-- 8. FOOTER -->
-        <footer>
-            <nav>
-                <a href="https://jlegal.pro/">Full Report</a>
-                <a href="https://jlegal.pro/evidence-photos.html">Evidence Photos</a>
-                <a href="https://jlegal.pro/audio-analysis.html">Audio Analysis</a>
-                <a href="http://72.62.174.60/view/talley-recording">zopbfjwz...nexyd.onion</a>
-                <a href="mailto:justin@jlegal.pro">justin@jlegal.pro</a>
-            </nav>
-        </footer>
+<!-- 5. THE CONVERGENCE -->
+<section class="convergence-section" id="convergence">
 
-    </div><!-- end .container -->
+    <!-- Visual: three lines merging -->
+    <div class="merge-visual">
+        <div class="merge-line merge-line--red"></div>
+        <div class="merge-line merge-line--teal"></div>
+        <div class="merge-line merge-line--gold"></div>
+    </div>
 
-</article>
+    <!-- Interleaved timeline -->
+    <div class="convergence-timeline">
+        <div class="conv-entry conv-entry--gold">
+            <span class="conv-date">February 2025</span>
+            <span class="conv-text">Disability coercion begins.</span>
+        </div>
+        <div class="conv-entry conv-entry--teal critical">
+            <span class="conv-date">August 22, 2025</span>
+            <span class="conv-text">Assault.</span>
+        </div>
+        <div class="conv-entry conv-entry--red">
+            <span class="conv-date">September 2025</span>
+            <span class="conv-text">HVAC fails.</span>
+        </div>
+        <div class="conv-entry conv-entry--teal">
+            <span class="conv-date">October 6, 2025</span>
+            <span class="conv-text">Retaliatory warning&mdash;94 minutes.</span>
+        </div>
+        <div class="conv-entry conv-entry--multi critical">
+            <span class="conv-date">February 28, 2026</span>
+            <span class="conv-text">License expires. Father keeps paying.</span>
+        </div>
+        <div class="conv-entry conv-entry--red critical">
+            <span class="conv-date">April 6, 2026</span>
+            <span class="conv-text">Poisoning begins.</span>
+        </div>
+        <div class="conv-entry conv-entry--red-teal critical">
+            <span class="conv-date">April 15, 2026</span>
+            <span class="conv-text">Nicole on camera. Police called. Non-renewal.</span>
+        </div>
+        <div class="conv-entry conv-entry--gold">
+            <span class="conv-date">May 1, 2026</span>
+            <span class="conv-text">Father refuses relocation.</span>
+        </div>
+        <div class="conv-entry conv-entry--red critical">
+            <span class="conv-date">May 4, 2026</span>
+            <span class="conv-text">Eviction notice.</span>
+        </div>
+        <div class="conv-entry conv-entry--multi critical">
+            <span class="conv-date">May 6, 2026</span>
+            <span class="conv-text">Ambulance. Father still paying.</span>
+        </div>
+        <div class="conv-entry conv-entry--gold critical">
+            <span class="conv-date">May 7, 2026</span>
+            <span class="conv-text">&ldquo;You do not have my permission to come to my house.&rdquo;</span>
+        </div>
+        <div class="conv-entry conv-entry--teal">
+            <span class="conv-date">June 12, 2026</span>
+            <span class="conv-text">Trial date.</span>
+        </div>
+        <div class="conv-entry conv-entry--red">
+            <span class="conv-date">June 15, 2026</span>
+            <span class="conv-text">Eviction vacate date.</span>
+        </div>
+    </div>
+
+    <!-- PULL QUOTE: In convergence -->
+    <div class="container" style="margin-top: 48px;">
+        <blockquote class="pullquote">
+            &ldquo;I got sick. I have doctor&rsquo;s notes and you guys know that.&rdquo;
+            <cite>&mdash; Justin Horn, April 15, 2026</cite>
+        </blockquote>
+    </div>
+
+    <!-- Convergence closing -->
+    <div class="convergence-closing">
+        <p>Three institutional surfaces&mdash;building management, the criminal justice system, and the family trust&mdash;converge on displacing the same Jewish tenant in the same window, from the same building where he was assaulted. Each actor arrives at the same conclusion&mdash;Justin is the problem&mdash;from its own incentives. They do not need to coordinate. The structure does the work.</p>
+
+        <p class="architecture">This was not dysfunction. It was architecture.</p>
+    </div>
+</section>
+
+<!-- 7. CLOSING -->
+<section class="closing">
+    <div class="container">
+        <p class="status">He&rsquo;s displaced. Unit 806 is a total loss. SERVPRO refused the job. The bodycam hasn&rsquo;t been produced. His father is still the trustee. The eviction stands. The trial is June 12.</p>
+
+        <p class="coda">This site exists because no institution acted. So he documented it himself.</p>
+    </div>
+</section>
+
+<!-- 8. FOOTER -->
+<footer>
+    <div class="container">
+        <p class="footer-label">Documentation</p>
+        <nav>
+            <a href="https://jlegal.pro/">Full Report</a>
+            <a href="https://jlegal.pro/evidence-photos.html">Evidence Photos</a>
+            <a href="https://jlegal.pro/audio-analysis.html">Audio Analysis</a>
+            <a href="http://72.62.174.60/view/talley-recording">zopbfjwz...nexyd.onion</a>
+            <a href="mailto:justin@jlegal.pro">justin@jlegal.pro</a>
+        </nav>
+    </div>
+</footer>
+
+<!-- 9. STICKY NAV JS -->
+<script>
+(function() {
+    var nav = document.getElementById('stickyNav');
+    var hero = document.getElementById('hero');
+    var heroHeight = hero.offsetHeight;
+    var visible = false;
+
+    function onScroll() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollY > heroHeight && !visible) {
+            nav.classList.add('visible');
+            visible = true;
+        } else if (scrollY <= heroHeight && visible) {
+            nav.classList.remove('visible');
+            visible = false;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function() {
+        heroHeight = hero.offsetHeight;
+    }, { passive: true });
+})();
+</script>
 
 </body>
 </html>
