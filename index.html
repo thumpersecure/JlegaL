@@ -102,6 +102,7 @@
       text-decoration: none; color: #ffffff;
       padding-right: 10px;
       border-right: 1px solid rgba(255,255,255,0.12);
+      max-width: 340px; flex-shrink: 1; overflow: hidden;
     }
     .nav-brand-main {
       font-weight: bold; letter-spacing: 1.8px;
@@ -464,7 +465,8 @@
       .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 18px; line-height: 40px; }
       .go-to-bottom { bottom: 16px; right: 64px; width: 40px; height: 40px; font-size: 18px; line-height: 40px; }
       #navSearchPrev, #navSearchNext { min-width: 44px; min-height: 44px; font-size: 18px; }
-      .start-here-btn { padding: 10px 14px !important; font-size: 13px !important; }
+      .start-here-btn, .story-btn { padding: 10px 14px !important; font-size: 13px !important; min-height: 44px; }
+      .nav-menu-btn { padding: 8px 12px !important; min-height: 44px; }
       .status-label { font-size: 12px !important; }
       .menu-category-header { font-size: 12px !important; }
     }
@@ -478,9 +480,8 @@
       .status-num { font-size: 20px; }
       .status-sep { display: none; }
       .status-detail { font-size: 10px; }
-      .start-here-btn { padding: 4px 8px; font-size: 10px; }
+      .status-label { letter-spacing: 1px !important; }
       .nav-search-input { width: 90px !important; }
-      .nav-menu-btn { padding: 5px 10px; font-size: 11px; }
     }
     /* ── Where the Public Data Fails ────────────────────────────── */
     .li-section-rule { border-top: 3px solid #B8741A; padding-top: 32px; margin-bottom: 0; }
@@ -571,8 +572,8 @@
     </a>
     <span class="nav-section-label no-print" id="navSectionLabel"></span>
     <div class="nav-actions-row" style="display: flex; align-items: center; gap: 8px; margin-left: auto;">
-    <a href="#critical-findings" class="start-here-btn no-print">Start Here</a>
-    <a href="story.html" class="story-btn no-print">Story</a>
+    <a href="story.html" class="story-btn no-print" style="padding: 5px 10px;">Story</a>
+    <a href="#critical-findings" class="start-here-btn no-print" style="font-size: 9px; padding: 3px 6px;">Start Here</a>
     <div class="nav-search-wrap no-print" style="display: flex; align-items: center; gap: 4px;">
       <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search..." aria-label="Search page">
       <button id="navSearchPrev" title="Previous match" style="display:none; background:none; border:1px solid #567; color:#c8d4ea; border-radius:3px; padding:8px 12px; cursor:pointer; font-size:14px; line-height:1;">&lsaquo;</button>
@@ -829,7 +830,7 @@
   <!-- ============================================================ -->
   <!-- COVER PAGE                                                    -->
   <!-- ============================================================ -->
-  <div id="cover-page" style="page-break-after: always; text-align: center; padding: 80px 40px 60px 40px; border: 3px double #1B2A4A; margin-bottom: 48px;">
+  <div id="cover-page" style="page-break-after: always; text-align: center; padding: 60px 40px 40px 40px; border: 3px double #1B2A4A; margin-bottom: 48px;">
 
     <h1 style="font-size: 30px; color: #1B2A4A; font-family: Georgia, serif; margin: 0 0 8px 0; letter-spacing: 1px; border: none;">
       SYSTEMATIC ANTISEMITISM AT GOLDTEX APARTMENTS
@@ -844,7 +845,7 @@
     <div style="width: 120px; height: 3px; background: #1B2A4A; margin: 24px auto;"></div>
 
     <!-- FACES GRID -->
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin: 28px auto 12px auto; max-width: 900px;">
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin: 28px auto 20px auto; max-width: 900px;">
       <div style="text-align: center; width: 105px;">
         <img src="bob-faith.png" alt="Bob Faith" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #8B0000;" loading="lazy">
         <div style="font-size: 12px; font-weight: bold; color: #1B2A4A; margin-top: 4px;">Bob Faith</div>
