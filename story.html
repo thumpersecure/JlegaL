@@ -67,7 +67,8 @@
             color: var(--text);
             text-decoration: none;
             padding: 12px 14px;
-            border: 1px solid var(--line);
+            border: 2px solid var(--color-gold-link);
+            box-shadow: 0 0 8px var(--color-gold-glow);
             font-size: 13px;
             letter-spacing: 0.06em;
             text-transform: uppercase;
@@ -174,6 +175,7 @@
             font-weight: 400;
             margin-bottom: 16px;
             letter-spacing: -0.01em;
+            animation: fadeInUp 0.8s ease-out both;
         }
 
         .hero .meta {
@@ -182,6 +184,7 @@
             letter-spacing: 0.09em;
             text-transform: uppercase;
             margin-bottom: 22px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .hero .line {
@@ -189,6 +192,7 @@
             height: 1px;
             background: var(--color-gold-link);
             margin: 0 auto 24px;
+            animation: drawLine 0.6s ease-out 0.4s both;
         }
 
         .hero .hook {
@@ -197,6 +201,7 @@
             line-height: 1.55;
             max-width: 860px;
             font-style: italic;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .hero .hook-sub {
@@ -393,6 +398,13 @@
             margin-bottom: 2px;
         }
 
+        .event.red { box-shadow: 0 0 8px var(--color-red-glow); }
+        .event.teal { box-shadow: 0 0 8px var(--color-teal-glow); }
+        .event.gold { box-shadow: 0 0 8px var(--color-gold-glow); }
+        .event.multi { box-shadow: 0 0 12px var(--color-red-glow), 0 0 12px var(--color-gold-glow); }
+
+        .event:hover { transform: scale(1.3); transition: transform 0.2s ease; }
+
         .figure-note {
             margin-top: 20px;
             font-size: 14px;
@@ -446,14 +458,14 @@
         .track {
             background: var(--bg-card);
             border: 1px solid var(--line);
-            border-top: 3px solid;
+            border-top: 6px solid;
             border-radius: 8px;
             padding: 18px 16px 16px;
         }
 
-        .track.red { border-top-color: var(--color-red); }
-        .track.teal { border-top-color: var(--color-teal); }
-        .track.gold { border-top-color: var(--color-gold-link); }
+        .track.red { border-top-color: var(--color-red); border-left: 4px solid var(--color-red); }
+        .track.teal { border-top-color: var(--color-teal); border-left: 4px solid var(--color-teal); }
+        .track.gold { border-top-color: var(--color-gold-link); border-left: 4px solid var(--color-gold-link); }
 
         .track h3 {
             font-family: var(--serif);
@@ -555,10 +567,12 @@
 
         .architecture {
             font-family: var(--serif);
-            font-size: 32px;
+            font-size: clamp(32px, 5vw, 44px);
             color: var(--color-red);
             font-style: italic;
             margin-top: 30px;
+            text-shadow: 0 4px 16px rgba(196, 53, 42, 0.25);
+            letter-spacing: 0.02em;
         }
 
         footer {
@@ -712,6 +726,16 @@
             .sticky-nav {
                 transition: none;
             }
+
+            .hero h1,
+            .hero .meta,
+            .hero .hook {
+                animation: none;
+            }
+
+            .hero .line {
+                animation: none;
+            }
         }
 
         .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--color-red), var(--color-teal), var(--color-gold)); width: 0%; z-index: 1001; transition: width 0.05s linear; pointer-events: none; }
@@ -725,8 +749,11 @@
         .merge-visual::after { content: ''; position: absolute; bottom: 0; left: calc(50% - 5px); width: 10px; height: 10px; border-radius: 50%; background: var(--text); box-shadow: 0 0 20px var(--color-red), 0 0 30px var(--color-teal), 0 0 20px var(--color-gold); }
 
         [data-date] { transition: opacity 0.3s ease; }
-        .date-highlight { opacity: 1; background: rgba(196,53,42,0.1); border-radius: 4px; }
+        .date-highlight { opacity: 1; background: rgba(196,53,42,0.2); border-radius: 4px; border-bottom: 2px solid var(--color-red); padding-bottom: 2px; }
         .date-dim { opacity: 0.3; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes drawLine { from { width: 0; } to { width: 80px; } }
     </style>
 </head>
 <body>
@@ -868,7 +895,7 @@
                         </tr>
                         <tr>
                             <td>Apr 6, 2026</td>
-                            <td>FSK tape added; FLIR 102-114 F; off-gassing begins</td>
+                            <td>FSK tape added; FLIR 102-114 F; off-gassing begins; Nicole Cordial emails written notice of AC discomfort</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -925,6 +952,8 @@
             <h2 class="section-title">Then follow each line down</h2>
             <p class="section-subtitle">Tracks = chronology. Surfaces = institutional framing.</p>
 
+            <p style="text-align: center; font-size: 13px; color: var(--text-dim); font-style: italic; margin-bottom: 24px;">Hover over any date to highlight matching events across all three tracks.</p>
+
             <div class="tracks-grid">
                 <article class="track red" id="track-goldtex" aria-labelledby="track-building">
                     <h3 id="track-building">Track 1 - The Building</h3>
@@ -933,11 +962,11 @@
                         <li data-date="2025-12-08"><time datetime="2025-12-08">Dec 8, 2025</time>The building installs a Hanukkah display in the assault lobby — gold menorah, Star of David, stuffed bears in yarmulkes. 108 days after the antisemitic assault in the same space. Justin sees it as recognition. It keeps him in the building. The transfer request remains denied.</li>
                         <li data-date="2026-02-28"><time datetime="2026-02-28">Feb 28, 2026</time>Rental license expires; rent collection continues.</li>
                         <li data-date="2026-04-01"><time datetime="2026-04-01">Apr 1, 2026</time>Portable AC installed in Unit 806.</li>
-                        <li data-date="2026-04-06"><time datetime="2026-04-06">Apr 6, 2026</time>FSK tape applied to exhaust hose; FLIR 102-114 F; documented off-gassing begins.</li>
+                        <li data-date="2026-04-06"><time datetime="2026-04-06">Apr 6, 2026</time>FSK tape applied to exhaust hose; FLIR 102-114 F; documented off-gassing begins. That same day, Nicole Cordial emailed: "I'm also sorry to hear you might not be feeling well with the portable AC unit. If you think it's causing any discomfort, we can absolutely remove it for now." Written notice of harm — nine days before the April 15 video. Her second notice, not her first.</li>
                         <li data-date="2026-04-10"><time datetime="2026-04-10">Apr 10, 2026</time>Dr. Fabi letter documents airborne contaminant exposure.</li>
                         <li data-date="2026-04-15"><time datetime="2026-04-15">Apr 15, 2026</time>Leasing-office video: direct notice, no dispute, three harm-continuing options. Police called on Justin. Non-renewal issued.</li>
                         <li data-date="2026-05-04"><time datetime="2026-05-04">May 4, 2026</time>Notice to Quit ("defiant trespasser").</li>
-                        <li data-date="2026-05-13"><time datetime="2026-05-13">May 13, 2026</time>SERVPRO refuses remediation: exceeds residential scope.</li>
+                        <li data-date="2026-05-13"><time datetime="2026-05-13">May 13, 2026</time>SERVPRO refuses remediation: exceeds residential scope. Greystar Real Estate Partners had already paid a $24 million FTC settlement. This was not a first-time actor making its first mistake. This was a company with a documented federal enforcement history managing a building with 16 open code violations and an expired license.</li>
                         <li data-date="2026-05-24"><time datetime="2026-05-24">May 24, 2026</time>Second acute exposure. Greystar begins post-fire remediation on Floor 8 — directly below Unit 806 — without notifying the chemically sensitive tenant whose lease is still active. Symptoms within minutes: headache, dizziness, cognitive impairment, fine motor degradation. Third documented exclusion from building-wide safety communication.</li>
                     </ol>
                 </article>
@@ -946,10 +975,11 @@
                     <h3 id="track-assault">Track 2 - The Assault / System response</h3>
                     <ol>
                         <li data-date="2025-07"><time datetime="2025-07">Summer 2025</time>Resident Stephen Talley directs Justin to antisemitic Twitter content — not accidentally shared, directed at him. Justin reports the content to building management on three documented occasions. The connection matters: the man who would assault him weeks later is the man who first weaponized the hate speech. The protected activity (reporting antisemitism) and the attacker are linked in a single causal chain. Three reports. Three times the building does nothing.</li>
-                        <li data-date="2025-08-22"><time datetime="2025-08-22">Aug 22, 2025</time>11-minute assault. Orbital fracture, broken nose, broken jaw.</li>
+                        <li data-date="2025-08-22"><time datetime="2025-08-22">Aug 22, 2025</time>11-minute assault. Orbital fracture, broken nose, broken jaw. A sneaker tread pattern was imprinted on his arm — forensic evidence that destroys any 'one punch' defense theory independent of audio, video, or witness credibility.</li>
                         <li data-date="2025-08-22"><time datetime="2025-08-22">Aug 22, 2025</time>Front desk tells police Justin was aggressor and no video exists.</li>
+                        <li data-date="2025-08-23"><time datetime="2025-08-23">Aug 23, 2025</time>Within 24 hours: maintenance worker Hakim asks on a recorded call, "so it was just one punch?" — language that precisely matches the defense theory articulated months later. At the preliminary hearing, the defense moved to suppress this audio. Parties do not move to suppress evidence that supports their own theory. The "one punch" narrative was being scripted on the building's clock before charges existed.</li>
                         <li data-date="2025-09-18"><time datetime="2025-09-18">Sept 18, 2025</time>Bercovitch preservation letter sent by certified mail.</li>
-                        <li data-date="2025-10-06"><time datetime="2025-10-06">Oct 6, 2025</time>Kane warning letter issued ~94 minutes after complaint.</li>
+                        <li data-date="2025-10-06"><time datetime="2025-10-06">Oct 6, 2025</time>At 3:01 PM, Justin emailed Greystar reporting antisemitic gossip and staff harassment. At 4:35 PM — ninety-four minutes later — Regional Manager Sara Kane sent him a formal warning letter. Not an investigation. Not an apology. A warning. The complaint was never addressed. The warning WAS the institutional response to the complaint. This is the same pattern Nicole Cordial would repeat six months later: report harm, receive punishment.</li>
                         <li data-date="2025-12-31"><time datetime="2025-12-31">Dec 31, 2025</time>ADA Sean Mulville responds to bodycam request: "I checked our systems. I do not see it." The statement is passive — he checked whether PPD had uploaded it, not whether it existed or whether he should demand it. Under <em>Kyles v. Whitley</em>, police possession is prosecution possession. The DA has an obligation to obtain and disclose, not just check a database. Four ADAs assigned to this case. None compelled production. The footage moved from "doesn't exist" (building lie) to "can't be found" (system failure) to institutional forgetting.</li>
                         <li data-date="2026-04-15"><time datetime="2026-04-15">Apr 15, 2026</time>Same evening as leasing-office video, Justin files harassment report.</li>
                         <li data-date="2026-05-10"><time datetime="2026-05-10">May 10, 2026</time>Upon reporting witness intimidation and retaliation, Cpl. Snyder (Badge #8068) argued for seven minutes before agreeing to write a report. He called the account 'a made up story.' When shown evidence, he stated: 'I'm not interested in a plethora of evidence.' He then characterized the situation as 'crazy' — his own word, not the complainant's. The seven-minute resistance to documenting the report is itself corroboration of the severity he resisted acknowledging. Report eventually filed under DC #26-09-0597175.</li>
@@ -967,9 +997,9 @@
                         <li data-date="2026-02-28"><time datetime="2026-02-28">Feb 28, 2026</time>License expires; father continues paying landlord over written objection.</li>
                         <li data-date="2026-05-01"><time datetime="2026-05-01">May 1, 2026</time>10K relocation request refused ("Why should I jeopardize my credit?").</li>
                         <li data-date="2026-05-06"><time datetime="2026-05-06">May 6, 2026</time>Ambulance day; trust channel still tied to same property payments.</li>
-                        <li data-date="2026-05-07"><time datetime="2026-05-07">May 7, 2026</time>"You do not have my permission to come to my house."</li>
+                        <li data-date="2026-05-07"><time datetime="2026-05-07">May 7, 2026</time>"You do not have my permission to come to my house." That same day, when his displaced son asked about finding safe housing, the trustee's response was: "Just hire them." Three words. The strongest single statement of scienter in the record — the trustee knew the crisis was real and chose detachment over action.</li>
                         <li data-date="2026-05-14"><time datetime="2026-05-14">May 14, 2026</time>Eight days after the ambulance, the trustee funds furnished relocation housing — via personal credit card. The capacity existed on May 1. He chose May 14. The timing is itself evidence: help arrived only after the crisis became undeniable, not when it was requested.</li>
-                        <li data-date="2026-05-10"><time datetime="2026-05-10">May 10, 2026</time>"Check the mail" while holding tracking number.</li>
+                        <li data-date="2026-05-10"><time datetime="2026-05-10">May 10, 2026</time>The trustee possessed a USPS tracking number for a document being sent to the beneficiary. Across multiple days, he repeatedly directed Justin to "check the mail" — which meant physically returning to the building from which acute VOC exposure had displaced him. The directive manufactured reasons for the displaced witness to return to the same building where adverse documentation against him was being generated. Justin placed it on the record: "How many times did you say check the mail when you had a tracking number the entire time?"</li>
                     </ol>
                 </article>
             </div>
@@ -979,6 +1009,11 @@
                     "Then you're welcome to break your lease and move out."
                     <cite>Nicole Cordial, Apr 15, 2026</cite>
                 </blockquote>
+                <blockquote class="pullquote">
+                    "I've been so nice to you."
+                    <cite>Nicole Cordial, Apr 15, 2026 (same recording)</cite>
+                </blockquote>
+                <p class="figure-note" style="grid-column: 1 / -1; margin-top: 0;">On the same recording, Nicole says: "I've been so nice to you." An unguarded admission that reveals how she frames the relationship — her "niceness" is a credit the tenant owes deference for, not professional property management. The person poisoning her tenant expects gratitude.</p>
                 <blockquote class="pullquote teal">
                     "I'm not interested in a plethora of evidence."
                     <cite>Cpl. Snyder, May 10, 2026</cite>
@@ -1046,6 +1081,13 @@
         <div class="container">
             <div class="reading closing" id="convergence">
                 <h2 class="section-title">The convergence in plain language</h2>
+
+                <div class="merge-visual" aria-hidden="true">
+                  <div class="merge-line merge-line--red"></div>
+                  <div class="merge-line merge-line--teal"></div>
+                  <div class="merge-line merge-line--gold"></div>
+                </div>
+
                 <p>On May 6, the ambulance is the visible emergency point. But the convergence was built earlier: building decisions created and maintained the hazard path; system decisions degraded protection and evidence confidence; family-trust decisions constrained safe exit while payments continued.</p>
                 <p>By May 5, he could not safely remain in Unit 806. On May 6, he was transported to the ER and placed on oxygen. In the same period, eviction pressure remained active and the trial calendar was already fixed.</p>
                 <p>Tracks are the chronology. Surfaces are the institutional structure underneath those dates. They are two views of the same architecture.</p>
@@ -1064,12 +1106,12 @@
             <div class="reading">
                 <h2 class="section-title">Evidence Archive</h2>
                 <p>Every date, quote, and figure on this page is sourced from the documented record. The full archive:</p>
-                <ul style="margin: 20px 0; padding-left: 24px; line-height: 2;">
-                    <li><a href="index.html">Full Legal Report</a> — 60+ source documents, forensic anchors, legal synthesis</li>
-                    <li><a href="evidence-photos.html">Evidence Photographs</a> — FLIR thermal imaging, FSK tape, Ring doorbell footage, recovery photos</li>
-                    <li><a href="audio-analysis.html">Audio Analysis</a> — April 15 leasing office transcript with loudness mapping</li>
-                    <li><a href="lobby-displays.html">Lobby Displays</a> — Hanukkah display documentation, institutional framing</li>
-                    <li><a href="three-surfaces.html">The Three Surfaces</a> — Structural analysis of the convergence</li>
+                <ul style="margin: 20px 0; padding-left: 0; line-height: 2; list-style: none;">
+                    <li style="border-left: 3px solid var(--color-gold); padding-left: 12px; margin-bottom: 12px;"><a href="index.html">Full Legal Report</a> — 60+ source documents, forensic anchors, legal synthesis</li>
+                    <li style="border-left: 3px solid var(--color-red); padding-left: 12px; margin-bottom: 12px;"><a href="evidence-photos.html">Evidence Photographs</a> — FLIR thermal imaging, FSK tape, Ring doorbell footage, recovery photos</li>
+                    <li style="border-left: 3px solid var(--color-teal); padding-left: 12px; margin-bottom: 12px;"><a href="audio-analysis.html">Audio Analysis</a> — April 15 leasing office transcript with loudness mapping</li>
+                    <li style="border-left: 3px solid var(--color-red); padding-left: 12px; margin-bottom: 12px;"><a href="lobby-displays.html">Lobby Displays</a> — Hanukkah display documentation, institutional framing</li>
+                    <li style="border-left: 3px solid var(--color-gold); padding-left: 12px; margin-bottom: 12px;"><a href="three-surfaces.html">The Three Surfaces</a> — Structural analysis of the convergence</li>
                 </ul>
             </div>
         </div>
