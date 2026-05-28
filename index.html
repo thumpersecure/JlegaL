@@ -93,9 +93,9 @@
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
-      display: flex; flex-wrap: wrap;
+      display: flex; flex-wrap: nowrap;
       align-items: center; justify-content: space-between;
-      gap: 6px; padding: 4px 12px;
+      gap: 10px; padding: 6px 16px;
     }
     .nav-brand {
       display: flex; flex-direction: row; align-items: center; gap: 8px;
@@ -180,6 +180,12 @@
       background: rgba(255,215,0,0.2);
       margin: 4px 0;
     }
+    mark.search-hl { background: #ffd54f; padding: 1px 2px; border-radius: 2px; }
+    mark.search-hl-active { background: #ff6d00; color: #fff; }
+    .nav-search-input { font-size: 13px; padding: 4px 8px; border: 1px solid #567; border-radius: 3px; background: rgba(255,255,255,0.1); color: #fff; width: 140px; }
+    .nav-search-input::placeholder { color: #8899aa; }
+    .nav-search-count { font-size: 11px; color: #a8c8e8; white-space: nowrap; }
+    .nav-search-clear { background: none; border: none; color: #ff6d6d; font-size: 16px; cursor: pointer; padding: 0 4px; }
     #main-content,
     #cover-page,
     #adverse-parties,
@@ -541,8 +547,10 @@
     <span class="nav-section-label no-print" id="navSectionLabel"></span>
     <div class="nav-actions-row" style="display: flex; align-items: center; gap: 10px;">
     <a href="#critical-findings" class="start-here-btn no-print">Start Here</a>
-    <div class="nav-search-wrap no-print">
+    <div class="nav-search-wrap no-print" style="display: flex; align-items: center; gap: 4px;">
       <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search..." aria-label="Search page">
+      <button id="navSearchPrev" title="Previous match" style="display:none; background:none; border:1px solid #567; color:#c8d4ea; border-radius:3px; padding:2px 6px; cursor:pointer; font-size:14px; line-height:1;">&lsaquo;</button>
+      <button id="navSearchNext" title="Next match" style="display:none; background:none; border:1px solid #567; color:#c8d4ea; border-radius:3px; padding:2px 6px; cursor:pointer; font-size:14px; line-height:1;">&rsaquo;</button>
       <span class="nav-search-count" id="navSearchCount"></span>
       <button class="nav-search-clear" id="navSearchClear" title="Clear search" style="display:none;">&times;</button>
     </div>
@@ -811,6 +819,45 @@
     </h1>
 
     <div style="width: 120px; height: 3px; background: #1B2A4A; margin: 24px auto;"></div>
+
+    <!-- FACES GRID -->
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin: 28px auto 12px auto; max-width: 900px;">
+      <div style="text-align: center; width: 105px;">
+        <img src="bob-faith.png" alt="Bob Faith" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #8B0000;" loading="lazy">
+        <div style="font-size: 12px; font-weight: bold; color: #1B2A4A; margin-top: 4px;">Bob Faith</div>
+        <div style="font-size: 10px; color: #777;">CEO, Greystar</div>
+      </div>
+      <div style="text-align: center; width: 105px;">
+        <img src="nicole-cordial.jpg" alt="Nicole Cordial" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #8B0000;" loading="lazy">
+        <div style="font-size: 12px; font-weight: bold; color: #1B2A4A; margin-top: 4px;">Nicole Cordial</div>
+        <div style="font-size: 10px; color: #777;">Property Mgr</div>
+      </div>
+      <div style="text-align: center; width: 105px;">
+        <img src="talley-photo.png" alt="Stephen Talley" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #cc0000;" loading="lazy">
+        <div style="font-size: 12px; font-weight: bold; color: #8B0000; margin-top: 4px;">Stephen Talley</div>
+        <div style="font-size: 10px; color: #777;">Defendant</div>
+      </div>
+      <div style="text-align: center; width: 105px;">
+        <img src="abe-horn.png" alt="Dr. Abraham Horn" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #B8741A;" loading="lazy">
+        <div style="font-size: 12px; font-weight: bold; color: #1B2A4A; margin-top: 4px;">Dr. Abraham Horn</div>
+        <div style="font-size: 10px; color: #777;">Trustee</div>
+      </div>
+      <div style="text-align: center; width: 105px;">
+        <img src="pauline-parnes.png" alt="Pauline Parnes" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #B8741A;" loading="lazy">
+        <div style="font-size: 12px; font-weight: bold; color: #1B2A4A; margin-top: 4px;">Pauline Parnes</div>
+        <div style="font-size: 10px; color: #777;">Co-Trustee</div>
+      </div>
+      <div style="text-align: center; width: 105px;">
+        <img src="matt-pestronk.jpg" alt="Matthew Pestronk" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 2px solid #8B0000;" loading="lazy">
+        <div style="font-size: 12px; font-weight: bold; color: #1B2A4A; margin-top: 4px;">Matthew Pestronk</div>
+        <div style="font-size: 10px; color: #777;">Post Brothers</div>
+      </div>
+      <div style="text-align: center; width: 105px;">
+        <img src="mike-pestronk.jpg" alt="Michael Pestronk" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 2px solid #8B0000;" loading="lazy">
+        <div style="font-size: 12px; font-weight: bold; color: #1B2A4A; margin-top: 4px;">Michael Pestronk</div>
+        <div style="font-size: 10px; color: #777;">Post Brothers</div>
+      </div>
+    </div>
 
     <h2 style="font-size: 20px; color: #2C6E6A; font-family: Georgia, serif; font-weight: normal; font-style: italic; margin: 24px 0 40px 0;">
       Trustee Misapplication of Entrusted Property<br>&amp; Landlord Regulatory Non-Compliance
@@ -6154,11 +6201,14 @@
     });
   }
 
-  /* ── 3. Search box ───────────────────────────────────────────── */
+  /* ── 3. Search box with prev/next ──────────────────────────── */
   var searchInput = document.getElementById('navSearchInput');
   var searchCount = document.getElementById('navSearchCount');
   var searchClear = document.getElementById('navSearchClear');
+  var searchPrev = document.getElementById('navSearchPrev');
+  var searchNext = document.getElementById('navSearchNext');
   var searchTimer = null;
+  var searchIndex = -1;
 
   function clearHighlights() {
     var marks = document.querySelectorAll('mark.search-hl');
@@ -6169,11 +6219,14 @@
     });
     searchCount.textContent = '';
     searchClear.style.display = 'none';
+    searchPrev.style.display = 'none';
+    searchNext.style.display = 'none';
+    searchIndex = -1;
   }
 
   function highlightText(node, term) {
     var count = 0;
-    if (node.nodeType === 3) { /* text node */
+    if (node.nodeType === 3) {
       var idx = node.textContent.toLowerCase().indexOf(term.toLowerCase());
       if (idx >= 0) {
         var span = document.createElement('mark');
@@ -6196,22 +6249,47 @@
     return count;
   }
 
+  function goToMatch(idx) {
+    var marks = document.querySelectorAll('mark.search-hl');
+    if (marks.length === 0) return;
+    marks.forEach(function(m) { m.style.background = '#ffd54f'; });
+    if (idx < 0) idx = marks.length - 1;
+    if (idx >= marks.length) idx = 0;
+    searchIndex = idx;
+    marks[idx].style.background = '#ff6d00';
+    marks[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    searchCount.textContent = (idx + 1) + ' / ' + marks.length;
+  }
+
   function doSearch() {
     clearHighlights();
     var term = searchInput.value.trim();
     if (term.length < 2) return;
     var total = highlightText(document.body, term);
-    searchCount.textContent = total + ' match' + (total !== 1 ? 'es' : '');
-    searchClear.style.display = 'inline';
-    /* scroll to first match */
-    var first = document.querySelector('mark.search-hl');
-    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (total > 0) {
+      searchClear.style.display = 'inline';
+      searchPrev.style.display = 'inline';
+      searchNext.style.display = 'inline';
+      goToMatch(0);
+    } else {
+      searchCount.textContent = '0 matches';
+      searchClear.style.display = 'inline';
+    }
   }
 
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(doSearch, 350);
   });
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (e.shiftKey) goToMatch(searchIndex - 1);
+      else goToMatch(searchIndex + 1);
+    }
+  });
+  searchPrev.addEventListener('click', function() { goToMatch(searchIndex - 1); });
+  searchNext.addEventListener('click', function() { goToMatch(searchIndex + 1); });
   searchClear.addEventListener('click', function() {
     searchInput.value = '';
     clearHighlights();
