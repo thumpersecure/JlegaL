@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Antisemitism — jlegal.pro</title>
+    <meta name="description" content="A fact-based guide to recognizing antisemitism and how it manifested in the documented assault, institutional failure, and displacement of a Jewish tenant in Philadelphia.">
+    <meta property="og:title" content="Understanding Antisemitism — What It Looked Like in This Case">
+    <meta property="og:description" content="A fact-based guide to recognizing antisemitism and how it manifested in the documented assault, institutional failure, and displacement of a Jewish tenant in Philadelphia.">
+    <meta property="og:image" content="https://jlegal.pro/og-thumbnail.png">
+    <meta property="og:url" content="https://jlegal.pro/understanding-antisemitism.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="jlegal.pro">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Understanding Antisemitism — What It Looked Like in This Case">
+    <meta name="twitter:description" content="A fact-based guide to recognizing antisemitism and how it manifested in the documented assault, institutional failure, and displacement of a Jewish tenant in Philadelphia.">
+    <meta name="twitter:image" content="https://jlegal.pro/og-thumbnail.png">
+    <link rel="canonical" href="https://jlegal.pro/understanding-antisemitism.html">
+    <style>
+        :root {
+            --bg: #0c0c0e;
+            --bg-elevated: #131316;
+            --bg-card: #18181c;
+            --text: #e8e6e2;
+            --text-dim: #C0BEB6;
+            --line: rgba(232, 230, 226, 0.1);
+            --color-red: #c4352a;
+            --color-teal: #6BA3A5;
+            --color-gold: #8b7355;
+            --color-gold-link: #C4A97D;
+            --color-red-glow: rgba(196, 53, 42, 0.3);
+            --color-teal-glow: rgba(107, 163, 165, 0.3);
+            --color-gold-glow: rgba(139, 115, 85, 0.3);
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --max-w: 720px;
+            --section-gap: 80px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 18px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .skip-link {
+            position: absolute; top: -120px; left: 20px; z-index: 1200;
+            background: var(--bg-card); color: var(--text); text-decoration: none;
+            padding: 12px 14px; border: 2px solid var(--color-gold-link);
+            font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+        }
+        .skip-link:focus { top: 12px; }
+
+        a { color: var(--color-gold-link); text-underline-offset: 0.2em; }
+        a:hover { color: var(--text); }
+        a:focus-visible { outline: 2px solid var(--color-gold-link); outline-offset: 3px; }
+
+        /* Reading progress */
+        .reading-progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(90deg, var(--color-red), var(--color-teal), var(--color-gold));
+            width: 0%; z-index: 1001; transition: width 0.05s linear; pointer-events: none;
+        }
+
+        /* Sticky nav */
+        .sticky-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(12, 12, 14, 0.88); backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line); padding: 12px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            transform: translateY(-100%); opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .sticky-nav.visible { transform: translateY(0); opacity: 1; }
+        .sticky-nav:not(.visible) { visibility: hidden; pointer-events: none; }
+        .sticky-nav .nav-title { font-family: var(--serif); font-size: 16px; }
+        .sticky-nav .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+        .sticky-nav .nav-link {
+            font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+            text-decoration: none; color: var(--color-gold-link);
+            padding: 10px 12px; min-height: 44px; display: inline-flex; align-items: center;
+        }
+
+        .container { width: min(var(--max-w), 100%); margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 80px; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh; min-height: 100dvh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 72px 24px;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+        }
+        .hero h1 {
+            font-family: var(--serif); font-size: clamp(36px, 8vw, 64px);
+            font-weight: 400; margin-bottom: 16px; letter-spacing: -0.01em;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+        .hero .line {
+            width: 68px; height: 1px; background: var(--color-gold-link);
+            margin: 0 auto 24px;
+            animation: drawLine 0.6s ease-out 0.3s both;
+        }
+        .hero .hook {
+            font-family: var(--serif); font-size: clamp(18px, 2.8vw, 26px);
+            line-height: 1.55; max-width: 640px; font-style: italic;
+            color: var(--text-dim);
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        .scroll-indicator {
+            position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+        .scroll-indicator span {
+            display: block; width: 24px; height: 38px; border: 2px solid var(--text-dim);
+            border-radius: 12px; position: relative; margin: 0 auto 8px;
+        }
+        .scroll-indicator span::after {
+            content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+            width: 4px; height: 8px; background: var(--text-dim); border-radius: 2px;
+            animation: scrollDot 1.8s ease-in-out infinite;
+        }
+        .scroll-indicator p {
+            font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        /* Sections */
+        .section { padding: var(--section-gap) 0; }
+        .section-title {
+            font-family: var(--serif); font-size: clamp(26px, 5vw, 38px);
+            font-weight: 400; margin-bottom: 10px; text-align: center;
+        }
+        .section-subtitle {
+            text-align: center; color: var(--text-dim); font-size: 14px;
+            letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 34px;
+        }
+
+        /* Prose */
+        .prose p { margin-bottom: 18px; line-height: 1.8; }
+        .prose p:last-child { margin-bottom: 0; }
+
+        /* Divider */
+        .divider {
+            width: 60px; height: 1px; background: var(--color-gold-link);
+            margin: 0 auto; opacity: 0.5;
+        }
+
+        /* Mechanism cards */
+        .mechanism {
+            background: var(--bg-elevated); border-left: 4px solid var(--color-red);
+            border-radius: 0 6px 6px 0; padding: 22px 20px; margin-bottom: 20px;
+        }
+        .mechanism:last-child { margin-bottom: 0; }
+        .mechanism h4 {
+            font-family: var(--serif); font-size: 20px; font-weight: 400;
+            margin: 0 0 8px; color: var(--text);
+        }
+        .mechanism p { color: var(--text-dim); font-size: 16px; line-height: 1.7; margin: 0; }
+        .mechanism.teal { border-left-color: var(--color-teal); }
+        .mechanism.gold { border-left-color: var(--color-gold-link); }
+
+        /* Callout */
+        .callout {
+            background: var(--bg-card); border: 1px solid var(--line);
+            border-left: 4px solid var(--color-red);
+            border-radius: 0 8px 8px 0; padding: 24px 22px; margin-top: 28px;
+        }
+        .callout p {
+            color: var(--text-dim); font-family: var(--serif);
+            font-size: 18px; line-height: 1.6; font-style: italic; margin: 0;
+        }
+
+        /* Subsection cards */
+        .applies-card {
+            background: var(--bg-card); border: 1px solid var(--line);
+            border-radius: 8px; padding: 28px 24px; margin-bottom: 28px;
+        }
+        .applies-card:last-child { margin-bottom: 0; }
+        .applies-card h4 {
+            font-family: var(--serif); font-size: 22px; font-weight: 400;
+            margin: 0 0 14px; color: var(--text);
+        }
+        .applies-card p {
+            color: var(--text-dim); font-size: 16px; line-height: 1.7; margin-bottom: 0;
+        }
+
+        /* Action list */
+        .action-list {
+            list-style: none; margin: 0; padding: 0;
+        }
+        .action-list li {
+            background: var(--bg-card); border: 1px solid var(--line);
+            border-radius: 8px; padding: 20px 22px; margin-bottom: 14px;
+            display: flex; align-items: flex-start; gap: 16px;
+        }
+        .action-list li:last-child { margin-bottom: 0; }
+        .action-num {
+            font-family: var(--serif); font-size: 28px; color: var(--color-gold-link);
+            line-height: 1; min-width: 32px; text-align: center; padding-top: 2px;
+        }
+        .action-content strong {
+            display: block; font-size: 16px; margin-bottom: 4px;
+        }
+        .action-content p {
+            color: var(--text-dim); font-size: 15px; line-height: 1.6; margin: 0;
+        }
+
+        /* Resource list */
+        .resource-list {
+            list-style: none; margin: 24px 0 0; padding: 0;
+        }
+        .resource-list li {
+            padding: 14px 0; border-bottom: 1px solid var(--line);
+        }
+        .resource-list li:last-child { border-bottom: none; }
+        .resource-list a { font-weight: 600; font-size: 16px; }
+        .resource-list .resource-desc {
+            display: block; color: var(--text-dim); font-size: 14px; margin-top: 4px; line-height: 1.5;
+        }
+        .resource-group {
+            margin-bottom: 32px;
+        }
+        .resource-group:last-child { margin-bottom: 0; }
+        .resource-group h4 {
+            font-family: var(--serif); font-weight: 400;
+            color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em;
+            font-size: 13px; margin-bottom: 6px;
+        }
+
+        /* Closing */
+        .closing-statement {
+            font-family: var(--serif); font-size: clamp(18px, 2.8vw, 22px);
+            text-align: center; line-height: 1.75; color: var(--text-dim);
+            font-style: italic; max-width: 660px; margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--line); margin-top: var(--section-gap);
+            padding: 46px 0 64px;
+        }
+        footer .footer-label {
+            font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--text-dim); text-align: center; margin-bottom: 18px;
+        }
+        footer nav {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 26px;
+        }
+        footer nav a {
+            text-decoration: none; color: var(--color-gold-link); font-size: 14px;
+            letter-spacing: 0.04em; text-transform: uppercase;
+            padding: 10px 12px; min-height: 44px;
+            display: inline-flex; align-items: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes drawLine { from { width: 0; } to { width: 68px; } }
+        @keyframes scrollDot {
+            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 0.3; transform: translateX(-50%) translateY(12px); }
+            100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            body { font-size: 17px; }
+            .hero { min-height: 88vh; min-height: 88dvh; }
+            .hero .hook { font-size: 18px; }
+            .section { padding: 56px 0; }
+            .applies-card { padding: 22px 18px; }
+            .action-list li { padding: 16px 18px; gap: 12px; }
+            .mechanism { padding: 18px 16px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .sticky-nav { transition: none; }
+            .hero h1, .hero .hook, .hero .line { animation: none; }
+            .scroll-indicator span::after { animation: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="reading-progress" id="readingProgress"></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="sticky-nav" id="stickyNav" aria-label="Page navigation" aria-hidden="true">
+    <span class="nav-title">Understanding Antisemitism</span>
+    <div class="nav-links">
+        <a class="nav-link" href="story.html">The Story</a>
+        <a class="nav-link" href="index.html">Full Report</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+    <div>
+        <h1>Understanding Antisemitism</h1>
+        <div class="line" role="presentation"></div>
+        <p class="hook">What it is, how it works, and what it looked like in this case.</p>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+        <p>Scroll</p>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <!-- OPENING -->
+    <section class="section" id="opening">
+        <div class="container">
+            <div class="prose">
+                <p>You might already know what antisemitism looks like. You might think you do but aren&rsquo;t completely sure. Or you might be here because something about this case just felt wrong, and you want to understand why. Wherever you&rsquo;re coming from, this page is for you. It won&rsquo;t lecture you. It won&rsquo;t assume what you know or don&rsquo;t know. It will simply show you &mdash; plainly, in human terms &mdash; what antisemitism is, how it works, and why it matters to what happened here.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- WHAT IS ANTISEMITISM? -->
+    <section class="section" id="what-is">
+        <div class="container">
+            <h2 class="section-title">What Is Antisemitism?</h2>
+            <div class="section-subtitle">Definitions &amp; Dynamics</div>
+
+            <div class="prose">
+                <p>Antisemitism is hostility, prejudice, or discrimination directed at Jewish people simply because they are Jewish.</p>
+
+                <p>The Anti-Defamation League describes it as &ldquo;the marginalization and oppression of Jews,&rdquo; manifesting as &ldquo;exploitation of, discrimination against, violence against and dehumanization of the Jewish people based on stereotypes and disinformation.&rdquo;</p>
+
+                <p>The International Holocaust Remembrance Alliance offers the widely adopted working definition: &ldquo;Antisemitism is a certain perception of Jews, which may be expressed as hatred toward Jews. Rhetorical and physical manifestations of antisemitism are directed toward Jewish or non-Jewish individuals and/or their property, toward Jewish community institutions and religious facilities.&rdquo;</p>
+
+                <p>What makes antisemitism unusual among prejudices is a built-in contradiction. Most forms of bigotry portray their targets as inferior. Antisemitism does something different: it simultaneously portrays Jewish people as dangerously powerful and as deserving of persecution. The same group is cast as both the puppet master and the scapegoat. This paradox has allowed antisemitism to adapt across centuries.</p>
+
+                <p>Antisemitism is not only slurs or attacks on individuals. It also operates at a systemic level &mdash; through institutional discrimination, social exclusion, and cultural narratives repeated so often they start to feel like common sense. Recognizing it means looking beyond single incidents to the patterns and structures that sustain them.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- HOW DOES ANTISEMITISM WORK? -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Does Antisemitism Work?</h2>
+            <div class="section-subtitle">Mechanisms of Harm</div>
+
+            <div class="prose" style="margin-bottom: 28px;">
+                <p>Antisemitism does not always announce itself with slurs or swastikas. It often operates through quieter mechanisms that compound over time.</p>
+            </div>
+
+            <div class="mechanism">
+                <h4>Stereotyping</h4>
+                <p>Antisemitic stereotypes reduce Jewish people to caricatures, shaping how a Jewish person&rsquo;s words and actions are interpreted, often casting ordinary behavior as suspicious or threatening.</p>
+            </div>
+
+            <div class="mechanism teal">
+                <h4>Scapegoating</h4>
+                <p>When problems arise, Jewish individuals may be blamed disproportionately or singled out as the source of conflict. Scapegoating turns the victim into the supposed cause of the very hostility directed at them.</p>
+            </div>
+
+            <div class="mechanism gold">
+                <h4>Institutional Indifference</h4>
+                <p>Systems meant to protect people may fail to recognize antisemitic motivation even when it is plainly present. Incidents are logged as generic conflicts, and the bias driving them goes unexamined.</p>
+            </div>
+
+            <div class="mechanism">
+                <h4>Erasure</h4>
+                <p>Hate crimes are reframed as mutual disputes or personality clashes. By stripping away the antisemitic context, the victim&rsquo;s experience is flattened into something that sounds ordinary.</p>
+            </div>
+
+            <div class="mechanism teal">
+                <h4>Displacement</h4>
+                <p>Rather than confronting the person causing harm, institutions may find it easier to remove the Jewish person from the situation entirely. The victim&rsquo;s presence is treated as the problem, not the hatred directed at them.</p>
+            </div>
+
+            <div class="callout">
+                <p>These mechanisms rarely operate in isolation. Together, they form a cycle that protects aggressors and exhausts victims.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- WHAT INTERNATIONAL STANDARDS REQUIRE -->
+    <section class="section" id="standards">
+        <div class="container">
+            <h2 class="section-title">What International Standards Require</h2>
+            <div class="section-subtitle">OSCE Framework</div>
+
+            <div class="prose">
+                <p>The OSCE&rsquo;s practical guide establishes clear obligations when a bias-motivated crime occurs: authorities must recognize and record the bias motivation, conduct thorough evidence collection, provide support to victims, reassure the broader Jewish community, build trust between institutions and Jewish communities, and investigate transparently.</p>
+
+                <p>In this case, none of these steps were taken at the scene or in the nine months that followed.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- HOW THIS APPLIES TO WHAT HAPPENED HERE -->
+    <section class="section" id="applies-here">
+        <div class="container">
+            <h2 class="section-title">How This Applies to What Happened Here</h2>
+            <div class="section-subtitle">Six Documented Failures</div>
+
+            <div class="applies-card">
+                <h4>The Assault Was Antisemitic</h4>
+                <p>Stephen Talley directed antisemitic content at Justin Horn in summer 2025. Justin reported it to building management three times. The building did nothing. On August 22, 2025, Talley assaulted Justin for eleven minutes &mdash; orbital fracture, broken nose, broken jaw. The charges include ethnic intimidation under 18 Pa.C.S. Section 2710. The OSCE guide says law enforcement must recognize and record antisemitic bias motivation. When police arrived, the front desk lied &mdash; told officers Justin was the aggressor, said no video existed. Both were false.</p>
+            </div>
+
+            <div class="applies-card">
+                <h4>The Institution Failed</h4>
+                <p>The case was dismissed at preliminary hearing. It was refiled only after supervisory review added aggravated assault and ethnic intimidation charges &mdash; acknowledging the original investigation was deficient. Corporal Snyder dismissed a witness intimidation report as &ldquo;a made up story.&rdquo; Four ADAs failed to produce the responding officer&rsquo;s bodycam footage over nine months. The framework meant to protect victims of bias-motivated violence failed at its most basic function: preserving the record.</p>
+            </div>
+
+            <div class="applies-card">
+                <h4>The Victim Was Displaced, Not Protected</h4>
+                <p>Instead of support, Justin was poisoned by his landlord&rsquo;s equipment, denied a unit transfer for over a year, served with a retaliatory eviction, and labeled a &ldquo;defiant trespasser&rdquo; &mdash; in the same building where the antisemitic assault occurred. The OSCE guide calls for providing support to victims. What happened was the opposite.</p>
+            </div>
+
+            <div class="applies-card">
+                <h4>The Hanukkah Display</h4>
+                <p>On December 8, 2025 &mdash; 108 days after the antisemitic assault &mdash; the building installed a Hanukkah display in that same lobby. Gold menorah, Star of David, stuffed bears in yarmulkes. Justin saw it as recognition. It kept him in the building. His transfer request remained denied. Four months later, he was displaced.</p>
+            </div>
+
+            <div class="applies-card">
+                <h4>The Bodycam</h4>
+                <p>The responding officer&rsquo;s bodycam from the antisemitic assault has not been produced through four ADAs over nine months. Philadelphia PD&rsquo;s own audits show 54% full compliance in the worst district. When evidence of an antisemitic hate crime is not preserved, the victim&rsquo;s account is left unsupported by the very system designed to document it.</p>
+            </div>
+
+            <div class="applies-card">
+                <h4>The Family Dimension</h4>
+                <p>The family trust dimension is the most painful to examine. Dr. Abraham Horn structured financial support through mechanisms that conditioned Justin&rsquo;s access to resources on maintaining a disability classification. When the building became dangerous, Justin could not simply leave. The trust funded the very situation harming him while withholding the means to escape it. The structural effect was a closed loop: the family control made the hate crime survivable but inescapable.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- WHAT YOU CAN DO -->
+    <section class="section" id="action">
+        <div class="container">
+            <h2 class="section-title">What You Can Do</h2>
+            <div class="section-subtitle">Five Steps</div>
+
+            <ul class="action-list">
+                <li>
+                    <span class="action-num">1</span>
+                    <div class="action-content">
+                        <strong>Learn</strong>
+                        <p>Read the ADL toolkit and OSCE guide linked below.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="action-num">2</span>
+                    <div class="action-content">
+                        <strong>Report</strong>
+                        <p>If you witness antisemitism, report it at <a href="https://www.adl.org/report-incident" rel="noopener" target="_blank">adl.org/report-incident</a>.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="action-num">3</span>
+                    <div class="action-content">
+                        <strong>Recognize</strong>
+                        <p>Antisemitism is not always a swastika. Sometimes it&rsquo;s a building displaying a menorah in the lobby where a Jewish tenant was beaten &mdash; then evicting him four months later.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="action-num">4</span>
+                    <div class="action-content">
+                        <strong>Support</strong>
+                        <p>Share this documentation. The record exists because no institution acted.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="action-num">5</span>
+                    <div class="action-content">
+                        <strong>Speak up</strong>
+                        <p>Silence in the face of hatred is never neutral.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- RESOURCES -->
+    <section class="section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Resources</h2>
+            <div class="section-subtitle">Further Reading &amp; Documentation</div>
+
+            <div class="resource-group">
+                <h4>Toolkits &amp; Guides</h4>
+                <ul class="resource-list">
+                    <li>
+                        <a href="Antisemitism-Uncovered-Toolkit-ADL.pdf">Antisemitism Uncovered: A Guide to Old Myths in a New Era (ADL)</a>
+                        <span class="resource-desc">Comprehensive toolkit covering the history, myths, and modern manifestations of antisemitism.</span>
+                    </li>
+                    <li>
+                        <a href="Guide-to-Fighting-Antisemitism-OSCE.pdf">Understanding Antisemitic Hate Crimes and Addressing the Security Needs of Jewish Communities (OSCE/ODIHR)</a>
+                        <span class="resource-desc">Practical guide for law enforcement, policymakers, and civil society on identifying, recording, and prosecuting antisemitic hate crimes.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource-group">
+                <h4>Case Documentation</h4>
+                <ul class="resource-list">
+                    <li>
+                        <a href="index.html">Full Legal Report</a>
+                        <span class="resource-desc">The complete documented record covering the assault, the building, the criminal case, and the trust.</span>
+                    </li>
+                    <li>
+                        <a href="story.html">The Story</a>
+                        <span class="resource-desc">Narrative timeline showing how three institutional tracks converged on displacing a Jewish tenant.</span>
+                    </li>
+                    <li>
+                        <a href="convergence.html">Convergence</a>
+                        <span class="resource-desc">Structural analysis of how the building, the criminal justice system, and the family trust produced convergent outcomes.</span>
+                    </li>
+                    <li>
+                        <a href="evidence-photos.html">Evidence Photos</a>
+                        <span class="resource-desc">FLIR thermal imaging, FSK tape documentation, and recovery photographs.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource-group">
+                <h4>Contact</h4>
+                <ul class="resource-list">
+                    <li>
+                        <a href="mailto:justin@jlegal.pro">justin@jlegal.pro</a>
+                        <span class="resource-desc">Direct contact for questions, press inquiries, or legal correspondence.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- CLOSING -->
+    <section class="section" id="closing">
+        <div class="container">
+            <div class="closing-statement">
+                <p>Understanding antisemitism is not an academic exercise. It is the difference between recognizing what happened and pretending it didn&rsquo;t. Every institution that received a report had the power to act. None did. This site exists because silence, repeated across every institution a person turns to, becomes its own verdict. Understanding is the first step. But understanding without action is just awareness without consequence &mdash; and for the person left standing alone, there is no difference between the two.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p class="footer-label">Documentation path</p>
+        <nav>
+            <a href="index.html">Full Report</a>
+            <a href="story.html">The Story</a>
+            <a href="convergence.html">Convergence</a>
+            <a href="evidence-photos.html">Evidence Photos</a>
+            <a href="mailto:justin@jlegal.pro">justin@jlegal.pro</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+/* Sticky nav show/hide */
+(function() {
+    var nav = document.getElementById('stickyNav');
+    var hero = document.getElementById('hero');
+    var heroHeight = hero.offsetHeight;
+    var visible = false;
+
+    function setNavState(show) {
+        nav.classList.toggle('visible', show);
+        nav.setAttribute('aria-hidden', show ? 'false' : 'true');
+        if ('inert' in nav) nav.inert = !show;
+        visible = show;
+    }
+
+    function onScroll() {
+        var sy = window.pageYOffset || document.documentElement.scrollTop;
+        if (sy > heroHeight && !visible) setNavState(true);
+        else if (sy <= heroHeight && visible) setNavState(false);
+    }
+
+    setNavState(false);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function() { heroHeight = hero.offsetHeight; }, { passive: true });
+})();
+
+/* Reading progress bar */
+window.addEventListener('scroll', function() {
+    var sh = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = sh > 0 ? (window.scrollY / sh) * 100 : 0;
+    document.getElementById('readingProgress').style.width = pct + '%';
+}, { passive: true });
+</script>
+
+</body>
+</html>
